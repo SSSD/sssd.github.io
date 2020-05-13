@@ -1,3 +1,7 @@
+---
+version: 1.16.x
+---
+
 # Smartcard authentication - Multiple Certificates on a Smartcard
 
 ## Related ticket(s):

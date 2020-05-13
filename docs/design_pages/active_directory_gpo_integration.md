@@ -1,3 +1,7 @@
+---
+version: 1.12.x
+---
+
 # GPO-Based Access Control
 
 ## Problem Statement

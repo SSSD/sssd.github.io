@@ -1,3 +1,7 @@
+---
+version: 1.9.x
+---
+
 # SUDO caching rules
 
 ## Important sudo attributes

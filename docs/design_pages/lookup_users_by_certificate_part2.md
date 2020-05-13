@@ -1,3 +1,7 @@
+---
+version: 1.14.x
+---
+
 # Lookup Users by Certificate - Active Directory
 
 Related ticket(s):

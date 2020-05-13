@@ -1,3 +1,7 @@
+---
+version: 1.13.x
+---
+
 # IPA sudo schema support
 
 Related ticket(s):

@@ -1,3 +1,7 @@
+---
+version: 1.14.x
+---
+
 # SSSCTL - a CLI tool to control and monitor SSSD
 
 Related ticket(s):

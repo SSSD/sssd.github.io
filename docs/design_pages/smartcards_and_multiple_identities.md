@@ -1,3 +1,7 @@
+---
+version: 1.15.x
+---
+
 # Smartcards and Multiple Identities
 
 Related ticket(s):

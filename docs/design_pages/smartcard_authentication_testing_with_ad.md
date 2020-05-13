@@ -1,3 +1,7 @@
+---
+version: 1.13.x
+---
+
 # Smartcard authentication - Testing with AD
 
 As mentioned on [SmartcardAuthenticationStep1](https://docs.pagure.org/SSSD.sssd/design_pages/smartcard_authentication_step1.html) the primary focus of the development was the authentication to an IPA client. Nevertheless, the general authentication code path is the same and when the needed requirements are met it can be used to authenticate on a AD domain client as well. But please note that as with an IPA client this will only be a local authentication, so far no Kerberos tickets will be available after authentication. pkinit will be added in one of the next steps.

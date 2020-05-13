@@ -1,3 +1,7 @@
+---
+version: 1.13.x
+---
+
 # Do not always override home directory with subdomain_homedir value in server mode
 
 Related ticket(s):

@@ -1,3 +1,7 @@
+---
+version: 1.13.x
+---
+
 # Smartcard authentication - Step 1 (local authentication)
 
 Related ticket(s):

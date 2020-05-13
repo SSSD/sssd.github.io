@@ -1,3 +1,7 @@
+---
+version: 1.14.x
+---
+
 # Secrets Service
 
 Related ticket(s):

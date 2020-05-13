@@ -1,3 +1,7 @@
+---
+version: not-implemented
+---
+
 # Sudo Plugin Wire Protocol
 
 Sudo v1.8 supports a plugin API that can be used to extend features of SUDO. These pluggable modules can be of two types

@@ -1,3 +1,7 @@
+---
+version: not-implemented
+---
+
 # LDAP Referrals
 
 ## Pre-requisites

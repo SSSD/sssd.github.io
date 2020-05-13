@@ -1,3 +1,7 @@
+---
+version: 1.8.x
+---
+
 # Multiple LDAP search bases support
 
 ## Purpose

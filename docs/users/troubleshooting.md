@@ -1,6 +1,6 @@
 # Debugging and troubleshooting SSSD
 
-This document should help users who are trying to troubleshoot why their SSSD setup is not working as expected. After following the steps described here, the user should be able to either fix the configuration themselves or provide the developers/support a complete set of debug information to follow on in a <span data-role="doc">bug report \<reporting_bugs\></spanor on the [user support list](https://lists.fedorahosted.org/admin/lists/sssd-users.lists.fedorahosted.org/).
+This document should help users who are trying to troubleshoot why their SSSD setup is not working as expected. After following the steps described here, the user should be able to either fix the configuration themselves or provide the developers/support a complete set of debug information to follow on in a bug report  on the [user support list](https://lists.fedorahosted.org/admin/lists/sssd-users.lists.fedorahosted.org/).
 
 The SSSD provides two major features - obtaining information about users and authenticating users. Each of these hooks into different system APIs and should be viewed separately. However, a successful authentication can only be performed when the information about a user can be retrieved, so if authentication doesn't work in your case, please make sure you can at least obtain info from about the user with `getent passwd $user` and `id`.
 
@@ -8,11 +8,7 @@ The SSSD provides two major features - obtaining information about users and aut
 
 We are trying to document on examples how to read debug messages and how to troubleshoot specific issues. These are currently available guides that can help you:
 
-<div class="toctree">
-
-troubleshooting/how-to-troubleshoot-backend sudo_troubleshooting troubleshooting/how-to-troubleshoot-fleet-commander-integration
-
-</div>
+{% include toc dir='users/troubleshooting' %}
 
 ## Let tools help you\!
 

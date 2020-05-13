@@ -1,3 +1,7 @@
+---
+version: 1.8.x
+---
+
 # SSSD and automounter integration
 
 This design page describes integration of autofs and SSSD in a more centralized manner. The discussion started on SSSD mailing list and then in [Red Hat Bugzilla](https://bugzilla.redhat.com/show_bug.cgi?id=683523). This page summarizes the discussions and design.

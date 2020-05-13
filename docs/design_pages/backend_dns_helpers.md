@@ -1,3 +1,7 @@
+---
+version: pre-1.8
+---
+
 # Backend DNS Helpers
 
 ## Problem Statement

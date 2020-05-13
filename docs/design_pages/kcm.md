@@ -1,3 +1,7 @@
+---
+version: 1.15.x
+---
+
 # KCM server for SSSD
 
 ## Related ticket(s):

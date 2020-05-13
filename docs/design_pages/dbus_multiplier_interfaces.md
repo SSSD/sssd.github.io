@@ -1,3 +1,7 @@
+---
+version: 1.13.x
+---
+
 # Support for multiple D-Bus interfaces on single object path
 
 Related ticket(s):

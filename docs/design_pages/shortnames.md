@@ -1,3 +1,7 @@
+---
+version: 1.15.x
+---
+
 # Shortnames in trusted domains
 
 ## Related ticket(s):

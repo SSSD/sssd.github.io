@@ -1,3 +1,7 @@
+---
+version: 1.13.x
+---
+
 # Smart Cards
 
 For Fedora 20 (ended up in 21), we proposed adding [support for smart cards](https://fedoraproject.org/wiki/Changes/SSSD_Smart_Card_Support) to SSSD. This is where we work out how to do it, or try to, anyway.

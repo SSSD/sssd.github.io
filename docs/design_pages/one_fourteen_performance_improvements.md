@@ -1,3 +1,7 @@
+---
+version: 1.14.x
+---
+
 # Improve SSSD Performance with a timestamp cache
 
 Related ticket(s):

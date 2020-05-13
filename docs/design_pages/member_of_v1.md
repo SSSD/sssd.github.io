@@ -1,3 +1,7 @@
+---
+version: not-implemented
+---
+
 # Proposal to redesign the memberOf plugin (v1)
 
 Let us start with the following setup:

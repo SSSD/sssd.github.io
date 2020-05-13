@@ -1,3 +1,7 @@
+---
+version: not-implemented
+---
+
 **Nothing on this page truly exists. It contains only ramblings on what SSSD might become in the future.** These are mostly unordered notes.
 
 # SSSD 2.0

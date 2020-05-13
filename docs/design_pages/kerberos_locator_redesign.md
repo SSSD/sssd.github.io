@@ -1,3 +1,7 @@
+---
+version: not-implemented
+---
+
 # Kerberos Locator Plugin Redesign
 
 ## Old Design

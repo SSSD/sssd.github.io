@@ -1,3 +1,7 @@
+---
+version: 1.11.x
+---
+
 # IPA Server Mode
 
 Related tickets:

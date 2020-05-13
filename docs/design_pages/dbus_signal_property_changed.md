@@ -1,3 +1,7 @@
+---
+version: not-implemented
+---
+
 # D-Bus Signal: Notify Property Changed
 
 Related ticket(s):

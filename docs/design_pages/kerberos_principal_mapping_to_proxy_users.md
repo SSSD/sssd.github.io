@@ -1,3 +1,7 @@
+---
+version: 1.12.x
+---
+
 # Mapping ID provider names to Kerberos principals
 
 Related ticket(s):

@@ -1,3 +1,7 @@
+---
+version: 1.11.x
+---
+
 # Adding the `ad_access_filter` option
 
 Related ticket(s):

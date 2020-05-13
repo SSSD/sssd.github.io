@@ -1,3 +1,7 @@
+---
+version: 1.13.x
+---
+
 # DDNS - specify which server to update DNS with
 
 Related ticket(s):

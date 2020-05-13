@@ -1,3 +1,7 @@
+---
+version: not-implemented
+---
+
 # SUDO integration proposal using sudo policy plugin
 
 ## SUDO plugin API

@@ -1,3 +1,7 @@
+---
+version: 1.16.x
+---
+
 # Automatic Private Groups for LDAP and AD domains
 
 ## Related ticket(s):

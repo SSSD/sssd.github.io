@@ -1,3 +1,7 @@
+---
+version: 2.0.x
+---
+
 # Make authentication prompting configurable
 
 ## Related ticket(s):

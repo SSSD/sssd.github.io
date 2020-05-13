@@ -1,9 +1,13 @@
+---
+title: For developers
+nav_order: 3
+nav_exclude: false
+---
+
 # Developer documentation
 
 This documentation section contains information on how to build, test and release SSSD.
 
-<div class="toctree">
+## Table of Contents
+{% include toc dir='developers' %}
 
-contribute coding_style tests release_process internals ipc mmap_cache_1.15
-
-</div>

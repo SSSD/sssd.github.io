@@ -1,3 +1,9 @@
+---
+title: Home
+nav_order: 0
+nav_exclude: false
+---
+
 # SSSD - System Security Services Daemon
 
 SSSD is a system daemon. Its primary function is to provide access to local or remote identity and authentication resources through a common framework that can provide caching and offline support to the system. It provides several interfaces, including NSS and PAM modules or a D-Bus interface.
@@ -11,34 +17,19 @@ SSSD is a system daemon. Its primary function is to provide access to local or r
     - [GitHub mirror](https://github.com/SSSD/sssd)
     - [GitHub pull requests](https://github.com/SSSD/sssd/pulls)
 
-Contents:
+## Contents:
 
-<div class="toctree">
+### [Newcomers Guide](docs/newcomers/index.md)
+{% include toc dir='newcomers' %}
 
-newcomers/index.rst users/index.rst
+### [User facing documentation](docs/users/index.md)
+{% include toc dir='users' %}
 
-</div>
+### [External documentation about SSSD](docs/external/index.md)
+* [Red Hat documentation](docs/external/index.md#red-hat-documentation)
+* [Community documentation](docs/external/index.md#community-documentation)
 
-<div class="toctree">
+### [Developer documentation](docs/developers/index.md)
+{% include toc dir='developers' %}
 
-external/index.rst
-
-</div>
-
-<div class="toctree">
-
-developers/index.rst
-
-</div>
-
-<div class="toctree">
-
-design_pages/index.rst
-
-</div>
-
-## Indices and tables
-
-  - <span data-role="ref">genindex</span>
-  - <span data-role="ref">modindex</span>
-  - <span data-role="ref">search</span>
+### [SSSD feature design pages](docs/design_pages/index.md)

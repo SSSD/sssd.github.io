@@ -42,9 +42,4 @@ Other branches are not maintained.
 | [sssd-1.13.0.tar.gz](https://releases.pagure.org/SSSD/sssd/sssd-1.13.0.tar.gz) | [sssd-1.13.0.tar.gz.asc](https://releases.pagure.org/SSSD/sssd/sssd-1.13.0.tar.gz.asc) | SHA1SUM: `f9c57cfb91d8e0e35d565a1d5b165e8f669989d2` | 2015-07-06 | [Release notes](relnotes/notes_1_13_0) | [Manpages](http://jhrozek.fedorapeople.org/sssd/1.13.0/man/) |
 
 ## List of all release notes
-
-<div class="toctree">
-
-relnotes/\*
-
-</div>
+{% include toc dir='users/relnotes' %}

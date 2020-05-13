@@ -1,3 +1,7 @@
+---
+version: 1.13.x
+---
+
 # Lookup Users by Certificate
 
 Related ticket(s):

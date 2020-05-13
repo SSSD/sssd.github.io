@@ -1,3 +1,7 @@
+---
+version: 1.16.x
+---
+
 # Change password on LDAP server that does not support Password Mofify Extended Operation
 
 ## Related ticket(s):

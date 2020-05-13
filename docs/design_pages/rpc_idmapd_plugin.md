@@ -1,3 +1,7 @@
+---
+version: 1.12.x
+---
+
 # SSS NFS Client (rpc.idmapd plugin)
 
 The client is named "**sss_nfs**" (although "sss_idmap" or "idmap" might have been better names, the term "idmap" is already occupied in the SSSD world).

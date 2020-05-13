@@ -1,3 +1,7 @@
+---
+version: 1.16.x
+---
+
 # Detecting POSIX attributes in Global Catalog using the Partial Attribute Set
 
 ## Related ticket(s):

@@ -1,3 +1,7 @@
+---
+version: 1.10.x
+---
+
 # Periodical refresh of expired entries
 
 Related ticket(s):

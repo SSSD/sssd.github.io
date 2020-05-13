@@ -1,3 +1,7 @@
+---
+version: 1.15.x
+---
+
 # Smartcard Authentication - PKINIT
 
 Related ticket(s):

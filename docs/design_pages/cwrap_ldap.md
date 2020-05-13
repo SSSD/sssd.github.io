@@ -1,3 +1,7 @@
+---
+version: 1.12.x
+---
+
 # LDAP provider integration tests
 
 Related tickets:

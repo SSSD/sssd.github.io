@@ -1,3 +1,9 @@
+---
+title: External documentation
+nav_order: 5
+nav_exclude: false
+---
+
 # External documentation about SSSD
 
 ## Red Hat documentation

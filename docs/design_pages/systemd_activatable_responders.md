@@ -1,3 +1,7 @@
+---
+version: 1.15.x
+---
+
 # Systemd Activatable Responders
 
 ## Related ticket(s):

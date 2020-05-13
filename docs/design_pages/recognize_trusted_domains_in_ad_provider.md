@@ -1,3 +1,7 @@
+---
+version: 1.10.x
+---
+
 # Recognize trusted domains in AD provider
 
 Related tickets:

@@ -1,3 +1,7 @@
+---
+version: 1.9.x
+---
+
 # Supporting Local Users as members of LDAP Groups for RRFc2307 servers
 
 Related Tickets:

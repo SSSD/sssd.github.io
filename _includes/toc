@@ -1,0 +1,9 @@
+{% assign path = '/docs/' | append: include.dir | append: '/' %}
+{% assign sorted_pages = site.pages | sort:"title" %}
+<ul>
+  {% for page in sorted_pages %}
+  {% if page.dir == path and page.name != 'index.md' and (include.version == nil or page.version == include.version) %}
+    <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+  {% endif %}
+  {% endfor %}
+</ul>

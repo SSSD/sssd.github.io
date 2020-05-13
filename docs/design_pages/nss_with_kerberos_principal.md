@@ -1,3 +1,7 @@
+---
+version: 1.12.x
+---
+
 # Allow Kerberos Principals in getpwnam() calls
 
 Related ticket(s):

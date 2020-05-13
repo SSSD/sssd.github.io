@@ -1,3 +1,7 @@
+---
+version: 1.9.x
+---
+
 # Sub-Domains in SSSD
 
 Currently SSSD assumes that each domain configured in sssd.conf represents exactly one domain in the backend. For example if only the domains DOM1 and DOM2 are configured in sssd.conf a request for a user for DOMX will return an error message and no backend is queried.

@@ -1,3 +1,7 @@
+---
+version: 1.16.x
+---
+
 # Hybrid Private Groups for LDAP and AD domains
 
 ## Related ticket(s):

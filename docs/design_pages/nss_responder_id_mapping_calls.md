@@ -1,3 +1,7 @@
+---
+version: 1.12.x
+---
+
 # ID Mapping calls for the NSS responder
 
 Related tickets:

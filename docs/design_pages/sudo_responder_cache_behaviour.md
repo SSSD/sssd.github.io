@@ -1,3 +1,7 @@
+---
+version: 1.9.x
+---
+
 # SUDO Responder Cache Behaviour
 
 Before we go into the caching its better to know some useful information about sudo schema.

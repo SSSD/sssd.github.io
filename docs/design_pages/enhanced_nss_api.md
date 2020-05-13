@@ -1,3 +1,7 @@
+---
+version: 1.16.x
+---
+
 # Enhanced NSS (Name Service Switch) API
 
 ## Related ticket(s):

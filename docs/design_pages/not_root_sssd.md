@@ -1,3 +1,7 @@
+---
+version: 1.12.x
+---
+
 # Running SSSD as a non-root user
 
 Related ticket(s):

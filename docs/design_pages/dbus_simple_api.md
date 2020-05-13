@@ -1,3 +1,7 @@
+---
+version: 1.12.x
+---
+
 # Simple D-Bus API wrapper library
 
 Related ticket(s):

@@ -1,3 +1,7 @@
+---
+version: not-implemented
+---
+
 # Sockets for domains in a multi-tenant setup
 
 ## Problem statement

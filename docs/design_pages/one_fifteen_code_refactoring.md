@@ -1,3 +1,7 @@
+---
+version: not-implemented
+---
+
 # Code refactoring for the 1.15 release
 
 Related ticket(s):

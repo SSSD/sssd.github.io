@@ -1,3 +1,7 @@
+---
+version: 1.10.x
+---
+
 # Global Catalog Lookups in SSSD
 
 Related tickets:

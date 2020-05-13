@@ -1,3 +1,7 @@
+---
+version: 1.10.x
+---
+
 # Use Active Directory's DNS sites
 
 Related ticket(s):

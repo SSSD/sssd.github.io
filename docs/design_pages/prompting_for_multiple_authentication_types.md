@@ -1,3 +1,7 @@
+---
+version: 1.14.x
+---
+
 # Prompting For Multiple Authentication Types
 
 Related ticket(s):

@@ -1,3 +1,7 @@
+---
+version: not-implemented
+---
+
 # Async WinBind
 
 The WinBind provider uses *libwbclient* library for communication with WinBind to satisfy NSS and PAM requests. However this library doesn't provide an asynchronous interface. We had a choice between creating this interface or use synchronous calls in auxiliary processes running in parallel to the main provider process.

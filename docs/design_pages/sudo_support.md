@@ -1,3 +1,7 @@
+---
+version: 1.9.x
+---
+
 # SUDO Support to SSSD
 
 This Design document talks about the integration of SUDO support to SSSD through plugin system. The SUDO can be used to check whether a user have rights to execute the instructions as another user. Using this plugin SUDO can be configured to use custom rules and policies. So that we can alter authorization rules so as to provide cached access to LDAP. This will make it easier to maintain centralized sudo rules. The SSSD caches the SUDO policies, so that the SUDO support can work better with a LDAP sever.

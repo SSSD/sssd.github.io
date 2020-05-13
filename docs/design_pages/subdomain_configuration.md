@@ -1,3 +1,7 @@
+---
+version: 1.15.x
+---
+
 # Trusted domain configuration
 
   - Related ticket(s):

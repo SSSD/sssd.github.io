@@ -1,3 +1,7 @@
+---
+version: 1.16.x
+---
+
 # Generate an access control report for IPA domains
 
 ## Related ticket(s):

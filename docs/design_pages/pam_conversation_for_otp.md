@@ -1,3 +1,7 @@
+---
+version: 1.13.x
+---
+
 # PAM Conversation for OTP/Two-Factor-Authentication
 
 Related ticket(s):

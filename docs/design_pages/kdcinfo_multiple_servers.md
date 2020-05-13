@@ -1,3 +1,7 @@
+---
+version: 1.16.x
+---
+
 # Multiple server addresses or names in kdcinfo files
 
 ## Related ticket(s):

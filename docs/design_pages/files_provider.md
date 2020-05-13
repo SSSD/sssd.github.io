@@ -1,3 +1,7 @@
+---
+version: 1.15.x
+---
+
 # "Files" data provider to serve contents of `/etc/passwd` and `/etc/group`
 
 Related ticket(s):

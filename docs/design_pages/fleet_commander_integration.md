@@ -1,3 +1,7 @@
+---
+version: 1.15.x
+---
+
 # Fleet Commander Integration
 
 ## Related ticket(s):

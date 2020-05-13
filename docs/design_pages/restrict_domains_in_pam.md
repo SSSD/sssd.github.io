@@ -1,3 +1,7 @@
+---
+version: 1.12.x
+---
+
 # Restricting the domains a PAM service can auth against
 
 Related ticket(s):

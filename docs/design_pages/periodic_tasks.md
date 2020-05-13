@@ -1,3 +1,7 @@
+---
+version: 1.10.x
+---
+
 # Periodic task API
 
 Related ticket(s):

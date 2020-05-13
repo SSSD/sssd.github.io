@@ -1,3 +1,7 @@
+---
+version: 1.16.x
+---
+
 # Kdcinfo files for trusted domains
 
 ## Related ticket(s):

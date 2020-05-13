@@ -1,3 +1,7 @@
+---
+version: not-implemented
+---
+
 Note well: this is at the *spitballing* stage, so it can all get shot down.
 
 # AccountsService takeover

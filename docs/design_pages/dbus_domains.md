@@ -1,3 +1,7 @@
+---
+version: 1.13.x
+---
+
 # D-Bus Interface: Domains
 
 Related ticket(s):

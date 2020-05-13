@@ -1,0 +1,22 @@
+title: SSSD Docs
+email: sssd-users@lists.fedorahosted.org
+description: >-
+  SSSD is a daemon that serves local and remote identity and authentication
+  resources to the system. It can be joined to AD, IPA and LDAP domain as
+  well as provide local users and groups from standard files.
+
+# Build settings
+markdown: kramdown
+remote_theme: pmarsceill/just-the-docs
+
+# Just The Docs theme configuration
+search_enabled: true
+heading_anchors: true
+aux_links:
+  "SSSD on GitHub":
+    - "https://github.com/SSSD/sssd"
+
+# Default front matter
+defaults:
+  - values:
+      nav_exclude: true

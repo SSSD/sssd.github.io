@@ -1,3 +1,7 @@
+---
+version: 1.13.x
+---
+
 # ID mapping - Automatically assign new slices for any AD domain
 
 Related ticket(s):

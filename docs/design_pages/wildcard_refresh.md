@@ -1,3 +1,7 @@
+---
+version: 1.13.x
+---
+
 # Wildcard refresh through InfoPipe
 
 Related ticket(s):

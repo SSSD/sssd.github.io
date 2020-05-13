@@ -1,3 +1,7 @@
+---
+version: 1.14.x
+---
+
 # sss_confcheck tool (deprecated and moved to sssctl)
 
 This tool is no longer developed and it's functionality was moved to sssctl tool.

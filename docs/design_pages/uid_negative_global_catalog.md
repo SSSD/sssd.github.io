@@ -1,3 +1,7 @@
+---
+version: 1.16.x
+---
+
 # Using the Global Catalog to speed up lookups by ID
 
 ## Related ticket(s):

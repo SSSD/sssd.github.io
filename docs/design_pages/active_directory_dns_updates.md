@@ -1,3 +1,7 @@
+---
+version: 1.10.x
+---
+
 # Active Directory client DNS updates
 
 Related ticket(s):

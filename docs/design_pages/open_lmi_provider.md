@@ -1,3 +1,7 @@
+---
+version: 1.12.x
+---
+
 # OpenLMI provider design
 
 ## Problem Statement

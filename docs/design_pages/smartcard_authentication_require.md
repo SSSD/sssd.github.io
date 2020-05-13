@@ -1,3 +1,7 @@
+---
+version: 2.0.x
+---
+
 # Require Smartcard authentication (for local users)
 
 ## Related ticket(s):

@@ -1,3 +1,7 @@
+---
+version: pre-1.8
+---
+
 # Common SIGCHLD handler
 
 Related ticket(s):

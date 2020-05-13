@@ -1,3 +1,7 @@
+---
+version: 1.12.x
+---
+
 # Specify the DNS site a client is using
 
 Related ticket(s):

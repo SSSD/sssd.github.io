@@ -1,3 +1,7 @@
+---
+version: 1.13.x
+---
+
 # Authenticate against cache in SSSD
 
 Related ticket(s):

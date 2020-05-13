@@ -1,3 +1,7 @@
+---
+version: pre-1.8
+---
+
 # Netgroup NSS map support
 
 ## Overview of Netgroups

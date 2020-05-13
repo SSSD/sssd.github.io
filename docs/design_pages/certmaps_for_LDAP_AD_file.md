@@ -1,3 +1,7 @@
+---
+version: 2.0.x
+---
+
 # Certificate mapping and matching rules for all providers
 
 ## Related ticket(s):
