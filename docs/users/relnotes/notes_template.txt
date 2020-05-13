@@ -1,0 +1,17 @@
+SSSD $version
+===========
+
+Highlights
+----------
+
+Packaging Changes
+-----------------
+
+Documentation Changes
+---------------------
+
+Tickets Fixed
+-------------
+
+Detailed Changelog
+------------------
