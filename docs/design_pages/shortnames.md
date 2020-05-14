@@ -85,7 +85,7 @@ For testing this feature the person you'll have to have an environment with a wo
         
             # ipa config-mod --domain-resolution-order="ad.example:ipa.example"
 
-NOTE: Yes, the list set up on IPA side is separated by colon (:) while the one in SSSD side is separated by comma (.).
+NOTE: Yes, the list set up on IPA side is separated by colon (`:`) while the one in SSSD side is separated by comma (`,`).
 
 And that's all. With those changes the operations that could be done using fully-qualified-names now can be done by just using shortnames (obviously, having exactly the same results).
 
