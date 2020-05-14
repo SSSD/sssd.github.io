@@ -6,7 +6,7 @@ version: 1.15.x
 
   - Related tickets:
     
-    - [[RFE] Use one smartcard and certificate for authentication to distinct logon accounts](https://pagure.io/SSSD/sssd/issue/3050)
+    - [[RFE] Use one smartcard and certificate for authentication to distinct logon accounts](https://github.com/SSSD/sssd/issues/4083)
 
   - Related IPA design page:
     
@@ -20,7 +20,7 @@ Currently it is required that a certificate used for authentication is either st
 
 ### Matching
 
-Even if SSSD will support multiple certificates on a Smartcard in the context of <https://pagure.io/SSSD/sssd/issue/3050> it might be necessary to restrict (or relax) the current certificate selection in certain environments.
+Even if SSSD will support multiple certificates on a Smartcard in the context of <https://github.com/SSSD/sssd/issues/4083> it might be necessary to restrict (or relax) the current certificate selection in certain environments.
 
 ## Use cases
 

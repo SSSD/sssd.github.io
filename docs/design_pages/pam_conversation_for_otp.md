@@ -6,7 +6,7 @@ version: 1.13.x
 
 Related ticket(s):
 
-  - <https://pagure.io/SSSD/sssd/issue/2335>
+  - <https://github.com/SSSD/sssd/issues/3377>
 
 ## Problem statement
 
@@ -24,7 +24,7 @@ These convenience features are not available if 2FA is used with both factors co
 
 ### Unlock user's keyring
 
-Assuming a user with 2FA enabled which log into a desktop session. If the two factors are entered into a single prompt the resulting string cannot be used as a password for the desktop keyring application because it will change at every login. To not create issues SSSD will automatically remove the password item from the PAM environment in this case (see [\#2287](https://pagure.io/SSSD/sssd/issue/2287) for details).
+Assuming a user with 2FA enabled which log into a desktop session. If the two factors are entered into a single prompt the resulting string cannot be used as a password for the desktop keyring application because it will change at every login. To not create issues SSSD will automatically remove the password item from the PAM environment in this case (see [\#3329](https://github.com/SSSD/sssd/issues/3329) for details).
 
 If the two factors are entered separately the first factor, the long-term password, can but used as a password for the keyring application because changes will be rare. In this case SSS can put the long term password into the PAM environment so that the PAM modules of the keyring application can pick it up at login time so that there is no need to unlock the keyring in a separate step.
 

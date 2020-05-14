@@ -47,45 +47,45 @@ Documentation Changes
 Tickets Fixed
 -------------
 
-- [\#3549](https://pagure.io/SSSD/sssd/issue/3549) - CVE-2017-12173: Unsanitized input when searching in local cache database
-- [\#3531](https://pagure.io/SSSD/sssd/issue/3531) - dbus-1.11.18 caused hangs in cwrap integration tests
-- [\#3518](https://pagure.io/SSSD/sssd/issue/3518) - sssd_client: add mutex protected call to the PAC responder
-- [\#3511](https://pagure.io/SSSD/sssd/issue/3511) - sssd incorrectly checks 'try_inotify' thinking it is the wrong section
-- [\#3508](https://pagure.io/SSSD/sssd/issue/3508) - Issues with certificate mapping rules
-- [\#3501](https://pagure.io/SSSD/sssd/issue/3501) - Accessing IdM kerberos ticket fails while id mapping is applied
-- [\#3491](https://pagure.io/SSSD/sssd/issue/3491) - pysss_nss_idmap: py3 constants defined as strings or bytes
-- [\#3485](https://pagure.io/SSSD/sssd/issue/3485) - getsidbyid does not work with 1.15.3
-- [\#3481](https://pagure.io/SSSD/sssd/issue/3481) - ERROR at setup of test_kcm_sec_init_list_destroy
-- [\#3459](https://pagure.io/SSSD/sssd/issue/3459) - Allow fallback from krb5_aname_to_localname to other krb5 plugins
-- [\#3461](https://pagure.io/SSSD/sssd/issue/3461) - unable to access cifs share using sssd-libwbclient
-- [\#3488](https://pagure.io/SSSD/sssd/issue/3488) - SUDO doesn't work for IPA users on IPA clients after applying ID Views for them in IPA server
-- [\#3478](https://pagure.io/SSSD/sssd/issue/3478) - sudo: fall back to the full refresh after reaching a certain threshold
-- [\#3473](https://pagure.io/SSSD/sssd/issue/3473) - Failures on test_idle_timeout()
-- [\#3472](https://pagure.io/SSSD/sssd/issue/3472) - sysdb index improvements - missing ghost attribute indexing, unneeded objectclass index etc..
-- [\#3363](https://pagure.io/SSSD/sssd/issue/3363) - secrets: Per UID secrets quota
-- [\#3507](https://pagure.io/SSSD/sssd/issue/3507) - Long search filters are created during IPA sudo command + command group retrieval
-- [\#3499](https://pagure.io/SSSD/sssd/issue/3499) - Change the ldap_user_certificate to userCertificate;binary for the generic LDAP provider as well
-- [\#3482](https://pagure.io/SSSD/sssd/issue/3482) - Fleet Commander: Add a timeout to avoid contacting the DP too often in case there was no profile fetched in the last login
-- [\#3460](https://pagure.io/SSSD/sssd/issue/3460) - id root triggers an LDAP lookup
-- [\#3315](https://pagure.io/SSSD/sssd/issue/3315) - infopipe: org.freedesktop.sssd.infopipe.Groups.Group doesn't show users
-- [\#3308](https://pagure.io/SSSD/sssd/issue/3308) - SELinux: Use libselinux's getseuserbyname to get the correct seuser
-- [\#3307](https://pagure.io/SSSD/sssd/issue/3307) - RFE: Log to syslog when sssd cannot contact servers, goes offline
-- [\#3306](https://pagure.io/SSSD/sssd/issue/3306) - infopipe: List\* with limit = 0 returns 0 results
-- [\#3305](https://pagure.io/SSSD/sssd/issue/3305) - infopipe: crash when filter doesn't contain '\*'
-- [\#3254](https://pagure.io/SSSD/sssd/issue/3254) - Set udp_preference_limit=0 by sssd-ad using a krb5 snippet
-- [\#2995](https://pagure.io/SSSD/sssd/issue/2995) - RFE: Deliver FleetCommander URL endpoint from an IPA server
-- [\#2893](https://pagure.io/SSSD/sssd/issue/2893) - [RFE] Conditionally wrap user terminal with tlog
-- [\#3513](https://pagure.io/SSSD/sssd/issue/3513) - MAN: Document that full_name_format must be set if the output of trusted domains user resolution should be shortnames only
-- [\#3450](https://pagure.io/SSSD/sssd/issue/3450) - Unnecessary second log event causing much spam to syslog
-- [\#3417](https://pagure.io/SSSD/sssd/issue/3417) - MAN: document that attribute 'provider' is not allowed in section 'secrets'
-- [\#3399](https://pagure.io/SSSD/sssd/issue/3399) - Improve description of 'trusted domain section' in sssd.conf's man page
-- [\#3061](https://pagure.io/SSSD/sssd/issue/3061) - Add systemtap probes into the top-level data provider requests
-- [\#2809](https://pagure.io/SSSD/sssd/issue/2809) - CI doesn't work with DNF
-- [\#2301](https://pagure.io/SSSD/sssd/issue/2301) - Print a warning when enumeration is requrested but disabled
-- [\#1898](https://pagure.io/SSSD/sssd/issue/1898) - Move header files consumed by both server and client to special folder
-- [\#3517](https://pagure.io/SSSD/sssd/issue/3517) - Prevent "TypeError: must be type, not classobj"
-- [\#3147](https://pagure.io/SSSD/sssd/issue/3147) - sssctl: get and set debug level
-- [\#3057](https://pagure.io/SSSD/sssd/issue/3057) - Merge existing command line tools into sssctl
+- [\#4575](https://github.com/SSSD/sssd/issues/4575) - CVE-2017-12173: Unsanitized input when searching in local cache database
+- [\#4557](https://github.com/SSSD/sssd/issues/4557) - dbus-1.11.18 caused hangs in cwrap integration tests
+- [\#4544](https://github.com/SSSD/sssd/issues/4544) - sssd_client: add mutex protected call to the PAC responder
+- [\#4537](https://github.com/SSSD/sssd/issues/4537) - sssd incorrectly checks 'try_inotify' thinking it is the wrong section
+- [\#4534](https://github.com/SSSD/sssd/issues/4534) - Issues with certificate mapping rules
+- [\#4527](https://github.com/SSSD/sssd/issues/4527) - Accessing IdM kerberos ticket fails while id mapping is applied
+- [\#4517](https://github.com/SSSD/sssd/issues/4517) - pysss_nss_idmap: py3 constants defined as strings or bytes
+- [\#4511](https://github.com/SSSD/sssd/issues/4511) - getsidbyid does not work with 1.15.3
+- [\#4507](https://github.com/SSSD/sssd/issues/4507) - ERROR at setup of test_kcm_sec_init_list_destroy
+- [\#4485](https://github.com/SSSD/sssd/issues/4485) - Allow fallback from krb5_aname_to_localname to other krb5 plugins
+- [\#4487](https://github.com/SSSD/sssd/issues/4487) - unable to access cifs share using sssd-libwbclient
+- [\#4514](https://github.com/SSSD/sssd/issues/4514) - SUDO doesn't work for IPA users on IPA clients after applying ID Views for them in IPA server
+- [\#4504](https://github.com/SSSD/sssd/issues/4504) - sudo: fall back to the full refresh after reaching a certain threshold
+- [\#4499](https://github.com/SSSD/sssd/issues/4499) - Failures on test_idle_timeout()
+- [\#4498](https://github.com/SSSD/sssd/issues/4498) - sysdb index improvements - missing ghost attribute indexing, unneeded objectclass index etc..
+- [\#4393](https://github.com/SSSD/sssd/issues/4393) - secrets: Per UID secrets quota
+- [\#4533](https://github.com/SSSD/sssd/issues/4533) - Long search filters are created during IPA sudo command + command group retrieval
+- [\#4525](https://github.com/SSSD/sssd/issues/4525) - Change the ldap_user_certificate to userCertificate;binary for the generic LDAP provider as well
+- [\#4508](https://github.com/SSSD/sssd/issues/4508) - Fleet Commander: Add a timeout to avoid contacting the DP too often in case there was no profile fetched in the last login
+- [\#4486](https://github.com/SSSD/sssd/issues/4486) - id root triggers an LDAP lookup
+- [\#4348](https://github.com/SSSD/sssd/issues/4348) - infopipe: org.freedesktop.sssd.infopipe.Groups.Group doesn't show users
+- [\#4341](https://github.com/SSSD/sssd/issues/4341) - SELinux: Use libselinux's getseuserbyname to get the correct seuser
+- [\#4340](https://github.com/SSSD/sssd/issues/4340) - RFE: Log to syslog when sssd cannot contact servers, goes offline
+- [\#4339](https://github.com/SSSD/sssd/issues/4339) - infopipe: List\* with limit = 0 returns 0 results
+- [\#4338](https://github.com/SSSD/sssd/issues/4338) - infopipe: crash when filter doesn't contain '\*'
+- [\#4287](https://github.com/SSSD/sssd/issues/4287) - Set udp_preference_limit=0 by sssd-ad using a krb5 snippet
+- [\#4036](https://github.com/SSSD/sssd/issues/4036) - RFE: Deliver FleetCommander URL endpoint from an IPA server
+- [\#3934](https://github.com/SSSD/sssd/issues/3934) - [RFE] Conditionally wrap user terminal with tlog
+- [\#4539](https://github.com/SSSD/sssd/issues/4539) - MAN: Document that full_name_format must be set if the output of trusted domains user resolution should be shortnames only
+- [\#4477](https://github.com/SSSD/sssd/issues/4477) - Unnecessary second log event causing much spam to syslog
+- [\#4444](https://github.com/SSSD/sssd/issues/4444) - MAN: document that attribute 'provider' is not allowed in section 'secrets'
+- [\#4426](https://github.com/SSSD/sssd/issues/4426) - Improve description of 'trusted domain section' in sssd.conf's man page
+- [\#4094](https://github.com/SSSD/sssd/issues/4094) - Add systemtap probes into the top-level data provider requests
+- [\#3850](https://github.com/SSSD/sssd/issues/3850) - CI doesn't work with DNF
+- [\#3343](https://github.com/SSSD/sssd/issues/3343) - Print a warning when enumeration is requrested but disabled
+- [\#2940](https://github.com/SSSD/sssd/issues/2940) - Move header files consumed by both server and client to special folder
+- [\#4543](https://github.com/SSSD/sssd/issues/4543) - Prevent "TypeError: must be type, not classobj"
+- [\#4180](https://github.com/SSSD/sssd/issues/4180) - sssctl: get and set debug level
+- [\#4090](https://github.com/SSSD/sssd/issues/4090) - Merge existing command line tools into sssctl
 
 Detailed Changelog
 ------------------

@@ -6,7 +6,7 @@ version: 1.9.x
 
 Related Tickets:
 
-  - [SSSD does not list local user's group membership defined in LDAP](https://pagure.io/SSSD/sssd/issue/1020)
+  - [SSSD does not list local user's group membership defined in LDAP](https://github.com/SSSD/sssd/issues/2062)
 
 ## Problem Statement
 

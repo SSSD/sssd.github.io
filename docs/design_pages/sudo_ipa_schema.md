@@ -6,11 +6,11 @@ version: 1.13.x
 
 Related ticket(s):
 
-  - <https://pagure.io/SSSD/sssd/issue/1108>
+  - <https://github.com/SSSD/sssd/issues/2150>
 
 Related design document(s)
 
-  - [<https://docs.pagure.org/SSSD.sssd/design_pages/sudo_caching_rules>](https://docs.pagure.org/SSSD.sssd/design_pages/sudo_caching_rules.html)
+  - [<sudo_caching_rules>](sudo_caching_rules.md)
 
 ## Problem statement
 

@@ -6,8 +6,8 @@ version: 1.13.x
 
 Related Ticket(s):
 
-  - [Investigate using the krb5 responder for driving the PAM conversation with OTPs](https://pagure.io/SSSD/sssd/issue/2335)
-  - [Interaction with SSSD, GDM, OTP and GNOME Keyring](https://pagure.io/SSSD/sssd/issue/2278)
+  - [Investigate using the krb5 responder for driving the PAM conversation with OTPs](https://github.com/SSSD/sssd/issues/3377)
+  - [Interaction with SSSD, GDM, OTP and GNOME Keyring](https://github.com/SSSD/sssd/issues/3320)
 
 ## Problem Statement
 

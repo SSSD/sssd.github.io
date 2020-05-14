@@ -29,21 +29,21 @@ Documentation Changes
 Tickets Fixed
 -------------
 
-- [\#697](https://pagure.io/SSSD/sssd/issue/697) - Use command line arguments instead env vars for krb5_child
-- [\#201](https://pagure.io/SSSD/sssd/issue/201) - Man pages do not specify that sssd dyndns_refresh_interval &lt; 60 is pulled to 60 seconds
-- [\#243](https://pagure.io/SSSD/sssd/issue/243) - [RFE] Socket-activate responders
-- [\#517](https://pagure.io/SSSD/sssd/issue/517) - krb5_child: Remove getenv() ran as root
-- [\#060](https://pagure.io/SSSD/sssd/issue/060) - better debugging of timestamp cache modifications
-- [\#129](https://pagure.io/SSSD/sssd/issue/129) - [RFE] socket-activate the IFP responder
-- [\#151](https://pagure.io/SSSD/sssd/issue/151) - cache_req: complete the needs of NSS responders
-- [\#156](https://pagure.io/SSSD/sssd/issue/156) - nss_sss might leak memory when calling thread goes away
-- [\#214](https://pagure.io/SSSD/sssd/issue/214) - Update man pages for any AD provider config options that differ from ldap/krb5 providers defaults
-- [\#215](https://pagure.io/SSSD/sssd/issue/215) - Review and update SSSD's wiki pages for 1.15 Alpha release
-- [\#235](https://pagure.io/SSSD/sssd/issue/235) - SSSCTL should not be case sensitive when searching for usernames or groups in a case-insensitive domain
-- [\#245](https://pagure.io/SSSD/sssd/issue/245) - [RFE] Shutdown timeout for {socket,bus}-activated responders
-- [\#275](https://pagure.io/SSSD/sssd/issue/275) - Unchecked return value of sss_cmd_empty_packet(pctx-&gt;creq-&gt;out);
-- [\#283](https://pagure.io/SSSD/sssd/issue/283) - getsidbyid can fail in some cases due to cache_req refactoring
-- [\#284](https://pagure.io/SSSD/sssd/issue/284) - getsidbyname does not work properly with case insensitive domains
+- [\#1739](https://github.com/SSSD/sssd/issues/1739) - Use command line arguments instead env vars for krb5_child
+- [\#1243](https://github.com/SSSD/sssd/issues/1243) - Man pages do not specify that sssd dyndns_refresh_interval &lt; 60 is pulled to 60 seconds
+- [\#1285](https://github.com/SSSD/sssd/issues/1285) - [RFE] Socket-activate responders
+- [\#1559](https://github.com/SSSD/sssd/issues/1559) - krb5_child: Remove getenv() ran as root
+- [\#3060](https://github.com/SSSD/sssd/issues/4093) - better debugging of timestamp cache modifications
+- [\#1171](https://github.com/SSSD/sssd/issues/1171) - [RFE] socket-activate the IFP responder
+- [\#1193](https://github.com/SSSD/sssd/issues/1193) - cache_req: complete the needs of NSS responders
+- [\#1198](https://github.com/SSSD/sssd/issues/1198) - nss_sss might leak memory when calling thread goes away
+- [\#1256](https://github.com/SSSD/sssd/issues/1256) - Update man pages for any AD provider config options that differ from ldap/krb5 providers defaults
+- [\#1257](https://github.com/SSSD/sssd/issues/1257) - Review and update SSSD's wiki pages for 1.15 Alpha release
+- [\#1277](https://github.com/SSSD/sssd/issues/1277) - SSSCTL should not be case sensitive when searching for usernames or groups in a case-insensitive domain
+- [\#1287](https://github.com/SSSD/sssd/issues/1287) - [RFE] Shutdown timeout for {socket,bus}-activated responders
+- [\#1317](https://github.com/SSSD/sssd/issues/1317) - Unchecked return value of sss_cmd_empty_packet(pctx-&gt;creq-&gt;out);
+- [\#1325](https://github.com/SSSD/sssd/issues/1325) - getsidbyid can fail in some cases due to cache_req refactoring
+- [\#1326](https://github.com/SSSD/sssd/issues/1326) - getsidbyname does not work properly with case insensitive domains
 
 Detailed Changelog
 ------------------

@@ -6,8 +6,8 @@ version: 1.14.x
 
 Related ticket(s):
 
-  - <https://pagure.io/SSSD/sssd/issue/2081>
-  - <https://pagure.io/SSSD/sssd/issue/2884>
+  - <https://github.com/SSSD/sssd/issues/3123>
+  - <https://github.com/SSSD/sssd/issues/3925>
 
 ## Problem statement
 
@@ -19,7 +19,7 @@ Usually if admin changes sudo rules he would like to see an effect immediately.
 
 ## Overview of the solution
 
-Sudo rules are stored in sss_cache. Sometimes *smart* or *full* refresh of sudo rules is done, but there is no effective way to invalidate them (see [<https://docs.pagure.org/SSSD.sssd/design_pages/sudo_caching_rules>](https://docs.pagure.org/SSSD.sssd/design_pages/sudo_caching_rules.html)).
+Sudo rules are stored in sss_cache. Sometimes *smart* or *full* refresh of sudo rules is done, but there is no effective way to invalidate them (see [<sudo_caching_rules>](sudo_caching_rules.md)).
 
 Solution consists of two steps:
 

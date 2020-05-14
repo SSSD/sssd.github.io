@@ -6,7 +6,7 @@ SSSD development discussions occur either on the [SSSD development (sssd-devel) 
 
 The SSSD originated as a sister-project to [FreeIPA](http://www.freeipa.org), so we share many pieces. Contributing to FreeIPA may also help SSSD and vice versa.
 
-If you want to file a bug or enhancement request, please log in with your Fedora Account System credentials. If you do not have a Fedora Account, you can register for one at <https://admin.fedoraproject.org/accounts/>. There is dedicated page about [bug reporting](https://docs.pagure.org/SSSD.sssd/users/reporting_bugs.html).
+If you want to file a bug or enhancement request, please log in with your Fedora Account System credentials. If you do not have a Fedora Account, you can register for one at <https://admin.fedoraproject.org/accounts/>. There is dedicated page about [bug reporting](../users/reporting_bugs.md).
 
 ## Contribution Policy
 
@@ -16,19 +16,15 @@ All source code committed to the SSSD is assumed to be made available under the 
 
 For the SSSD project, we use the [Git](http://www.kernel.org/pub/software/scm/git/docs/gittutorial.html) source control system.
 
-Hosted on [Pagure](https://pagure.io/SSSD/sssd) are the [documentation](https://pagure.io/SSSD/docs), the [issue tracker](https://pagure.io/SSSD/sssd/issues), and the referential repository: :
-
-    https://pagure.io/SSSD/sssd.git
-
-SSSD's repository on Pagure is mirrored to GitHub and maintained as read-only instance: :
+Hosted on [GitHub](https://github.com/SSSD/sssd) are the [documentation](https://github.com/SSSD/sssd.github.io), the [issue tracker](https://github.com/SSSD/sssd/issues), and the referential repository:
 
     https://github.com/SSSD/sssd
 
-The preferred way for sending patches is to create pull requests either on Pagure or GitHub. You can also e-mail your patch as an attachment to the [sssd-devel](https://docs.pagure.org/SSSD.sssd/developers/contribute.html#contribute) mailing list. A guide for a [GitHub workflow](https://docs.pagure.org/SSSD.sssd/newcomers/getting_started.html#github-workflow) is available. The paragraphs below assume you are using Pagure.
+The preferred way for sending patches is to create pull requests on GitHub. You can also e-mail your patch as an attachment to the [sssd-devel](contribute.md#contribute) mailing list. A guide for a [GitHub workflow](../newcomers/getting_started.md#github-workflow) is available. The paragraphs below assume you are using Github.
 
 ## Tasks for newcomers
 
-We try to mark tickets that don't require too much existing knowledge with the `easyfix` keyword in our issue tracker. We also prepared [a query](https://pagure.io/SSSD/sssd/issues?status=Open&tags=easyfix) that lists the easy fixes. Before starting the work on any of these tickets, it might be a good idea to contact the SSSD developers on the [sssd-devel](https://docs.pagure.org/SSSD.sssd/developers/contribute.html#contribute) mailing list and check if the ticket is still valid or ask for guidance in general.
+We try to mark tickets that don't require too much existing knowledge with the `Easy to fix` keyword in our issue tracker. We also prepared [a query](https://github.com/SSSD/sssd/issues?q=is%3Aopen+is%3Aissue+label%3A%22Easy+to+fix%22) that lists the easy fixes. Before starting the work on any of these tickets, it might be a good idea to contact the SSSD developers on the [sssd-devel](contribute.md#contribute) mailing list and check if the ticket is still valid or ask for guidance in general.
 
 ### Getting the source
 
@@ -58,7 +54,7 @@ It can be invoked with :
 
 Once that's done, you can clone our upstream git repository with :
 
-    git clone https://pagure.io/SSSD/sssd.git
+    git clone https://github.com/SSSD/sssd.git
 
 This will create a new subdirectory 'sssd' in the current directory which will contain the current master sources. All development should be done first against the master branch, then backported to one of the stable branches if necessary.
 
@@ -146,7 +142,7 @@ You can download development packages from [COPR](https://copr.fedoraproject.org
 
 ### Coding Style
 
-We have adopted the code style and formatting specification used by the FreeIPA project to describe our [Python](http://www.freeipa.org/page/Python_Coding_Style) coding style. For C language we also used [FreeIPA C style](http://www.freeipa.org/page/Coding_Style) but this style is currently outdated and a [new updated C style guide](https://docs.pagure.org/SSSD.sssd/developers/coding_style.html) was written for SSSD.
+We have adopted the code style and formatting specification used by the FreeIPA project to describe our [Python](http://www.freeipa.org/page/Python_Coding_Style) coding style. For C language we also used [FreeIPA C style](http://www.freeipa.org/page/Coding_Style) but this style is currently outdated and a [new updated C style guide](coding_style.md) was written for SSSD.
 
 ### Spell-checker
 
@@ -163,14 +159,14 @@ Use your favorite spell-checker. Checking with LibreOffice can be done like:
 
 ### Submitting
 
-Please, read the basic etiquette paragraph of the [GitHub workflow](https://docs.pagure.org/SSSD.sssd/newcomers/getting_started.html#github-workflow) before submitting.
+Please, read the basic etiquette paragraph of the [GitHub workflow](../newcomers/getting_started.md#github-workflow) before submitting.
 
 Make your changes and then add any new or modified files to a change-set with the command: :
 
     git add <path_to_file1<path_to_file2...
     git commit
 
-Before submitting a patch, always make sure it doesn't break [SSSD tests](https://docs.pagure.org/SSSD.sssd/users/reporting_bugs.html#running-integration-tests-locally) and applies to the latest upstream master branch. You will want to rebase to this branch and fix any merge conflicts (in case someone else changed the same code). :
+Before submitting a patch, always make sure it doesn't break [SSSD tests](../users/reporting_bugs.md#running-integration-tests-locally) and applies to the latest upstream master branch. You will want to rebase to this branch and fix any merge conflicts (in case someone else changed the same code). :
 
     git remote update
     git rebase -i origin/master
@@ -181,7 +177,7 @@ If this rebase has a merge conflict, you will need to resolve the conflict befor
 
 This will put you right back where you started.
 
-Patches should be split so that every logical change in the large patchset is contained in its own patch. An example of this is [SSSD Ticket \#2789](https://pagure.io/SSSD/sssd/issue/2789) where one patch makes the `resolv_is_address()` function public with tests and the other adds the function in the SSSD providers.
+Patches should be split so that every logical change in the large patchset is contained in its own patch. An example of this is [SSSD Ticket \#2789](https://github.com/SSSD/sssd/issues/3830) where one patch makes the `resolv_is_address()` function public with tests and the other adds the function in the SSSD providers.
 
 Once your changes are ready for submission, submit it via a pull request.
 
@@ -210,7 +206,7 @@ The description associated with the patch is an important piece of information t
 
 These best practices are loosely based on the [kernel patch submission recommendation](http://www.kernel.org/doc/Documentation/SubmittingPatches).
 
-An example of a patch formatted according to the above guidelines is commit [925a14d50edf0e3b800ce659b10b771ae1cde293](https://pagure.io/SSSD/sssd/c/925a14d50edf0e3b800ce659b10b771ae1cde293/): :
+An example of a patch formatted according to the above guidelines is commit [925a14d50edf0e3b800ce659b10b771ae1cde293](https://github.com/SSSD/sssd/commit/925a14d50edf0e3b800ce659b10b771ae1cde293):
 
     LDAP: Fix nesting level comparison
     
@@ -219,7 +215,7 @@ An example of a patch formatted according to the above guidelines is commit [925
     will avoid parent group of group searches.
     
     Resolves:
-    https://pagure.io/SSSD/sssd/issue/3425
+    https://github.com/SSSD/sssd/issues/4452
 
 ### Testing SSSD
 

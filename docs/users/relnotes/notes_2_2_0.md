@@ -6,9 +6,9 @@ Highlights
 
 ### New features
 
-- The Kerberos provider (and composite authentication providers based on it, like AD or IPA) can now include more KDC addresses or host names when writing data for the Kerberos locator plugin (see `sssd_krb5_locator_plugin(8)`). This means that Kerberos client applications, such as `kinit` would be able to switch between multiple KDC servers discovered by SSSD. Please see description of the option `krb5_kdcinfo_lookahead` in the `sssd-krb5(5)` manual page for more information or refer to [the design page](https://docs.pagure.org/SSSD.sssd/design_pages/kdcinfo_multiple_servers.html) (\#3973, \#3974, \#3975)
-- The 2FA prompting can now be configured. The administrator can set custom prompts for first or second factor or select a single prompt for both factors. This can be configured per-service. Please see the section called "Prompting configuration" in the `sssd.conf(5)` manual page for more details or refer to [the design page](https://docs.pagure.org/SSSD.sssd/design_pages/prompting_configuration.html) (\#3264).
-- The LDAP authentication provider now allows to use a different method of changing LDAP passwords using a modify operation in addition to the default extended operation. This is meant to support old LDAP servers that do not implement the extended operation. The password change using the modification operation can be selected with `ldap_pwmodify_mode = "ldap_modify"`. More information can also be found in [the design page](https://docs.pagure.org/SSSD.sssd/design_pages/prompting_configuration.html) (\#1314)
+- The Kerberos provider (and composite authentication providers based on it, like AD or IPA) can now include more KDC addresses or host names when writing data for the Kerberos locator plugin (see `sssd_krb5_locator_plugin(8)`). This means that Kerberos client applications, such as `kinit` would be able to switch between multiple KDC servers discovered by SSSD. Please see description of the option `krb5_kdcinfo_lookahead` in the `sssd-krb5(5)` manual page for more information or refer to [the design page](../../design_pages/kdcinfo_multiple_servers.md) (\#3973, \#3974, \#3975)
+- The 2FA prompting can now be configured. The administrator can set custom prompts for first or second factor or select a single prompt for both factors. This can be configured per-service. Please see the section called "Prompting configuration" in the `sssd.conf(5)` manual page for more details or refer to [the design page](../../design_pages/prompting_configuration.md) (\#3264).
+- The LDAP authentication provider now allows to use a different method of changing LDAP passwords using a modify operation in addition to the default extended operation. This is meant to support old LDAP servers that do not implement the extended operation. The password change using the modification operation can be selected with `ldap_pwmodify_mode = "ldap_modify"`. More information can also be found in [the design page](../../design_pages/prompting_configuration.md) (\#1314)
 - The `auto_private_groups` configuration option now takes a new value `hybrid`. This mode autogenerates private groups for user entries where the UID and GID values have the same value and at the same time the GID value does not correspond to a real group entry in LDAP (\#3822)
 - A new option `ad_gpo_ignore_unreadable` was added. This option, which defaults to false, can be used to ignore group policy containers in AD with unreadable or missing attributes. This is for the case when server contains GPOs that have very strict permissions on their attributes in AD but are unrelated to access control (\#3867)
 - The `cached_auth_timeout` parameter is now inherited by trusted domains (\#3960). The pre-authentication request is now cached as well when this option is in effect (\#3960)
@@ -53,47 +53,47 @@ Documentation Changes
 Tickets Fixed
 -------------
 
-- [4016](https://pagure.io/SSSD/sssd/issue/4016) - sssd fails to build with Python 3.8
-- [4015](https://pagure.io/SSSD/sssd/issue/4015) - The server error message is not returned if password change fails
-- [4014](https://pagure.io/SSSD/sssd/issue/4014) - The files provider does not handle resetOffline properly
-- [4006](https://pagure.io/SSSD/sssd/issue/4006) - sssd does not properly check GSS-SPNEGO
-- [3997](https://pagure.io/SSSD/sssd/issue/3997) - sudo: always use server highest usn for smart refresh
-- [3992](https://pagure.io/SSSD/sssd/issue/3992) - ipa-getkeytab can call NSS operation which might deadlock the subdomains request
-- [3991](https://pagure.io/SSSD/sssd/issue/3991) - providers/data_provider_be: code review required
-- [3990](https://pagure.io/SSSD/sssd/issue/3990) - providers/data_provider_be: potential dereferencing of 'bad' ptr
-- [3989](https://pagure.io/SSSD/sssd/issue/3989) - Consider merge of two "negcache" tests.
-- [3988](https://pagure.io/SSSD/sssd/issue/3988) - pam_sss failing for external users not configured via sssd
-- [3984](https://pagure.io/SSSD/sssd/issue/3984) - IPA: Deleted user from trusted domain is not removed properly from the cache on IPA clients
-- [3983](https://pagure.io/SSSD/sssd/issue/3983) - filter_users option is not applied to sub-domains if SSSD starts offline
-- [3980](https://pagure.io/SSSD/sssd/issue/3980) - sudorule matching when no host or hostcat set
-- [3979](https://pagure.io/SSSD/sssd/issue/3979) - The HBAC code requires dereference to be enabled and fails otherwise
-- [3978](https://pagure.io/SSSD/sssd/issue/3978) - UPN negative cache does not use values from 'filter_users' config option
-- [3976](https://pagure.io/SSSD/sssd/issue/3976) - crash in dp_failover_active_server
-- [3975](https://pagure.io/SSSD/sssd/issue/3975) - Lookahead resolving of host names to provide names for the kdcinfo plugin
-- [3974](https://pagure.io/SSSD/sssd/issue/3974) - Write a list of host names up to a configurable limit to the kdcinfo files
-- [3973](https://pagure.io/SSSD/sssd/issue/3973) - The kdcinfo plugin should be able to resolve host names
-- [3972](https://pagure.io/SSSD/sssd/issue/3972) - Circular dependency between subdomains update and NSS responder invoking getDomains
-- [3968](https://pagure.io/SSSD/sssd/issue/3968) - krb5_child_init: check_ccache_files() might be *too* slow with large cache
-- [3965](https://pagure.io/SSSD/sssd/issue/3965) - [RFE]: Optionally disable generating auto private groups for subdomains of an AD provider
-- [3964](https://pagure.io/SSSD/sssd/issue/3964) - Responders: `is_user_local_by_name()` should avoid calling nss API entirely
-- [3963](https://pagure.io/SSSD/sssd/issue/3963) - Responders: processing of `filter_users</span>/<span class="title-ref">filter_groups` should avoid calling blocking NSS API
-- [3960](https://pagure.io/SSSD/sssd/issue/3960) - cached_auth_timeout not honored for AD users authenticated via trust with FreeIPA
-- [3957](https://pagure.io/SSSD/sssd/issue/3957) - sudo: runAsUser/Group does not work with domain_resolution_order
-- [3946](https://pagure.io/SSSD/sssd/issue/3946) - SSSD netgroups do not honor entry_cache_nowait_percentage
-- [3931](https://pagure.io/SSSD/sssd/issue/3931) - proxy provider is not working with enumerate=true when trying to fetch all groups
-- [3907](https://pagure.io/SSSD/sssd/issue/3907) - responders chain requests that were issued before reconnection to sssd_be
-- [3899](https://pagure.io/SSSD/sssd/issue/3899) - change the default service search base in SSSD-IPA
-- [3867](https://pagure.io/SSSD/sssd/issue/3867) - [RFE] Need an option in SSSD so that it will skip GPOs that have groupPolicyContainers, unreadable by SSSD.
-- [3861](https://pagure.io/SSSD/sssd/issue/3861) - Python multihost tests are not part of upstream tarball
-- [3838](https://pagure.io/SSSD/sssd/issue/3838) - KCM: If the default ccache cannot be found, fall back to the first one
-- [3822](https://pagure.io/SSSD/sssd/issue/3822) - Enable generating user private groups only for users with no primary GID
-- [3769](https://pagure.io/SSSD/sssd/issue/3769) - sssd tools don't handle the implicit domain
-- [3636](https://pagure.io/SSSD/sssd/issue/3636) - nested group missing after updates on provider
-- [3614](https://pagure.io/SSSD/sssd/issue/3614) - FIPS mode breaks using pysss.so (sss_obfuscate)
-- [3467](https://pagure.io/SSSD/sssd/issue/3467) - online detection in case sssd starts before network does appears to be broken
-- [3401](https://pagure.io/SSSD/sssd/issue/3401) - sssd does not failover to another IPA server if just the KDC service fails
-- [3264](https://pagure.io/SSSD/sssd/issue/3264) - [RFE] Make 2FA prompting configurable
-- [1314](https://pagure.io/SSSD/sssd/issue/1314) - RFE Request for allowing password changes using SSSD in DS which dont follow OID's from RFC 3062
+- [\#4987](https://github.com/SSSD/sssd/issues/4987) - sssd fails to build with Python 3.8
+- [\#4986](https://github.com/SSSD/sssd/issues/4986) - The server error message is not returned if password change fails
+- [\#4985](https://github.com/SSSD/sssd/issues/4985) - The files provider does not handle resetOffline properly
+- [\#4977](https://github.com/SSSD/sssd/issues/4977) - sssd does not properly check GSS-SPNEGO
+- [\#4969](https://github.com/SSSD/sssd/issues/4969) - sudo: always use server highest usn for smart refresh
+- [\#4964](https://github.com/SSSD/sssd/issues/4964) - ipa-getkeytab can call NSS operation which might deadlock the subdomains request
+- [\#4963](https://github.com/SSSD/sssd/issues/4963) - providers/data_provider_be: code review required
+- [\#4962](https://github.com/SSSD/sssd/issues/4962) - providers/data_provider_be: potential dereferencing of 'bad' ptr
+- [\#4961](https://github.com/SSSD/sssd/issues/4961) - Consider merge of two "negcache" tests.
+- [\#4960](https://github.com/SSSD/sssd/issues/4960) - pam_sss failing for external users not configured via sssd
+- [\#4956](https://github.com/SSSD/sssd/issues/4956) - IPA: Deleted user from trusted domain is not removed properly from the cache on IPA clients
+- [\#4955](https://github.com/SSSD/sssd/issues/4955) - filter_users option is not applied to sub-domains if SSSD starts offline
+- [\#4952](https://github.com/SSSD/sssd/issues/4952) - sudorule matching when no host or hostcat set
+- [\#4951](https://github.com/SSSD/sssd/issues/4951) - The HBAC code requires dereference to be enabled and fails otherwise
+- [\#4950](https://github.com/SSSD/sssd/issues/4950) - UPN negative cache does not use values from 'filter_users' config option
+- [\#4949](https://github.com/SSSD/sssd/issues/4949) - crash in dp_failover_active_server
+- [\#4948](https://github.com/SSSD/sssd/issues/4948) - Lookahead resolving of host names to provide names for the kdcinfo plugin
+- [\#4947](https://github.com/SSSD/sssd/issues/4947) - Write a list of host names up to a configurable limit to the kdcinfo files
+- [\#4946](https://github.com/SSSD/sssd/issues/4946) - The kdcinfo plugin should be able to resolve host names
+- [\#4945](https://github.com/SSSD/sssd/issues/4945) - Circular dependency between subdomains update and NSS responder invoking getDomains
+- [\#4941](https://github.com/SSSD/sssd/issues/4941) - krb5_child_init: check_ccache_files() might be *too* slow with large cache
+- [\#4938](https://github.com/SSSD/sssd/issues/4938) - [RFE]: Optionally disable generating auto private groups for subdomains of an AD provider
+- [\#4937](https://github.com/SSSD/sssd/issues/4937) - Responders: `is_user_local_by_name()` should avoid calling nss API entirely
+- [\#4936](https://github.com/SSSD/sssd/issues/4936) - Responders: processing of `filter_users</span>/<span class="title-ref">filter_groups` should avoid calling blocking NSS API
+- [\#4933](https://github.com/SSSD/sssd/issues/4933) - cached_auth_timeout not honored for AD users authenticated via trust with FreeIPA
+- [\#4931](https://github.com/SSSD/sssd/issues/4931) - sudo: runAsUser/Group does not work with domain_resolution_order
+- [\#4924](https://github.com/SSSD/sssd/issues/4924) - SSSD netgroups do not honor entry_cache_nowait_percentage
+- [\#4911](https://github.com/SSSD/sssd/issues/4911) - proxy provider is not working with enumerate=true when trying to fetch all groups
+- [\#4892](https://github.com/SSSD/sssd/issues/4892) - responders chain requests that were issued before reconnection to sssd_be
+- [\#4884](https://github.com/SSSD/sssd/issues/4884) - change the default service search base in SSSD-IPA
+- [\#4857](https://github.com/SSSD/sssd/issues/4857) - [RFE] Need an option in SSSD so that it will skip GPOs that have groupPolicyContainers, unreadable by SSSD.
+- [\#4851](https://github.com/SSSD/sssd/issues/4851) - Python multihost tests are not part of upstream tarball
+- [\#4832](https://github.com/SSSD/sssd/issues/4832) - KCM: If the default ccache cannot be found, fall back to the first one
+- [\#4816](https://github.com/SSSD/sssd/issues/4816) - Enable generating user private groups only for users with no primary GID
+- [\#4775](https://github.com/SSSD/sssd/issues/4775) - sssd tools don't handle the implicit domain
+- [\#4657](https://github.com/SSSD/sssd/issues/4657) - nested group missing after updates on provider
+- [\#4635](https://github.com/SSSD/sssd/issues/4635) - FIPS mode breaks using pysss.so (sss_obfuscate)
+- [\#4493](https://github.com/SSSD/sssd/issues/4493) - online detection in case sssd starts before network does appears to be broken
+- [\#4428](https://github.com/SSSD/sssd/issues/4428) - sssd does not failover to another IPA server if just the KDC service fails
+- [\#4297](https://github.com/SSSD/sssd/issues/4297) - [RFE] Make 2FA prompting configurable
+- [\#2356](https://github.com/SSSD/sssd/issues/2356) - RFE Request for allowing password changes using SSSD in DS which dont follow OID's from RFC 3062
 
 Detailed changelog
 ------------------

@@ -10,11 +10,11 @@ Just check out the project's documentation on their github.
 
 ## GitHub workflow
 
-For general information about SSSD hosting see the paragraph [Source Code Repository](https://docs.pagure.org/SSSD.sssd/developers/contribute.html#source-code-repository). It covers using SSSD's Pagure repository.
+For general information about SSSD hosting see the paragraph [Source Code Repository](../developers/contribute.md#source-code-repository). It covers using SSSD's Github repository.
 
 This section assumes you use GitHub.
 
-At first some general information. All pull request activity generates an e-mail notification to the [sssd-devel](https://docs.pagure.org/SSSD.sssd/developers/contribute.html#contribute) mailing list so that we keep the development history outside GitHub.
+At first some general information. All pull request activity generates an e-mail notification to the [sssd-devel](../developers/contribute.md#contribute) mailing list so that we keep the development history outside GitHub.
 
 These are the steps to contribute to SSSD:
 
@@ -27,7 +27,7 @@ Using `https://` will ensure you don't push to SSSD's GitHub repo by mistake. On
 
   - Create your local branch: `$ git checkout -b wip/meaningful_name`
 
-Considering you have built SSSD following the instructions provided in our [Contribute page](https://docs.pagure.org/SSSD.sssd/developers/contribute.html), have made your changes following our [Coding guidelines](https://docs.pagure.org/SSSD.sssd/developers/coding_style.html), have committed your changes following our [git-commit-template](https://github.com/SSSD/sssd/blob/master/.git-commit-template), and have implemented some unit/integration tests to ensure we're never hit by this very same issue again in the future ... now is time to open your pull-request.
+Considering you have built SSSD following the instructions provided in our [Contribute page](../developers/contribute.md), have made your changes following our [Coding guidelines](../developers/coding_style.md), have committed your changes following our [git-commit-template](https://github.com/SSSD/sssd/blob/master/.git-commit-template), and have implemented some unit/integration tests to ensure we're never hit by this very same issue again in the future ... now is time to open your pull-request.
 
 The way the author of this document does is:
 
@@ -73,9 +73,9 @@ Any GitHub user can comment on the code:
   - either add a comment to the text field, or
   - click on the individual commit links and add comments inline to the diff.
 
-Only collaborators can self-assign a pull requests and add labels. If you would like to be added as a collaborator, please send an e-mail to [sssd-devel](https://docs.pagure.org/SSSD.sssd/developers/contribute.html#contribute) and ask to be added.
+Only collaborators can self-assign a pull requests and add labels. If you would like to be added as a collaborator, please send an e-mail to [sssd-devel](../developers/contribute.md#contribute) and ask to be added.
 
-If you want to formally review a pull request, please assign the pull request to yourself. This indicates that you'll be working with the submitter on pushing their pull requests upstream. You don't need to assign the pull request if you just want to add a one-time comment. The pull-request assignee(s) will be added as `Reviewed-By` tags when pushing to the Pagure repository.
+If you want to formally review a pull request, please assign the pull request to yourself. This indicates that you'll be working with the submitter on pushing their pull requests upstream. You don't need to assign the pull request if you just want to add a one-time comment. The pull-request assignee(s) will be added as `Reviewed-By` tags when pushing to the Github repository.
 
 If there is an issue in the code that you feel warrants a patch respin, add the `changes requested` label to the pull request.
 
@@ -125,4 +125,4 @@ Finally, add the commit hashes to the pull request page, add the label `pushed` 
 
 As mentioned in the beginning, there are several different ways to contribute and you may need to find the one that fits better for yourself.
 
-In case you spot something wrong in this page, please, open an issue and/or a pull-request to our [sssd-docs repo](https://pagure.io/SSSD/docs).
+In case you spot something wrong in this page, please, open an issue and/or a pull-request to our [sssd.github.io repo](https://github.com/SSSD/sssd.github.io).

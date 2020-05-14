@@ -38,37 +38,37 @@ Documentation Changes
 Tickets Fixed
 -------------
 
-- [\#897](https://pagure.io/SSSD/sssd/issue/897) sssd should pass -d to nsupdate when running with high log level
-- [\#1501](https://pagure.io/SSSD/sssd/issue/1501) Make the LDAP bind operation timeout configurable
-- [\#2150](https://pagure.io/SSSD/sssd/issue/2150) [RFE] Expose listing calls over D-BUS
-- [\#2224](https://pagure.io/SSSD/sssd/issue/2224) nsupdate stderr is not captured
-- [\#2236](https://pagure.io/SSSD/sssd/issue/2236) The cleanup task has no DEBUG statements
-- [\#2326](https://pagure.io/SSSD/sssd/issue/2326) SBUS: Flush the UID cache when we receive NameOwnerChanged
-- [\#2338](https://pagure.io/SSSD/sssd/issue/2338) [RFE] Implement object caching on the bus
-- [\#2339](https://pagure.io/SSSD/sssd/issue/2339) IFP: support multiple interfaces for object
-- [\#2540](https://pagure.io/SSSD/sssd/issue/2540) SSSD does not update Dynamic DNS records if the IPA domain differs from machine hostname's domain
-- [\#2569](https://pagure.io/SSSD/sssd/issue/2569) In ipa-ad trust, with 'default_domain_suffix' set to AD domain, IPA user are not able to log unless use_fully_qualified_names is set
-- [\#2574](https://pagure.io/SSSD/sssd/issue/2574) SSSD should be able to build python2 and python3 bindings in a one build
-- [\#2583](https://pagure.io/SSSD/sssd/issue/2583) [RFE] Homedir is always overwritten with subdomain_homedir value in server mode
-- [\#2593](https://pagure.io/SSSD/sssd/issue/2593) Does sssd-ad use the most suitable attribute for group name?
-- [\#2596](https://pagure.io/SSSD/sssd/issue/2596) Add a way to lookup users based on CAC identity certificates
-- [\#2603](https://pagure.io/SSSD/sssd/issue/2603) Make SSSD's HBAC validation more permissive if deny rules are not used
-- [\#2609](https://pagure.io/SSSD/sssd/issue/2609) [bug] sssd always appends default_domain_suffix when checking for host keys
-- [\#2618](https://pagure.io/SSSD/sssd/issue/2618) Man sssd-ad(5) lists Group Policy Management Editor naming for some policies but not for all
-- [\#2620](https://pagure.io/SSSD/sssd/issue/2620) id_provider=proxy with auth_provider=ldap does not work reliably
-- [\#2625](https://pagure.io/SSSD/sssd/issue/2625) Sudo responder does not respect filter_users and filter_groups
-- [\#2627](https://pagure.io/SSSD/sssd/issue/2627) Disable the cleanup task by default
-- [\#2636](https://pagure.io/SSSD/sssd/issue/2636) RFE: Fetch keytabs for one-way trusts in IPA subdomain code
-- [\#2638](https://pagure.io/SSSD/sssd/issue/2638) RFE: Change ad_id_ctx instantiation in the IPA subdomain code to support one-way trusts
-- [\#2645](https://pagure.io/SSSD/sssd/issue/2645) [RFE] Support GPOs from different domain controllers
-- [\#2661](https://pagure.io/SSSD/sssd/issue/2661) RFE: Change AD GPO default to enforcing
-- [\#2666](https://pagure.io/SSSD/sssd/issue/2666) sssd with ldap backend throws error domain log
-- [\#1807](https://pagure.io/SSSD/sssd/issue/1807) [RFE] authenticate against cache in SSSD
-- [\#2017](https://pagure.io/SSSD/sssd/issue/2017) [RFE] Python 3 support
-- [\#2485](https://pagure.io/SSSD/sssd/issue/2485) [RFE] The fast memory cache should cache initgroups
-- [\#2590](https://pagure.io/SSSD/sssd/issue/2590) SSSD doesn't re-read resolv.conf if the file doesn't exist during boot
-- [\#2641](https://pagure.io/SSSD/sssd/issue/2641) Add a IS_DEFAULT_VIEW macro
-- [\#2701](https://pagure.io/SSSD/sssd/issue/2701) Kerberos-based providers other than krb5 do not queue requests
+- [\#1939](https://github.com/SSSD/sssd/issues/1939) sssd should pass -d to nsupdate when running with high log level
+- [\#2543](https://github.com/SSSD/sssd/issues/2543) Make the LDAP bind operation timeout configurable
+- [\#3192](https://github.com/SSSD/sssd/issues/3192) [RFE] Expose listing calls over D-BUS
+- [\#3266](https://github.com/SSSD/sssd/issues/3266) nsupdate stderr is not captured
+- [\#3278](https://github.com/SSSD/sssd/issues/3278) The cleanup task has no DEBUG statements
+- [\#3368](https://github.com/SSSD/sssd/issues/3368) SBUS: Flush the UID cache when we receive NameOwnerChanged
+- [\#3380](https://github.com/SSSD/sssd/issues/3380) [RFE] Implement object caching on the bus
+- [\#3381](https://github.com/SSSD/sssd/issues/3381) IFP: support multiple interfaces for object
+- [\#3582](https://github.com/SSSD/sssd/issues/3582) SSSD does not update Dynamic DNS records if the IPA domain differs from machine hostname's domain
+- [\#3611](https://github.com/SSSD/sssd/issues/3611) In ipa-ad trust, with 'default_domain_suffix' set to AD domain, IPA user are not able to log unless use_fully_qualified_names is set
+- [\#3616](https://github.com/SSSD/sssd/issues/3616) SSSD should be able to build python2 and python3 bindings in a one build
+- [\#3624](https://github.com/SSSD/sssd/issues/3624) [RFE] Homedir is always overwritten with subdomain_homedir value in server mode
+- [\#3634](https://github.com/SSSD/sssd/issues/3634) Does sssd-ad use the most suitable attribute for group name?
+- [\#3637](https://github.com/SSSD/sssd/issues/3637) Add a way to lookup users based on CAC identity certificates
+- [\#3644](https://github.com/SSSD/sssd/issues/3644) Make SSSD's HBAC validation more permissive if deny rules are not used
+- [\#3650](https://github.com/SSSD/sssd/issues/3650) [bug] sssd always appends default_domain_suffix when checking for host keys
+- [\#3659](https://github.com/SSSD/sssd/issues/3659) Man sssd-ad(5) lists Group Policy Management Editor naming for some policies but not for all
+- [\#3661](https://github.com/SSSD/sssd/issues/3661) id_provider=proxy with auth_provider=ldap does not work reliably
+- [\#3666](https://github.com/SSSD/sssd/issues/3666) Sudo responder does not respect filter_users and filter_groups
+- [\#3668](https://github.com/SSSD/sssd/issues/3668) Disable the cleanup task by default
+- [\#3677](https://github.com/SSSD/sssd/issues/3677) RFE: Fetch keytabs for one-way trusts in IPA subdomain code
+- [\#3679](https://github.com/SSSD/sssd/issues/3679) RFE: Change ad_id_ctx instantiation in the IPA subdomain code to support one-way trusts
+- [\#3686](https://github.com/SSSD/sssd/issues/3686) [RFE] Support GPOs from different domain controllers
+- [\#3702](https://github.com/SSSD/sssd/issues/3702) RFE: Change AD GPO default to enforcing
+- [\#3707](https://github.com/SSSD/sssd/issues/3707) sssd with ldap backend throws error domain log
+- [\#2849](https://github.com/SSSD/sssd/issues/2849) [RFE] authenticate against cache in SSSD
+- [\#3059](https://github.com/SSSD/sssd/issues/3059) [RFE] Python 3 support
+- [\#3527](https://github.com/SSSD/sssd/issues/3527) [RFE] The fast memory cache should cache initgroups
+- [\#3631](https://github.com/SSSD/sssd/issues/3631) SSSD doesn't re-read resolv.conf if the file doesn't exist during boot
+- [\#3682](https://github.com/SSSD/sssd/issues/3682) Add a IS_DEFAULT_VIEW macro
+- [\#3742](https://github.com/SSSD/sssd/issues/3742) Kerberos-based providers other than krb5 do not queue requests
 
 Detailed Changelog
 ------------------

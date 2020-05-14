@@ -6,12 +6,12 @@ version: 1.14.x
 
 Related ticket(s):
 
-  - <https://pagure.io/SSSD/sssd/issue/385>
-  - <https://pagure.io/SSSD/sssd/issue/1788>
-  - <https://pagure.io/SSSD/sssd/issue/1828>
-  - <https://pagure.io/SSSD/sssd/issue/2166>
-  - <https://pagure.io/SSSD/sssd/issue/2954>
-  - <https://pagure.io/SSSD/sssd/issue/2957>
+  - <https://github.com/SSSD/sssd/issues/1427>
+  - <https://github.com/SSSD/sssd/issues/2830>
+  - <https://github.com/SSSD/sssd/issues/2870>
+  - <https://github.com/SSSD/sssd/issues/3208>
+  - <https://github.com/SSSD/sssd/issues/3995>
+  - <https://github.com/SSSD/sssd/issues/3998>
 
 ## Problem statement
 
@@ -21,12 +21,12 @@ SSSCTL will be CLI client using the SSSD infopipe as a server that will be provi
 
 ## Use cases
 
-  - online/offline state (<https://pagure.io/SSSD/sssd/issue/385>). Users have repeatedly asked for simple mean how to check if data provider is offline or online without need to check logs (if logging is enabled at all).
-  - Report whether the entry is present in SSSD cache (<https://pagure.io/SSSD/sssd/issue/2166>)
-  - Check if the cached entry is valid and refresh if appropriate (<https://pagure.io/SSSD/sssd/issue/2166>)
-  - Measure the time an operation took (useful in performance tuning, <https://pagure.io/SSSD/sssd/issue/385>)
+  - online/offline state (<https://github.com/SSSD/sssd/issues/1427>). Users have repeatedly asked for simple mean how to check if data provider is offline or online without need to check logs (if logging is enabled at all).
+  - Report whether the entry is present in SSSD cache (<https://github.com/SSSD/sssd/issues/3208>)
+  - Check if the cached entry is valid and refresh if appropriate (<https://github.com/SSSD/sssd/issues/3208>)
+  - Measure the time an operation took (useful in performance tuning, <https://github.com/SSSD/sssd/issues/1427>)
   - Failover status - Current state of failover process
-  - Display server to which provider is connected to (<https://pagure.io/SSSD/sssd/issue/385>)
+  - Display server to which provider is connected to (<https://github.com/SSSD/sssd/issues/1427>)
   - Display current debug level of a component
   - Generate memory report - Usually when user is observing a memory leak we provide him a special build that generates talloc report which we can then analyze. Using this tool customer would simply select SSSD component that is supposed to leak memory and generate the talloc report immediately.
   - Removing cache - Removing SSSD cache seems to be often misused act done by administrators as there are few real needs for that. Nevertheless, if administrator decides to remove the cache it would be better to do this using the tool instead of crude removing directories that might contain other useful data and could lead to serious problems. Q: Is this what was requested as 'force reload'? Q: Should this rather be part of sss_cache tool?

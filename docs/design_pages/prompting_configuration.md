@@ -6,8 +6,8 @@ version: 2.0.x
 
 ## Related ticket(s):
 
-  - <https://pagure.io/SSSD/sssd/issue/3264>
-  - <https://pagure.io/SSSD/sssd/issue/3856>
+  - <https://github.com/SSSD/sssd/issues/4297>
+  - <https://github.com/SSSD/sssd/issues/4846>
   - <https://bugzilla.redhat.com/show_bug.cgi?id=1623624>
 
 ## Problem statement
@@ -26,7 +26,7 @@ Another example is SSSD's default prompting for two-factor authentication if bot
 
 There are two ways how the two factors can be entered. Either each factor in a separate prompt and both chained together in a single prompt.
 
-The [PAM Conversation of OTP](https://docs.pagure.org/SSSD.sssd/design_pages/pam_conversation_for_otp.html) design page explains some details why using two separate prompts is useful from the SSSD point of view. However there are services which cannot handle PAM conversations and ask the user directly to enter the needed credentials. On the PAM level those application can put the user input in both prompts or only in the first one. Instead of adding heuristics to SSSD to figure out what is meant by which application it would be easier and more reliable to be able to configure the expected behavior for each service individually if needed.
+The [PAM Conversation of OTP](pam_conversation_for_otp.md) design page explains some details why using two separate prompts is useful from the SSSD point of view. However there are services which cannot handle PAM conversations and ask the user directly to enter the needed credentials. On the PAM level those application can put the user input in both prompts or only in the first one. Instead of adding heuristics to SSSD to figure out what is meant by which application it would be easier and more reliable to be able to configure the expected behavior for each service individually if needed.
 
 What has to be noted here is that SSSD must know somehow if the user entered a single password or or two-factor credentials in a single string. The reason is that both types of authentication might be treated differently on the server side. This can e.g. be seen with Kerberos where a special pre-authentication scheme described in [RFC6560](https://tools.ietf.org/html/rfc6560.html) is used. If here the plain password is used authentication will fail and if the two-factor string is used with plain Kerberos authentication not using the OTP pre-auth method authentication will fail as well. Since a failed authentication might increment a bad-password count and cause a user lock, try-and-error is not an option here.
 
@@ -40,7 +40,7 @@ Additionally this can only work properly with services which offer full PAM conv
 
 ### Asking for missing user name
 
-There is also the case of gdm-smartcard where typically no user name is prompted at all because it is expected that the user name can be derived from the certificate found on the Smartcard. But there are cases where this is not possible as described in [Smartcards and Multiple Identities](https://docs.pagure.org/SSSD.sssd/design_pages/smartcards_and_multiple_identities.html). Here is would be useful to have a configurable extra prompt for a user name hint.
+There is also the case of gdm-smartcard where typically no user name is prompted at all because it is expected that the user name can be derived from the certificate found on the Smartcard. But there are cases where this is not possible as described in [Smartcards and Multiple Identities](smartcards_and_multiple_identities.md). Here is would be useful to have a configurable extra prompt for a user name hint.
 
 ### Using specific authentication methods
 

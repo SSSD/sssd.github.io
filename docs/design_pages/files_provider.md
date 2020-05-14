@@ -6,19 +6,19 @@ version: 1.15.x
 
 Related ticket(s):
 
-  - The umbrella tracking ticket: <https://pagure.io/SSSD/sssd/issue/2228>
+  - The umbrella tracking ticket: <https://github.com/SSSD/sssd/issues/3270>
 
 which includes the following sub-tasks:
 
-  - Ship an immutable recovery mode config for local accounts -<https://pagure.io/SSSD/sssd/issue/2229>
-  - [RFE] Support UID/GID changes -<https://pagure.io/SSSD/sssd/issue/2244>
-  - Provide a "writable" D-Bus management API for local users -<https://pagure.io/SSSD/sssd/issue/3242>
+  - Ship an immutable recovery mode config for local accounts -<https://github.com/SSSD/sssd/issues/3271>
+  - [RFE] Support UID/GID changes -<https://github.com/SSSD/sssd/issues/3286>
+  - Provide a "writable" D-Bus management API for local users -<https://github.com/SSSD/sssd/issues/4275>
 
 ## Problem statement
 
 SSSD does not behave well with nscd, so we recommend that it be disabled. However, this comes with a price in the form of every nameservice lookup hitting the disk for `/etc/passwd` and friends every time. SSSD should be able to read and monitor these files and serve them from its cache, allowing `sss` to sort before `files` in `/etc/nsswitch.conf`
 
-In addition, SSSD provides some useful interfaces, such as [the dbus interface](https://docs.pagure.org/SSSD.sssd/design_pages/dbus_users_and_groups.html) which only work for users and groups SSSD knows about.
+In addition, SSSD provides some useful interfaces, such as [the dbus interface](dbus_users_and_groups.md) which only work for users and groups SSSD knows about.
 
 ## Use cases
 
@@ -28,11 +28,11 @@ SSSD (and its useful APIs) should always be available. This means that SSSD must
 
 ### Use Case: Programatically managing POSIX attributes of a user or a group
 
-Currently the available ways to manage users and groups is either spawn and call shadow-utils binaries like `useradd` or libuser. SSSD already has a D-Bus API used to provide custom attributes of domain users. This interface should be be extended to provide 'writable' methods to manage users and groups from files. This is tracked by [ticket \#3242](https://pagure.io/SSSD/sssd/issue/3242)
+Currently the available ways to manage users and groups is either spawn and call shadow-utils binaries like `useradd` or libuser. SSSD already has a D-Bus API used to provide custom attributes of domain users. This interface should be be extended to provide 'writable' methods to manage users and groups from files. This is tracked by [ticket \#3242](https://github.com/SSSD/sssd/issues/4275)
 
 ### Use Case: Manage extended attributes of users and groups
 
-Some applications (such as desktop environments) additional attributes (such as keyboard layout) should be stored along with the user. Since the passwd file has only a fixed number of fields, it might make sense to allow additional attributes to be stored in SSSD database and retrieved with sssd's D-Bus interface. Again, this is tracked by [ticket \#3242](https://pagure.io/SSSD/sssd/issue/3242)
+Some applications (such as desktop environments) additional attributes (such as keyboard layout) should be stored along with the user. Since the passwd file has only a fixed number of fields, it might make sense to allow additional attributes to be stored in SSSD database and retrieved with sssd's D-Bus interface. Again, this is tracked by [ticket \#3242](https://github.com/SSSD/sssd/issues/4275)
 
 ## Overview of the solution
 

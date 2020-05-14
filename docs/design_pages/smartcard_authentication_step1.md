@@ -6,14 +6,14 @@ version: 1.13.x
 
 Related ticket(s):
 
-  - <https://pagure.io/SSSD/sssd/issue/546>
-  - <https://pagure.io/SSSD/sssd/issue/2711>
+  - <https://github.com/SSSD/sssd/issues/1588>
+  - <https://github.com/SSSD/sssd/issues/3752>
 
 ## Problem statement
 
 Smartcard based authentication is another alternative to password based authentication. Other than OTP tokens where all authentication data can be entered at a password prompt Smartcards require special hardware and software to access the credentials stored on the card.
 
-Currently solutions are based on the pam_pkcs11 module which e.g. requires special configuration to map the certificate stored on a Smartcard to a user. Since SSSD already can map certificates to users (see e.g. [LookupUsersByCertificate](https://docs.pagure.org/SSSD.sssd/design_pages/lookup_users_by_certificate.html)) integration would be much easier. Additionally features like different authentication types per user or per service would only be possible with SSSD.
+Currently solutions are based on the pam_pkcs11 module which e.g. requires special configuration to map the certificate stored on a Smartcard to a user. Since SSSD already can map certificates to users (see e.g. [LookupUsersByCertificate](lookup_users_by_certificate.md)) integration would be much easier. Additionally features like different authentication types per user or per service would only be possible with SSSD.
 
 ## Use cases
 

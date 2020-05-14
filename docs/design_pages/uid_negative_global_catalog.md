@@ -6,7 +6,7 @@ version: 1.16.x
 
 ## Related ticket(s):
 
-<https://pagure.io/SSSD/sssd/issue/3468>
+<https://github.com/SSSD/sssd/issues/4494>
 
 ## Problem statement
 
@@ -42,7 +42,7 @@ The purpose of using the Global Catalog in SSSD is two-fold:
 
 Because not all the attributes required by SSSD are guaranteed to be replicated to the Global Catalog (especially the `uidNumber` and `gidNumber` attributes), SSSD runs a search that checks for the presence of any objects with either `uidNumber` or `gidNumber` during the very first request for a numerical ID. If no objects with either attribute are present, the Global Catalog support is disabled except for looking up Universal Group members.
 
-However, at the moment, SSSD will either use whole entry it finds in the Global Catalog or not use the Global Catalog at all. This puts a bit of responsibility on the administrator in the sense that the object in the Global Catalog must contain all the required entries or the administrator might need to disable the Global Catalog support manually in the configuration file. In the future (see e.g. ticket [3538 RFE: Use the global catalog only to look up the entry DN](https://pagure.io/SSSD/sssd/issue/3538)) we would like to change the logic so that it uses the Global Catalog to look up the entry DN, but then it would look up the entry attributes in the LDAP directory of the object's domain. However, that enhancement is out of scope of what this design page describes.
+However, at the moment, SSSD will either use whole entry it finds in the Global Catalog or not use the Global Catalog at all. This puts a bit of responsibility on the administrator in the sense that the object in the Global Catalog must contain all the required entries or the administrator might need to disable the Global Catalog support manually in the configuration file. In the future (see e.g. ticket [3538 RFE: Use the global catalog only to look up the entry DN](https://github.com/SSSD/sssd/issues/4564)) we would like to change the logic so that it uses the Global Catalog to look up the entry DN, but then it would look up the entry attributes in the LDAP directory of the object's domain. However, that enhancement is out of scope of what this design page describes.
 
 ## Overview of the solution
 

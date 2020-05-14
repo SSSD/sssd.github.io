@@ -5,7 +5,7 @@ version: pre-1.8
 # Common SIGCHLD handler
 
 Related ticket(s):
-- <https://pagure.io/SSSD/sssd/issue/1004>
+- <https://github.com/SSSD/sssd/issues/2046>
 
 I took some inspiration in the SIGUSR1 signal handling in data_provider_be.c. The SIGUSR1 signal is apparently used to force offline behavior on providers.
 

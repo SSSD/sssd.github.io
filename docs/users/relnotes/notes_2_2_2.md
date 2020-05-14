@@ -29,16 +29,16 @@ None
 Tickets Fixed
 -------------
 
-- [3932](https://pagure.io/SSSD/sssd/issue/3932) - MAN: Document that PAM stack contains the systemd-user service in the account phase in recent distributions
-- [4009](https://pagure.io/SSSD/sssd/issue/4009) - Removing domain from ad_enabled_domains is not reflected in cache
-- [4058](https://pagure.io/SSSD/sssd/issue/4058) - Paging not enabled when fetching external groups, limits the number of external groups to 2000
-- [4063](https://pagure.io/SSSD/sssd/issue/4063) - sssd-kcm: type confusion on KDC offset
-- [4067](https://pagure.io/SSSD/sssd/issue/4067) - pam_sss with smartcard auth does not create gnome keyring
-- [4068](https://pagure.io/SSSD/sssd/issue/4068) - pam_sss: empty smart card pin registers as authentication attempt
-- [4069](https://pagure.io/SSSD/sssd/issue/4069) - pam_sss should reset PAM_USER based on use_fully_qualified_names option in sssd.conf
-- [3996](https://pagure.io/SSSD/sssd/issue/3996) - sudo: do not update last usn when updating expired rules
-- [4065](https://pagure.io/SSSD/sssd/issue/4065) - IFP: GetUserAttr does not search by UPN
-- [4074](https://pagure.io/SSSD/sssd/issue/4074) - Integration tests use python2 unconditionally
+- [\#4912](https://github.com/SSSD/sssd/issues/4912) - MAN: Document that PAM stack contains the systemd-user service in the account phase in recent distributions
+- [\#4980](https://github.com/SSSD/sssd/issues/4980) - Removing domain from ad_enabled_domains is not reflected in cache
+- [\#5026](https://github.com/SSSD/sssd/issues/5026) - Paging not enabled when fetching external groups, limits the number of external groups to 2000
+- [\#5031](https://github.com/SSSD/sssd/issues/5031) - sssd-kcm: type confusion on KDC offset
+- [\#5035](https://github.com/SSSD/sssd/issues/5035) - pam_sss with smartcard auth does not create gnome keyring
+- [\#5036](https://github.com/SSSD/sssd/issues/5036) - pam_sss: empty smart card pin registers as authentication attempt
+- [\#5037](https://github.com/SSSD/sssd/issues/5037) - pam_sss should reset PAM_USER based on use_fully_qualified_names option in sssd.conf
+- [\#4968](https://github.com/SSSD/sssd/issues/4968) - sudo: do not update last usn when updating expired rules
+- [\#5033](https://github.com/SSSD/sssd/issues/5033) - IFP: GetUserAttr does not search by UPN
+- [\#5042](https://github.com/SSSD/sssd/issues/5042) - Integration tests use python2 unconditionally
 
 Detailed changelog
 ------------------

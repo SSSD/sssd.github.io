@@ -119,15 +119,15 @@ When creating a tarball for a beta or a release candidate, the resulting tarball
         # verify everything looks sane
         git push origin master
 
-## Upload the tarball to the [pagure releases section](https://pagure.io/SSSD/sssd/releases)
+## Upload the tarball to the [GitHub releases](https://github.com/SSSD/sssd/releases)
 
-1.  Navigate the browser to <https://pagure.io/SSSD/sssd/releases>
-2.  Click the Upload a new release button
+1.  Navigate the browser to <https://github.com/SSSD/sssd/releases>
+2.  Click the Draft a new release button
 3.  Upload both the source tarball (`.tar.gz`) and the GPG signature (`.tar.gz.asc`)
 
 ## Update the releases page
 
-1.  Add a line at the top of the <span data-role="doc">Releases \<../users/releases\></spanpage with links to the tarball and the GPG signature
+1.  Add a line at the top of the [Releases](../users/releases) with links to the tarball and the GPG signature
 
 2.  Add the `md5sum` and `sha1sum` calculated above
 
@@ -159,7 +159,7 @@ When releasing a final version (such as 1.9.0) after multiple preview releases, 
     1.  Make sure all tickets have been closed in the milestone so that it no longer appears in the roadmap
     2.  Create a new milestone for the next minor version (even if one isn't planned)
   - Add new ticket with the title 'Review and update SSSD's documentation for X.Y.Z release'.
-    - An example of this ticket is <https://pagure.io/SSSD/sssd/issue/2990>
+    - An example of this ticket is <https://github.com/SSSD/sssd/issues/4031>
 
 ### Announce the release to the world\!
 

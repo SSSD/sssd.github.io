@@ -6,14 +6,14 @@ version: 1.12.x
 
 Related tickets:
 
-  - [RFE Integrate SSSD with CIFS client](https://pagure.io/SSSD/sssd/issue/1534)
-  - [RFE Allow SSSD to be used with smbd shares](https://pagure.io/SSSD/sssd/issue/1588)
+  - [RFE Integrate SSSD with CIFS client](https://github.com/SSSD/sssd/issues/2576)
+  - [RFE Allow SSSD to be used with smbd shares](https://github.com/SSSD/sssd/issues/2630)
 
 Designs and tickets this design (might) depend:
 
-  - [ID Mapping calls for the NSS responder](https://docs.pagure.org/SSSD.sssd/design_pages/nss_responder_id_mapping_calls.html)
-  - [Global Catalog Lookups in SSSD](https://docs.pagure.org/SSSD.sssd/design_pages/global_catalog_lookups.html)
-  - [RFE Use the getpwnam()/getgrnam() interface as a gateway to resolve SID to Names](https://pagure.io/SSSD/sssd/issue/1559)
+  - [ID Mapping calls for the NSS responder](nss_responder_id_mapping_calls.md)
+  - [Global Catalog Lookups in SSSD](global_catalog_lookups.md)
+  - [RFE Use the getpwnam()/getgrnam() interface as a gateway to resolve SID to Names](https://github.com/SSSD/sssd/issues/2601)
 
 ## Problem Statement
 

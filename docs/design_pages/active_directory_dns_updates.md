@@ -6,7 +6,7 @@ version: 1.10.x
 
 Related ticket(s):
 
-  - [RFE AD dyndns updates](https://pagure.io/SSSD/sssd/issue/1504)
+  - [RFE AD dyndns updates](https://github.com/SSSD/sssd/issues/2546)
 
 ## Problem Statement
 

@@ -254,7 +254,7 @@ Manual configuration can be done with the following changes. The PAM example fil
 
 #### /etc/nsswitch.conf
 
-More maps will be available later (see at least tickets [\#359](https://pagure.io/SSSD/sssd/issue/359) and [\#901](https://pagure.io/SSSD/sssd/issue/901)).
+More maps will be available later (see at least tickets [\#1401](https://github.com/SSSD/sssd/issues/1401) and [\#1943](https://github.com/SSSD/sssd/issues/1943)).
 
 You don't have to copy the file as below, but please make sure `sss` is present on the lines as below:
 

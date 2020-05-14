@@ -6,7 +6,7 @@ version: 1.15.x
 
 ## Related ticket(s):
 
-* <https://pagure.io/SSSD/sssd/issue/2887>
+* <https://github.com/SSSD/sssd/issues/3928>
 
 ## Problem statement
 
@@ -39,10 +39,10 @@ The primary use-cases for the next SSSD upstream releases are related to contain
 
   - Having the KCM service might also enable us to solve tickets such as:
     
-    - [RFE To delete kerberos tickets once the user logs out](https://pagure.io/SSSD/sssd/issue/2551)
-    - [RFE Expand kerberos ticket renewal](https://pagure.io/SSSD/sssd/issue/1723)
-    - [RFE Add a general-purpose D-Bus responder for ticket monitoring](https://pagure.io/SSSD/sssd/issue/1497)
-    - [KCM: Implement a shim layer to format FILE-based credentials from KCM credential cache](https://pagure.io/SSSD/sssd/issue/3348)
+    - [RFE To delete kerberos tickets once the user logs out](https://github.com/SSSD/sssd/issues/3593)
+    - [RFE Expand kerberos ticket renewal](https://github.com/SSSD/sssd/issues/2765)
+    - [RFE Add a general-purpose D-Bus responder for ticket monitoring](https://github.com/SSSD/sssd/issues/2539)
+    - [KCM: Implement a shim layer to format FILE-based credentials from KCM credential cache](https://github.com/SSSD/sssd/issues/4378)
 
 ## Overview of the solution
 
@@ -72,7 +72,7 @@ The peer identity consists of an UID/GID tuple that is read from the client sock
 
 Since from the point of view of the KCM responder, the operations on the Kerberos caches should be seemingly atomic, but often the operations might require several round-trips to the secrets storage, all operations towards the KCM responder by a single UID are serialized.
 
-Internally in the secrets responder, the ccaches are stored at a new top-level anchor `cn=kcm`. The secret responder's quotas on secrets also apply separately to the `cn=kcm` tree; separately here means that it is allowed to store `max_secrets` secrets and at the same time `max_secrets` credential caches. There is a [separate ticket](https://pagure.io/SSSD/sssd/issue/3363) to make the quotas per-UID.
+Internally in the secrets responder, the ccaches are stored at a new top-level anchor `cn=kcm`. The secret responder's quotas on secrets also apply separately to the `cn=kcm` tree; separately here means that it is allowed to store `max_secrets` secrets and at the same time `max_secrets` credential caches. There is a [separate ticket](https://github.com/SSSD/sssd/issues/4393) to make the quotas per-UID.
 
 Currently, when the quota is reached we just fail. We should consider recovering more gracefully, such as by removing the oldest service (non-TGT) tickets.
 

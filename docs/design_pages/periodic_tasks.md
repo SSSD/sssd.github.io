@@ -6,7 +6,7 @@ version: 1.10.x
 
 Related ticket(s):
 
-  - [unite periodic refresh API](https://pagure.io/SSSD/sssd/issue/1891)
+  - [unite periodic refresh API](https://github.com/SSSD/sssd/issues/2933)
 
 ## Problem Statement
 

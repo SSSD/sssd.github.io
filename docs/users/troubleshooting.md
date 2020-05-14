@@ -123,7 +123,7 @@ Please follow the usual name-service request flow:
     - The SSSD caches identity information for some time. You can force cache refresh on next lookup using the [sss_cache(8)](https://jhrozek.fedorapeople.org/sssd/1.14.0/man/sss_cache.8.html) tool.
     - Please note that during login, updated information is always re-read from the server
   - After enrolling the same machine to a domain with different users (perhaps a test VM was enrolled to a newly provisioned server), no users can be resolved or log in
-    - Probably the new server has different ID values even if the users are named the same (like admin in an IPA domain). Currently UID changes are not supported even though [we plan on addressing that eventually](https://pagure.io/SSSD/sssd/issue/884). At the moment, caches must be removed.
+    - Probably the new server has different ID values even if the users are named the same (like admin in an IPA domain). Currently UID changes are not supported even though [we plan on addressing that eventually](https://github.com/SSSD/sssd/issues/1926). At the moment, caches must be removed.
 
 ### Common LDAP provider issues
 
@@ -259,4 +259,4 @@ The PAM authentication flow follows this pattern:
     - Make sure the group scope of the AD group mapped to the rule is not domain-local. Domain-local groups can't cross the trust boundary and cannot be therefore used for HBAC rules.
     - Check the keytab on the IPA client and make sure that it only contains entries from the IPA domain. If the keytab contains an entry from the AD domain, the PAC code might pick this entry for an AD user and then the PAC would only contain the AD groups, because the PAC would then be verified with the help of the AD KDC which knows nothing about the IPA groups and removes them from the PAC
     - Check the PAC with the help of a [dedicated IPA wiki page](https://www.freeipa.org/page/Howto/Inspecting_the_PAC) If the PAC contains the group, but it is not displayed on the client, then the issue is on the client side. If the PAC doesn't display the group in the PAC, then the issue is on the IPA KDC side. This would at least enable you to ask better questions on the user support lists.
-    - There was an irritating [SSSD bug](https://pagure.io/SSSD/sssd/issue/3382) that manifested as SSSD not listing some of the groups in the SSSD logs during the HBAC check. Make sure you are running an SSSD version that includes the fix.
+    - There was an irritating [SSSD bug](https://github.com/SSSD/sssd/issues/4410) that manifested as SSSD not listing some of the groups in the SSSD logs during the HBAC check. Make sure you are running an SSSD version that includes the fix.

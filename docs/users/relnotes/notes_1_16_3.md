@@ -8,7 +8,7 @@ Highlights
 
 - The `kdcinfo` files that SSSD uses to inform libkrb5 about which KDCs were discovered for a Kerberos realm used to be only generated for the joined domain, not the trusted domains. Starting with this release, the `kdcinfo` files are generated automatically also for trusted domains in setups that use `id_provider=ad` and IPA masters in a trust relationship with an AD domain.
 - The SSSD Kerberos locator plugin which processes the kdcinfo files and actually tells libkrb5 about the available KDCs can now process multiple address if SSSD generates more than one. At the moment, this feature is only used on IPA clients (see below). Please see the `sssd_krb5_locator_plugin(8)` manual page for more information about the Kerberos locator plugin.
-- On IPA clients, the AD DCs or the AD site which should be used to authenticate users can now be listed in a subdomain section. Please see [the feature design page](https://docs.pagure.org/SSSD.sssd/design_pages/kdcinfo_improvements.html) or the section "trusted domains configuration" for more details.
+- On IPA clients, the AD DCs or the AD site which should be used to authenticate users can now be listed in a subdomain section. Please see [the feature design page](../../design_pages/kdcinfo_improvements.md) or the section "trusted domains configuration" for more details.
 
 ### Notable bug fixes
 
@@ -40,27 +40,27 @@ Documentation Changes
 Tickets Fixed
 -------------
 
-- [3796](https://pagure.io/SSSD/sssd/issue/3796) - The IPA selinux provider can return an error if SELinux is completely disabled
-- [3794](https://pagure.io/SSSD/sssd/issue/3794) - sssd_ssh leaks file descriptors when more than one certificate is converted into an SSH key
-- [3791](https://pagure.io/SSSD/sssd/issue/3791) - The cached password does not store the salt prefix
-- [3778](https://pagure.io/SSSD/sssd/issue/3778) - When sssd is running as non-root user, the sudo pipe is created as sssd:sssd but then the private pipe ownership fails
-- [3777](https://pagure.io/SSSD/sssd/issue/3777) - If access check for a privileged pipe fails, the responder loops indefinitely
-- [3776](https://pagure.io/SSSD/sssd/issue/3776) - Spurious check in the sssd nss memcache can cause the memory cache to be skipped
-- [3774](https://pagure.io/SSSD/sssd/issue/3774) - Desktop Profile: The 10th policy is producing a wrong file name
-- [3773](https://pagure.io/SSSD/sssd/issue/3773) - SSSD bails out saving desktop profiles in case an invalid profile is found
-- [3767](https://pagure.io/SSSD/sssd/issue/3767) - Groups go missing with PAC enabled in sssd
-- [3766](https://pagure.io/SSSD/sssd/issue/3766) - CVE-2018-10852: information leak from the sssd-sudo responder
-- [3758](https://pagure.io/SSSD/sssd/issue/3758) - override_homedir should not apply to the files provider
-- [3755](https://pagure.io/SSSD/sssd/issue/3755) - The search filter for detecting POSIX attributes in global catalog is too broad and can cause a high load on the servers
-- [3754](https://pagure.io/SSSD/sssd/issue/3754) - SSSD AD uses LDAP filter to detect POSIX attributes stored in AD GC also for regular AD DC queries
-- [3747](https://pagure.io/SSSD/sssd/issue/3747) - sss_ssh_authorizedkeys exits abruptly if SSHD closes its end of the pipe before reading all the SSH keys
-- [3652](https://pagure.io/SSSD/sssd/issue/3652) - kdcinfo doesn't get populated for other domains
-- [3607](https://pagure.io/SSSD/sssd/issue/3607) - Handle conflicting e-mail addresses more gracefully
-- [3597](https://pagure.io/SSSD/sssd/issue/3597) - sssd doesn't allow user with expired password to login when PasswordgraceLimit set
-- [3596](https://pagure.io/SSSD/sssd/issue/3596) - A combination of the same qualified and unqualified sudoUser causes Error: 17: File exists
-- [3542](https://pagure.io/SSSD/sssd/issue/3542) - Get host key without proxying connection
-- [3475](https://pagure.io/SSSD/sssd/issue/3475) - Full information regarding priority of lookup of principal in keytab not in man page
-- [3291](https://pagure.io/SSSD/sssd/issue/3291) - RFE: sssd in cross realm trust configuration should be use AD KDC from a list or site defined in the config file
+- [\#4792](https://github.com/SSSD/sssd/issues/4792) - The IPA selinux provider can return an error if SELinux is completely disabled
+- [\#4790](https://github.com/SSSD/sssd/issues/4790) - sssd_ssh leaks file descriptors when more than one certificate is converted into an SSH key
+- [\#4789](https://github.com/SSSD/sssd/issues/4789) - The cached password does not store the salt prefix
+- [\#4784](https://github.com/SSSD/sssd/issues/4784) - When sssd is running as non-root user, the sudo pipe is created as sssd:sssd but then the private pipe ownership fails
+- [\#4783](https://github.com/SSSD/sssd/issues/4783) - If access check for a privileged pipe fails, the responder loops indefinitely
+- [\#4782](https://github.com/SSSD/sssd/issues/4782) - Spurious check in the sssd nss memcache can cause the memory cache to be skipped
+- [\#4780](https://github.com/SSSD/sssd/issues/4780) - Desktop Profile: The 10th policy is producing a wrong file name
+- [\#4779](https://github.com/SSSD/sssd/issues/4779) - SSSD bails out saving desktop profiles in case an invalid profile is found
+- [\#4773](https://github.com/SSSD/sssd/issues/4773) - Groups go missing with PAC enabled in sssd
+- [\#4772](https://github.com/SSSD/sssd/issues/4772) - CVE-2018-10852: information leak from the sssd-sudo responder
+- [\#4764](https://github.com/SSSD/sssd/issues/4764) - override_homedir should not apply to the files provider
+- [\#4761](https://github.com/SSSD/sssd/issues/4761) - The search filter for detecting POSIX attributes in global catalog is too broad and can cause a high load on the servers
+- [\#4760](https://github.com/SSSD/sssd/issues/4760) - SSSD AD uses LDAP filter to detect POSIX attributes stored in AD GC also for regular AD DC queries
+- [\#4754](https://github.com/SSSD/sssd/issues/4754) - sss_ssh_authorizedkeys exits abruptly if SSHD closes its end of the pipe before reading all the SSH keys
+- [\#4672](https://github.com/SSSD/sssd/issues/4672) - kdcinfo doesn't get populated for other domains
+- [\#4630](https://github.com/SSSD/sssd/issues/4630) - Handle conflicting e-mail addresses more gracefully
+- [\#4620](https://github.com/SSSD/sssd/issues/4620) - sssd doesn't allow user with expired password to login when PasswordgraceLimit set
+- [\#4619](https://github.com/SSSD/sssd/issues/4619) - A combination of the same qualified and unqualified sudoUser causes Error: 17: File exists
+- [\#4568](https://github.com/SSSD/sssd/issues/4568) - Get host key without proxying connection
+- [\#4501](https://github.com/SSSD/sssd/issues/4501) - Full information regarding priority of lookup of principal in keytab not in man page
+- [\#4324](https://github.com/SSSD/sssd/issues/4324) - RFE: sssd in cross realm trust configuration should be use AD KDC from a list or site defined in the config file
 
 Detailed Changelog
 ------------------

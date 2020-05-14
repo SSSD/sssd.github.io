@@ -6,9 +6,9 @@ version: 1.16.x
 
 ## Related ticket(s):
 
-* <https://pagure.io/SSSD/sssd/issue/3291>
-* <https://pagure.io/SSSD/sssd/issue/3652>
-* <https://pagure.io/SSSD/sssd/issue/941>
+* <https://github.com/SSSD/sssd/issues/4324>
+* <https://github.com/SSSD/sssd/issues/4672>
+* <https://github.com/SSSD/sssd/issues/1983>
 
 ## Problem statement
 

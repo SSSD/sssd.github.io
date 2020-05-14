@@ -8,7 +8,7 @@ This tool is no longer developed and it's functionality was moved to sssctl tool
 
 Related ticket(s):
 
-  - <https://pagure.io/SSSD/sssd/issue/2269>
+  - <https://github.com/SSSD/sssd/issues/3311>
 
 ## Problem statement
 
@@ -57,7 +57,7 @@ Available options: :
 
 ## Implementation details
 
-The tool will use ding-libs validators feature described [in this design document](https://docs.pagure.org/SSSD.sssd/design_pages/libini_config_file_checks.html).
+The tool will use ding-libs validators feature described [in this design document](libini_config_file_checks.md).
 
 ## Configuration changes
 

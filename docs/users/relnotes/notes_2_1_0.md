@@ -6,7 +6,7 @@ Highlights
 
 ### New features
 
-- Any provider can now match and map certificates to user identities. This feature enables to log in with a smart card without having to store the full certificate blob in the directory or in user overrides. Please see [The design page](https://docs.pagure.org/SSSD.sssd/design_pages/certmaps_for_LDAP_AD_file.html) for more information (\#3500)
+- Any provider can now match and map certificates to user identities. This feature enables to log in with a smart card without having to store the full certificate blob in the directory or in user overrides. Please see [The design page](../../design_pages/certmaps_for_LDAP_AD_file.md) for more information (\#3500)
 - `pam_sss` can now be configured to only perform Smart Card authentication or return an error if this is not possible.
 - `pam_sss` can also prompt the user to insert a Smart Card if, during an authentication it is not available. SSSD would then wait for the card until it is inserted or until timeout defined by `p11_wait_for_card_timeout` passes.
 - The device or reader used for Smart Card authentication can now be selected or restricted using a PKCS\#11 URI (see RFC-7512) specified in the `p11_uri` option.
@@ -59,81 +59,81 @@ Documentation Changes
 Tickets Fixed
 -------------
 
-- [3967](https://pagure.io/SSSD/sssd/issue/3967) - NSS responder does no refresh domain list when busy
-- [3961](https://pagure.io/SSSD/sssd/issue/3961) - sssd config-check reports an error for a valid configuration option
-- [3958](https://pagure.io/SSSD/sssd/issue/3958) - sssd_krb5_locator_plugin introduces delay in cifs.upcall krb5 calls
-- [3949](https://pagure.io/SSSD/sssd/issue/3949) - gdm login not prompting for username when smart card maps to multiple users
-- [3942](https://pagure.io/SSSD/sssd/issue/3942) - RemovedInPytest4Warning: Fixture "passwd_ops_setup" called directly
-- [3937](https://pagure.io/SSSD/sssd/issue/3937) - If p11_child spawned from sssd_ssh times out, sssd_ssh fails completely
-- [3936](https://pagure.io/SSSD/sssd/issue/3936) - Missing sssd-files in last section(SEE ALSO) of sssd man pages
-- [3924](https://pagure.io/SSSD/sssd/issue/3924) - "Corrupted" name of "Hello" method of org.freedesktop.DBus sssd sbus interface on Fedora Rawhide
-- [3921](https://pagure.io/SSSD/sssd/issue/3921) - crash when requesting extra attributes
-- [3919](https://pagure.io/SSSD/sssd/issue/3919) - sss_cache prints spurious error messages when invoked from shadow-utils on package install
-- [3917](https://pagure.io/SSSD/sssd/issue/3917) - Double free error in tev_curl
-- [3916](https://pagure.io/SSSD/sssd/issue/3916) - Wrong spelling of method
-- [3912](https://pagure.io/SSSD/sssd/issue/3912) - incorrect example in the man page of idmap_sss suggests using \* for backend sss
-- [3911](https://pagure.io/SSSD/sssd/issue/3911) - Re-setting the trusted AD domain fails due to wrong subdomain service name being used
-- [3910](https://pagure.io/SSSD/sssd/issue/3910) - KCM destroy operation returns KRB5_CC_NOTFOUND, should return KRB5_FCC_NOFILE if non-existing ccache is about to be destroyed
-- [3909](https://pagure.io/SSSD/sssd/issue/3909) - SSSD 2.0 has drastically lower sbus timeout than 1.x, this can result in time outs
-- [3906](https://pagure.io/SSSD/sssd/issue/3906) - extraAttributes is org.freedesktop.DBus.Error.UnknownProperty: Unknown property
-- [3903](https://pagure.io/SSSD/sssd/issue/3903) - PKINIT with KCM does not work
-- [3902](https://pagure.io/SSSD/sssd/issue/3902) - SSSD must be cleared/restarted periodically in order to retrieve AD users through IPA Trust
-- [3901](https://pagure.io/SSSD/sssd/issue/3901) - sssd returns '/' for emtpy home directories
-- [3896](https://pagure.io/SSSD/sssd/issue/3896) - sss_cache shouldn't return ENOENT when no entries match
-- [3892](https://pagure.io/SSSD/sssd/issue/3892) - The proxy provider does not copy reply from the child
-- [3890](https://pagure.io/SSSD/sssd/issue/3890) - SSSD changes the memory cache file ownership away from the SSSD user when running as root
-- [3889](https://pagure.io/SSSD/sssd/issue/3889) - Abort LDAP authentication if the check_encryption function finds out the connection is not authenticated
-- [3887](https://pagure.io/SSSD/sssd/issue/3887) - sssd support for for smartcards using ECC keys
-- [3882](https://pagure.io/SSSD/sssd/issue/3882) - Missing concise documentation about valid options for sssd-files-provider
-- [3876](https://pagure.io/SSSD/sssd/issue/3876) - Unable to su to root when logged in as a local user
-- [3875](https://pagure.io/SSSD/sssd/issue/3875) - CURLE_SSL_CACERT is deprecated in recent curl versions
-- [3874](https://pagure.io/SSSD/sssd/issue/3874) - RefreshRules_recv marks the wrong request as done
-- [3873](https://pagure.io/SSSD/sssd/issue/3873) - Perform some basic ccache initialization as part of gen_new to avoid a subsequent switch call failure
-- [3872](https://pagure.io/SSSD/sssd/issue/3872) - SSSD 2.x does not sanitize domain name properly for D-bus, resulting in a crash
-- [3871](https://pagure.io/SSSD/sssd/issue/3871) - sbus: allow non-root execution
-- [3866](https://pagure.io/SSSD/sssd/issue/3866) - sssctl user-checks does not show custom IFP user_attributes
-- [3865](https://pagure.io/SSSD/sssd/issue/3865) - Off-by-one error in retrieving host name causes hostnames with exactly 64 characters to not work
-- [3863](https://pagure.io/SSSD/sssd/issue/3863) - sssd ifp crash when trying FindByNameAndCertificate
-- [3862](https://pagure.io/SSSD/sssd/issue/3862) - Restarting the sssd-kcm service should reload the configuration without having to restart the whole sssd
-- [3858](https://pagure.io/SSSD/sssd/issue/3858) - sssctl user-show says that user is expired if the user comes from files provider
-- [3855](https://pagure.io/SSSD/sssd/issue/3855) - session not recording for local user when groups defined
-- [3854](https://pagure.io/SSSD/sssd/issue/3854) - sudo: sbus2 related crash
-- [3849](https://pagure.io/SSSD/sssd/issue/3849) - Files: The files provider always enumerates which causes duplicate when running getent passwd
-- [3848](https://pagure.io/SSSD/sssd/issue/3848) - pam_unix unable to match fully qualified username provided by sssd during smartcard auth using gdm
-- [3845](https://pagure.io/SSSD/sssd/issue/3845) - The config file validator says that certmap options are not allowed
-- [3841](https://pagure.io/SSSD/sssd/issue/3841) - The simultaneous use of strncpy and a length-check in client code is confusing Coverity
-- [3830](https://pagure.io/SSSD/sssd/issue/3830) - Printing incorrect information about domain with sssctl utility
-- [3829](https://pagure.io/SSSD/sssd/issue/3829) - SSSD does not batch DDNS update requests
-- [3828](https://pagure.io/SSSD/sssd/issue/3828) - Invalid domain provider causes SSSD to abort startup
-- [3827](https://pagure.io/SSSD/sssd/issue/3827) - SSSD should log to syslog if a domain is not started due to a misconfiguration
-- [3826](https://pagure.io/SSSD/sssd/issue/3826) - Remove references of sss_user/group/add/del commands in man pages since local provider is deprecated
-- [3821](https://pagure.io/SSSD/sssd/issue/3821) - crash related to sbus_router_destructor()
-- [3815](https://pagure.io/SSSD/sssd/issue/3815) - KCM: The secdb back end might fail creating a new ID with a completely empty database
-- [3814](https://pagure.io/SSSD/sssd/issue/3814) - [RFE] Add option to specify a Smartcard with a PKCS\#11 URI
-- [3813](https://pagure.io/SSSD/sssd/issue/3813) - sssd startup issues since 1.16.2 (PID file related)
-- [3812](https://pagure.io/SSSD/sssd/issue/3812) - sssd 2.0.0 segfaults on startup
-- [3810](https://pagure.io/SSSD/sssd/issue/3810) - sbus2: fix memory leak in sbus_message_bound_ref
-- [3807](https://pagure.io/SSSD/sssd/issue/3807) - The sbus codegen script relies on "python" which might not be available on all distributions
-- [3802](https://pagure.io/SSSD/sssd/issue/3802) - Reuse sysdb_error_to_errno() outside sysdb
-- [3798](https://pagure.io/SSSD/sssd/issue/3798) - When passwords are set to cache=false, userCertificate auth fails when backend is offline
-- [3797](https://pagure.io/SSSD/sssd/issue/3797) - When AD provider is offline, usercertmap fails
-- [3701](https://pagure.io/SSSD/sssd/issue/3701) - [RFE] Allow changing default behavior of SSSD from an allow-any default to a deny-any default when it can't find any GPOs to apply to a user login.
-- [3650](https://pagure.io/SSSD/sssd/issue/3650) - RFE: Require smartcard authentication
-- [3598](https://pagure.io/SSSD/sssd/issue/3598) - [RFE] Allow sssd to read the certificate attributes instead of blob look-up against the LDAP
-- [3576](https://pagure.io/SSSD/sssd/issue/3576) - sssd-kcm failed to start on F-27 after installing sssd-kcm
-- [3567](https://pagure.io/SSSD/sssd/issue/3567) - SYSDB: Lowercased email is stored as nameAlias
-- [3500](https://pagure.io/SSSD/sssd/issue/3500) - Make sure sssd is a replacement for pam_pkcs11 also for local account authentication
-- [3489](https://pagure.io/SSSD/sssd/issue/3489) - p11_child should work wit openssl1.0+
-- [3451](https://pagure.io/SSSD/sssd/issue/3451) - When sssd is configured with id_provider proxy and auth_provider ldap, login fails if the LDAP server is not allowing anonymous binds.
-- [3439](https://pagure.io/SSSD/sssd/issue/3439) - Snippets are not used when sssd.conf does not exist
-- [3413](https://pagure.io/SSSD/sssd/issue/3413) - a bug in libkrb5 causes kdestroy -A to not work with more than 2 principals with KCM
-- [3334](https://pagure.io/SSSD/sssd/issue/3334) - sssctl config-check does not check any special characters in domain name of domain section
-- [3333](https://pagure.io/SSSD/sssd/issue/3333) - usermod -a -G bar foo fails due to some file providers races
-- [3276](https://pagure.io/SSSD/sssd/issue/3276) - Revert workaround in CI for bug in python-{request,urllib3}
-- [3263](https://pagure.io/SSSD/sssd/issue/3263) - consider adding sudo-i to the list of pam_response_filter services by default
-- [2817](https://pagure.io/SSSD/sssd/issue/2817) - dynamic dns - remove detection of 'realm' keyword support
-- [2474](https://pagure.io/SSSD/sssd/issue/2474) - AD: do not override existing home-dir or shell if they are not available in the global catalog
-- [1944](https://pagure.io/SSSD/sssd/issue/1944) - convert dyndns timer to be_ptask
+- [\#4940](https://github.com/SSSD/sssd/issues/4940) - NSS responder does no refresh domain list when busy
+- [\#4934](https://github.com/SSSD/sssd/issues/4934) - sssd config-check reports an error for a valid configuration option
+- [\#4932](https://github.com/SSSD/sssd/issues/4932) - sssd_krb5_locator_plugin introduces delay in cifs.upcall krb5 calls
+- [\#4927](https://github.com/SSSD/sssd/issues/4927) - gdm login not prompting for username when smart card maps to multiple users
+- [\#4920](https://github.com/SSSD/sssd/issues/4920) - RemovedInPytest4Warning: Fixture "passwd_ops_setup" called directly
+- [\#4917](https://github.com/SSSD/sssd/issues/4917) - If p11_child spawned from sssd_ssh times out, sssd_ssh fails completely
+- [\#4916](https://github.com/SSSD/sssd/issues/4916) - Missing sssd-files in last section(SEE ALSO) of sssd man pages
+- [\#4909](https://github.com/SSSD/sssd/issues/4909) - "Corrupted" name of "Hello" method of org.freedesktop.DBus sssd sbus interface on Fedora Rawhide
+- [\#4906](https://github.com/SSSD/sssd/issues/4906) - crash when requesting extra attributes
+- [\#4904](https://github.com/SSSD/sssd/issues/4904) - sss_cache prints spurious error messages when invoked from shadow-utils on package install
+- [\#4902](https://github.com/SSSD/sssd/issues/4902) - Double free error in tev_curl
+- [\#4901](https://github.com/SSSD/sssd/issues/4901) - Wrong spelling of method
+- [\#4897](https://github.com/SSSD/sssd/issues/4897) - incorrect example in the man page of idmap_sss suggests using \* for backend sss
+- [\#4896](https://github.com/SSSD/sssd/issues/4896) - Re-setting the trusted AD domain fails due to wrong subdomain service name being used
+- [\#4895](https://github.com/SSSD/sssd/issues/4895) - KCM destroy operation returns KRB5_CC_NOTFOUND, should return KRB5_FCC_NOFILE if non-existing ccache is about to be destroyed
+- [\#4894](https://github.com/SSSD/sssd/issues/4894) - SSSD 2.0 has drastically lower sbus timeout than 1.x, this can result in time outs
+- [\#4891](https://github.com/SSSD/sssd/issues/4891) - extraAttributes is org.freedesktop.DBus.Error.UnknownProperty: Unknown property
+- [\#4888](https://github.com/SSSD/sssd/issues/4888) - PKINIT with KCM does not work
+- [\#4887](https://github.com/SSSD/sssd/issues/4887) - SSSD must be cleared/restarted periodically in order to retrieve AD users through IPA Trust
+- [\#4886](https://github.com/SSSD/sssd/issues/4886) - sssd returns '/' for emtpy home directories
+- [\#4881](https://github.com/SSSD/sssd/issues/4881) - sss_cache shouldn't return ENOENT when no entries match
+- [\#4878](https://github.com/SSSD/sssd/issues/4878) - The proxy provider does not copy reply from the child
+- [\#4876](https://github.com/SSSD/sssd/issues/4876) - SSSD changes the memory cache file ownership away from the SSSD user when running as root
+- [\#4875](https://github.com/SSSD/sssd/issues/4875) - Abort LDAP authentication if the check_encryption function finds out the connection is not authenticated
+- [\#4873](https://github.com/SSSD/sssd/issues/4873) - sssd support for for smartcards using ECC keys
+- [\#4869](https://github.com/SSSD/sssd/issues/4869) - Missing concise documentation about valid options for sssd-files-provider
+- [\#4866](https://github.com/SSSD/sssd/issues/4866) - Unable to su to root when logged in as a local user
+- [\#4865](https://github.com/SSSD/sssd/issues/4865) - CURLE_SSL_CACERT is deprecated in recent curl versions
+- [\#4864](https://github.com/SSSD/sssd/issues/4864) - RefreshRules_recv marks the wrong request as done
+- [\#4863](https://github.com/SSSD/sssd/issues/4863) - Perform some basic ccache initialization as part of gen_new to avoid a subsequent switch call failure
+- [\#4862](https://github.com/SSSD/sssd/issues/4862) - SSSD 2.x does not sanitize domain name properly for D-bus, resulting in a crash
+- [\#4861](https://github.com/SSSD/sssd/issues/4861) - sbus: allow non-root execution
+- [\#4856](https://github.com/SSSD/sssd/issues/4856) - sssctl user-checks does not show custom IFP user_attributes
+- [\#4855](https://github.com/SSSD/sssd/issues/4855) - Off-by-one error in retrieving host name causes hostnames with exactly 64 characters to not work
+- [\#4853](https://github.com/SSSD/sssd/issues/4853) - sssd ifp crash when trying FindByNameAndCertificate
+- [\#4852](https://github.com/SSSD/sssd/issues/4852) - Restarting the sssd-kcm service should reload the configuration without having to restart the whole sssd
+- [\#4848](https://github.com/SSSD/sssd/issues/4848) - sssctl user-show says that user is expired if the user comes from files provider
+- [\#4845](https://github.com/SSSD/sssd/issues/4845) - session not recording for local user when groups defined
+- [\#4844](https://github.com/SSSD/sssd/issues/4844) - sudo: sbus2 related crash
+- [\#4842](https://github.com/SSSD/sssd/issues/4842) - Files: The files provider always enumerates which causes duplicate when running getent passwd
+- [\#4841](https://github.com/SSSD/sssd/issues/4841) - pam_unix unable to match fully qualified username provided by sssd during smartcard auth using gdm
+- [\#4839](https://github.com/SSSD/sssd/issues/4839) - The config file validator says that certmap options are not allowed
+- [\#4835](https://github.com/SSSD/sssd/issues/4835) - The simultaneous use of strncpy and a length-check in client code is confusing Coverity
+- [\#4824](https://github.com/SSSD/sssd/issues/4824) - Printing incorrect information about domain with sssctl utility
+- [\#4823](https://github.com/SSSD/sssd/issues/4823) - SSSD does not batch DDNS update requests
+- [\#4822](https://github.com/SSSD/sssd/issues/4822) - Invalid domain provider causes SSSD to abort startup
+- [\#4821](https://github.com/SSSD/sssd/issues/4821) - SSSD should log to syslog if a domain is not started due to a misconfiguration
+- [\#4820](https://github.com/SSSD/sssd/issues/4820) - Remove references of sss_user/group/add/del commands in man pages since local provider is deprecated
+- [\#4815](https://github.com/SSSD/sssd/issues/4815) - crash related to sbus_router_destructor()
+- [\#4809](https://github.com/SSSD/sssd/issues/4809) - KCM: The secdb back end might fail creating a new ID with a completely empty database
+- [\#4808](https://github.com/SSSD/sssd/issues/4808) - [RFE] Add option to specify a Smartcard with a PKCS\#11 URI
+- [\#4807](https://github.com/SSSD/sssd/issues/4807) - sssd startup issues since 1.16.2 (PID file related)
+- [\#4806](https://github.com/SSSD/sssd/issues/4806) - sssd 2.0.0 segfaults on startup
+- [\#4804](https://github.com/SSSD/sssd/issues/4804) - sbus2: fix memory leak in sbus_message_bound_ref
+- [\#4802](https://github.com/SSSD/sssd/issues/4802) - The sbus codegen script relies on "python" which might not be available on all distributions
+- [\#4797](https://github.com/SSSD/sssd/issues/4797) - Reuse sysdb_error_to_errno() outside sysdb
+- [\#4794](https://github.com/SSSD/sssd/issues/4794) - When passwords are set to cache=false, userCertificate auth fails when backend is offline
+- [\#4793](https://github.com/SSSD/sssd/issues/4793) - When AD provider is offline, usercertmap fails
+- [\#4715](https://github.com/SSSD/sssd/issues/4715) - [RFE] Allow changing default behavior of SSSD from an allow-any default to a deny-any default when it can't find any GPOs to apply to a user login.
+- [\#4670](https://github.com/SSSD/sssd/issues/4670) - RFE: Require smartcard authentication
+- [\#4621](https://github.com/SSSD/sssd/issues/4621) - [RFE] Allow sssd to read the certificate attributes instead of blob look-up against the LDAP
+- [\#4600](https://github.com/SSSD/sssd/issues/4600) - sssd-kcm failed to start on F-27 after installing sssd-kcm
+- [\#4591](https://github.com/SSSD/sssd/issues/4591) - SYSDB: Lowercased email is stored as nameAlias
+- [\#4526](https://github.com/SSSD/sssd/issues/4526) - Make sure sssd is a replacement for pam_pkcs11 also for local account authentication
+- [\#4515](https://github.com/SSSD/sssd/issues/4515) - p11_child should work wit openssl1.0+
+- [\#4478](https://github.com/SSSD/sssd/issues/4478) - When sssd is configured with id_provider proxy and auth_provider ldap, login fails if the LDAP server is not allowing anonymous binds.
+- [\#4466](https://github.com/SSSD/sssd/issues/4466) - Snippets are not used when sssd.conf does not exist
+- [\#4440](https://github.com/SSSD/sssd/issues/4440) - a bug in libkrb5 causes kdestroy -A to not work with more than 2 principals with KCM
+- [\#4365](https://github.com/SSSD/sssd/issues/4365) - sssctl config-check does not check any special characters in domain name of domain section
+- [\#4364](https://github.com/SSSD/sssd/issues/4364) - usermod -a -G bar foo fails due to some file providers races
+- [\#4309](https://github.com/SSSD/sssd/issues/4309) - Revert workaround in CI for bug in python-{request,urllib3}
+- [\#4296](https://github.com/SSSD/sssd/issues/4296) - consider adding sudo-i to the list of pam_response_filter services by default
+- [\#3858](https://github.com/SSSD/sssd/issues/3858) - dynamic dns - remove detection of 'realm' keyword support
+- [\#3516](https://github.com/SSSD/sssd/issues/3516) - AD: do not override existing home-dir or shell if they are not available in the global catalog
+- [\#2986](https://github.com/SSSD/sssd/issues/2986) - convert dyndns timer to be_ptask
 
 Detailed Changelog
 ------------------

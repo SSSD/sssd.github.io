@@ -49,22 +49,22 @@ Documentation Changes
 Known issues
 ------------
 
-- <https://pagure.io/SSSD/sssd/issue/3807- The sbus codegen script relies on "python" which might not be available on all distributions
+- <https://github.com/SSSD/sssd/issues/4802- The sbus codegen script relies on "python" which might not be available on all distributions
 >
   - There is a script that autogenerates code for the internal SSSD IPC. The script happens to call "python" which is not available on all distributions. Patching the `sbus_generate.sh` file to call e.g. python3 explicitly works around the issue
 >
 Tickets Fixed
 -------------
 
-- [3717](https://pagure.io/SSSD/sssd/issue/3717) - Don't package sssd-secrets by default
-- [3685](https://pagure.io/SSSD/sssd/issue/3685) - KCM: Default to a new back end that would write to the secrets database directly
-- [3530](https://pagure.io/SSSD/sssd/issue/3530) - Remove CONFDB_DOMAIN_LEGACY_PASS
-- [3515](https://pagure.io/SSSD/sssd/issue/3515) - Disable host wildcards in sudoHost attribute (ldap_sudo_include_regexp=false)
-- [3494](https://pagure.io/SSSD/sssd/issue/3494) - Remove the special-case for RFC2307bis with zero nesting level
-- [3493](https://pagure.io/SSSD/sssd/issue/3493) - Remove the pysss.local interface
-- [3492](https://pagure.io/SSSD/sssd/issue/3492) - Remove support for ldap_groups_use_matching_rule_in_chain and ldap_initgroups_use_matching_rule_in_chain
-- [3304](https://pagure.io/SSSD/sssd/issue/3304) - Only build the local provider conditionally
-- [2926](https://pagure.io/SSSD/sssd/issue/2926) - Make list of local PAM services allowed for Smartcard authentication configurable
+- [\#4727](https://github.com/SSSD/sssd/issues/4727) - Don't package sssd-secrets by default
+- [\#4704](https://github.com/SSSD/sssd/issues/4704) - KCM: Default to a new back end that would write to the secrets database directly
+- [\#4556](https://github.com/SSSD/sssd/issues/4556) - Remove CONFDB_DOMAIN_LEGACY_PASS
+- [\#4541](https://github.com/SSSD/sssd/issues/4541) - Disable host wildcards in sudoHost attribute (ldap_sudo_include_regexp=false)
+- [\#4520](https://github.com/SSSD/sssd/issues/4520) - Remove the special-case for RFC2307bis with zero nesting level
+- [\#4519](https://github.com/SSSD/sssd/issues/4519) - Remove the pysss.local interface
+- [\#4518](https://github.com/SSSD/sssd/issues/4518) - Remove support for ldap_groups_use_matching_rule_in_chain and ldap_initgroups_use_matching_rule_in_chain
+- [\#4337](https://github.com/SSSD/sssd/issues/4337) - Only build the local provider conditionally
+- [\#3967](https://github.com/SSSD/sssd/issues/3967) - Make list of local PAM services allowed for Smartcard authentication configurable
 
 Detailed Changelog
 ------------------

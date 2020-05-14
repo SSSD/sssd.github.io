@@ -26,32 +26,32 @@ Tickets Fixed
 -------------
 
 
-- [\#2176](https://pagure.io/SSSD/sssd/issue/2176) warn if memcache_timeout is greater than entry_cache_timeout
-- [\#2493](https://pagure.io/SSSD/sssd/issue/2493) Check chown_debug_file() usage
-- [\#2673](https://pagure.io/SSSD/sssd/issue/2673) Consider also disabled domains when link_forest_roots() is called
-- [\#2697](https://pagure.io/SSSD/sssd/issue/2697) extend PAM responder unit test
-- [\#2706](https://pagure.io/SSSD/sssd/issue/2706) Contribute and DevelTips are duplicate
-- [\#2726](https://pagure.io/SSSD/sssd/issue/2726) Long living applicantion can use removed memory cache.
-- [\#2730](https://pagure.io/SSSD/sssd/issue/2730) responder_cache_req-tests failed
-- [\#2736](https://pagure.io/SSSD/sssd/issue/2736) sss_override: add find and show commands
-- [\#2759](https://pagure.io/SSSD/sssd/issue/2759) sbus_codegen_tests leaves a process running
-- [\#2779](https://pagure.io/SSSD/sssd/issue/2779) Review and update wiki pages for 1.13.2
-- [\#2786](https://pagure.io/SSSD/sssd/issue/2786) Create a wiki page that lists security-sensitive options
-- [\#2792](https://pagure.io/SSSD/sssd/issue/2792) SSSD is not closing sockets properly
-- [\#2800](https://pagure.io/SSSD/sssd/issue/2800) Relax POSIX check
-- [\#2802](https://pagure.io/SSSD/sssd/issue/2802) sss_override segfaults when accidentally adding --help flag to some commands
-- [\#2804](https://pagure.io/SSSD/sssd/issue/2804) Size limit exceeded too loud during POSIX check
-- [\#2807](https://pagure.io/SSSD/sssd/issue/2807) CI: configure script failed on CentOS {6,7}
-- [\#2810](https://pagure.io/SSSD/sssd/issue/2810) sssd_be crashed
-- [\#2811](https://pagure.io/SSSD/sssd/issue/2811) PAM responder crashed if user was not set
-- [\#2814](https://pagure.io/SSSD/sssd/issue/2814) avoid symlinks witih python modules
-- [\#2819](https://pagure.io/SSSD/sssd/issue/2819) CI: test_ipa_subdomains_server failed on rhel6 + --coverage (FAIL: test_ipa_subdom_server)
-- [\#2826](https://pagure.io/SSSD/sssd/issue/2826) sss_override: memory violation
-- [\#2827](https://pagure.io/SSSD/sssd/issue/2827) bug in UPN lookups for subdomain users
-- [\#2833](https://pagure.io/SSSD/sssd/issue/2833) local overrides: don't contact server with overriden name/id
-- [\#2837](https://pagure.io/SSSD/sssd/issue/2837) REGRESSION: ipa-client-automout failed
-- [\#2861](https://pagure.io/SSSD/sssd/issue/2861) sssd crashes if non-UTF-8 locale is used
-- [\#2863](https://pagure.io/SSSD/sssd/issue/2863) IFP: ifp_users_user_get_groups doesn't handle non-POSIX groups
+- [\#3218](https://github.com/SSSD/sssd/issues/3218) warn if memcache_timeout is greater than entry_cache_timeout
+- [\#3535](https://github.com/SSSD/sssd/issues/3535) Check chown_debug_file() usage
+- [\#3714](https://github.com/SSSD/sssd/issues/3714) Consider also disabled domains when link_forest_roots() is called
+- [\#3738](https://github.com/SSSD/sssd/issues/3738) extend PAM responder unit test
+- [\#3747](https://github.com/SSSD/sssd/issues/3747) Contribute and DevelTips are duplicate
+- [\#3767](https://github.com/SSSD/sssd/issues/3767) Long living applicantion can use removed memory cache.
+- [\#3771](https://github.com/SSSD/sssd/issues/3771) responder_cache_req-tests failed
+- [\#3777](https://github.com/SSSD/sssd/issues/3777) sss_override: add find and show commands
+- [\#3800](https://github.com/SSSD/sssd/issues/3800) sbus_codegen_tests leaves a process running
+- [\#3820](https://github.com/SSSD/sssd/issues/3820) Review and update wiki pages for 1.13.2
+- [\#3827](https://github.com/SSSD/sssd/issues/3827) Create a wiki page that lists security-sensitive options
+- [\#3833](https://github.com/SSSD/sssd/issues/3833) SSSD is not closing sockets properly
+- [\#3841](https://github.com/SSSD/sssd/issues/3841) Relax POSIX check
+- [\#3843](https://github.com/SSSD/sssd/issues/3843) sss_override segfaults when accidentally adding --help flag to some commands
+- [\#3845](https://github.com/SSSD/sssd/issues/3845) Size limit exceeded too loud during POSIX check
+- [\#3848](https://github.com/SSSD/sssd/issues/3848) CI: configure script failed on CentOS {6,7}
+- [\#3851](https://github.com/SSSD/sssd/issues/3851) sssd_be crashed
+- [\#3852](https://github.com/SSSD/sssd/issues/3852) PAM responder crashed if user was not set
+- [\#3855](https://github.com/SSSD/sssd/issues/3855) avoid symlinks witih python modules
+- [\#3860](https://github.com/SSSD/sssd/issues/3860) CI: test_ipa_subdomains_server failed on rhel6 + --coverage (FAIL: test_ipa_subdom_server)
+- [\#3867](https://github.com/SSSD/sssd/issues/3867) sss_override: memory violation
+- [\#3868](https://github.com/SSSD/sssd/issues/3868) bug in UPN lookups for subdomain users
+- [\#3874](https://github.com/SSSD/sssd/issues/3874) local overrides: don't contact server with overriden name/id
+- [\#3878](https://github.com/SSSD/sssd/issues/3878) REGRESSION: ipa-client-automout failed
+- [\#3902](https://github.com/SSSD/sssd/issues/3902) sssd crashes if non-UTF-8 locale is used
+- [\#3904](https://github.com/SSSD/sssd/issues/3904) IFP: ifp_users_user_get_groups doesn't handle non-POSIX groups
 
 Detailed Changelog
 ------------------

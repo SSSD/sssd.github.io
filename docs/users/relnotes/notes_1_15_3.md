@@ -7,14 +7,14 @@ Highlights
 ### New Features
 
 - In a setup where an IPA domain trusts an Active Directory domain, it is now possible to [define the domain resolution order](http://www.freeipa.org/page/Releases/4.5.0#AD_User_Short_Names). Starting with this version, SSSD is able to read and honor the domain resolution order, providing a way to resolve Active Directory users by just their short name. SSSD also supports a new option `domain_resolution_order` applicable in the `[sssd]` section that allows to configure short names for AD users in setup with `id_provider=ad` or in a setup with an older IPA server that doesn't support the `ipa config-mod --domain-resolution-order` configuration option. Also, it is now possible to use `use_fully_qualified_names=False` in a subdomain configuration, but please note that the user and group output from trusted domains will always be qualified to avoid conflicts.
-  - Design page - [Shortnames in trusted domains](https://docs.pagure.org/SSSD.sssd/design_pages/shortnames.html)
+  - Design page - [Shortnames in trusted domains](../../design_pages/shortnames.md)
 - SSSD ships with a new service called KCM. This service acts as a storage for Kerberos tickets when `libkrb5` is configured to use `KCM:` in `krb5.conf`. Compared to other Kerberos credential cache types, KCM is better suited for containerized environments and because the credential caches are managed by a stateful daemon, in future releases will also allow to renew tickets acquired outside SSSD (e.g. with `kinit`) or provide notifications about ticket changes. This feature is optional and can be disabled by selecting `--without-kcm` when configuring the SSSD build.
-  - Design page - [KCM server for SSSD](https://docs.pagure.org/SSSD.sssd/design_pages/kcm.html)
-  - \`NOTE\`: There are several known issues in the `KCM` responder that will be handled in the next release such as [issues with very large tickets](https://pagure.io/SSSD/sssd/issue/3386) or [tracking the SELinux label of the peer](https://pagure.io/SSSD/sssd/issue/3434) or even one [intermittent crash](https://pagure.io/SSSD/sssd/issue/3454). There are also some differences between how SSSD's KCM server works compared to Heimdal's KCM server such as [visibility of ccaches by root](https://pagure.io/SSSD/sssd/issue/3376).
+  - Design page - [KCM server for SSSD](../../design_pages/kcm.md)
+  - \`NOTE\`: There are several known issues in the `KCM` responder that will be handled in the next release such as [issues with very large tickets](https://github.com/SSSD/sssd/issues/4413) or [tracking the SELinux label of the peer](https://github.com/SSSD/sssd/issues/4461) or even one [intermittent crash](https://github.com/SSSD/sssd/issues/4481). There are also some differences between how SSSD's KCM server works compared to Heimdal's KCM server such as [visibility of ccaches by root](https://github.com/SSSD/sssd/issues/4405).
 - Support for user and group resolution through the D-Bus interface and authentication and/or authorization through the PAM interface even for setups without UIDs or Windows SIDs present on the LDAP directory side. This enhancement allows SSSD to be used together with [apache modules](https://github.com/adelton/mod_lookup_identity) to provide identities for applications
-  - Design page - [Support for non-POSIX users and groups](https://docs.pagure.org/SSSD.sssd/design_pages/non_posix_support.html)
+  - Design page - [Support for non-POSIX users and groups](../../design_pages/non_posix_support.md)
 - SSSD ships a new public library called `libsss_certmap` that allows a flexible and configurable way of mapping a certificate to a user identity. This is required e.g. in environments where it is not possible to add the certificate to the LDAP user entry, because the certificates are issued externally or the LDAP schema cannot be modified. Additionally, specific matching rules allow a specific certificate on a smart card to be selected for authentication.
-  - Design page - [Matching and Mapping Certificates](https://docs.pagure.org/SSSD.sssd/design_pages/matching_and_mapping_certificates.html)
+  - Design page - [Matching and Mapping Certificates](../../design_pages/matching_and_mapping_certificates.md)
 - The Kerberos locator plugin can be disabled using an environment variable `SSSD_KRB5_LOCATOR_DISABLE`. Please refer to the `sssd_krb5_locator_plugin` manual page for mode details.
 - The `sssctl` command line tool supports a new command `user-checks` that enables the administrator to check whether a certain user should be allowed or denied access to a certain PAM service.
 - The `secrets` responder now forwards requests to a proxy Custodia back end over a secure channel.
@@ -36,85 +36,85 @@ Documentation Changes
 ---------------------
 
 - `sssd-kcm` and `libsss_certmap` are documented in their own manual pages.
-- A new option `domain_resolution_order` was added. This option allows to specify the lookup order (especially w.r.t. trusted domains) that sssd will follow. Please see the [Shortnames in trusted domains](https://docs.pagure.org/SSSD.sssd/design_pages/shortnames.html) design page. for mode details.
-- New options `pam_app_services` and `domain_type` were added. These options can be used to only limit certain PAM services to reach certain SSSD domains that should only be exposed to non-OS applications. For more details, refer to the [Support for non-POSIX users and groups](https://docs.pagure.org/SSSD.sssd/design_pages/non_posix_support.html) design page.
+- A new option `domain_resolution_order` was added. This option allows to specify the lookup order (especially w.r.t. trusted domains) that sssd will follow. Please see the [Shortnames in trusted domains](../../design_pages/shortnames.md) design page. for mode details.
+- New options `pam_app_services` and `domain_type` were added. These options can be used to only limit certain PAM services to reach certain SSSD domains that should only be exposed to non-OS applications. For more details, refer to the [Support for non-POSIX users and groups](../../design_pages/non_posix_support.md) design page.
 >
 - The `secrets` responder supports several new options related to TLS setup and handling including `verify_peer`, `verify_host`, `capath`, `cacert` and `cert`. These options are all described in the `sssd-secrets` manual page.
 
 Tickets Fixed
 -------------
 
-- [\#3424](https://pagure.io/SSSD/sssd/issue/3424) - calling nspr_nss_setup/cleanup repeatedly in sss_encrypt SIGABRTs NSS eventually
-- [\#3452](https://pagure.io/SSSD/sssd/issue/3452) - ad_account_can_shortcut: allow shortcut for unhandled IDs
-- [\#3447](https://pagure.io/SSSD/sssd/issue/3447) - files provider should not use LOCAL_pam_handler but call the backend
-- [\#3435](https://pagure.io/SSSD/sssd/issue/3435) - Create a function to copy search bases between sdap_domain structures
-- [\#3431](https://pagure.io/SSSD/sssd/issue/3431) - Loading enterprise principals doesn't work with a primed cache
-- [\#3426](https://pagure.io/SSSD/sssd/issue/3426) - IPA client cannot change AD Trusted User password
-- [\#3418](https://pagure.io/SSSD/sssd/issue/3418) - Segfault in access_provider = krb5 is set in sssd.conf due to an off-by-one error when constructing the child send buffer
-- [\#3410](https://pagure.io/SSSD/sssd/issue/3410) - python-sssdconfig doesn't parse hexadecimal debug_level, resulting in set_option(): /usr/lib/python2.7/site-packages/SSSDConfig/__init__.py killed by TypeError
-- [\#3408](https://pagure.io/SSSD/sssd/issue/3408) - Accept changed principal if krb5_canonicalize=True
-- [\#3404](https://pagure.io/SSSD/sssd/issue/3404) - man: Update option "ipa_server_mode=True" in "man sssd-ipa"
-- [\#3403](https://pagure.io/SSSD/sssd/issue/3403) - SSSD doesn't handle conflicts between users from trusted domains with the same name when shortname user resolution is enabled
-- [\#3398](https://pagure.io/SSSD/sssd/issue/3398) - MAN: The timeout option doesn't say after how many heartbeats will the process be killed
-- [\#3397](https://pagure.io/SSSD/sssd/issue/3397) - ad provider: Child domains always use autodiscovered search bases
-- [\#3393](https://pagure.io/SSSD/sssd/issue/3393) - sss_nss_getlistbycert() does not return results from multiple domains
-- [\#3391](https://pagure.io/SSSD/sssd/issue/3391) - sss_override doesn't work with files provider
-- [\#3389](https://pagure.io/SSSD/sssd/issue/3389) - subdomain_homedir is not present in cfg_rules.ini
-- [\#3378](https://pagure.io/SSSD/sssd/issue/3378) - domain_to_basedn() function should use SDAP_SEARCH_BASE value from the domain code
-- [\#3377](https://pagure.io/SSSD/sssd/issue/3377) - sssd-ad man page should clarify that GSSAPI is used
-- [\#3375](https://pagure.io/SSSD/sssd/issue/3375) - minor typo fix that might have big impact
-- [\#3361](https://pagure.io/SSSD/sssd/issue/3361) - sssd_be crashes if ad_enabled_domains is selected
-- [\#3359](https://pagure.io/SSSD/sssd/issue/3359) - Allow to disable krb5 locator plugin selectively
-- [\#3358](https://pagure.io/SSSD/sssd/issue/3358) - [abrt] [faf] sssd: vfprintf(): /usr/libexec/sssd/sssd_be killed by 11
-- [\#3354](https://pagure.io/SSSD/sssd/issue/3354) - ifp: Users.FindByCertificate fails when certificate contains data before encapsilation boundary
-- [\#3344](https://pagure.io/SSSD/sssd/issue/3344) - Include sssd-secrets in SEE ALSO section of sssd.conf man page
-- [\#3343](https://pagure.io/SSSD/sssd/issue/3343) - Properly fall back to local Smartcard authentication
-- [\#3340](https://pagure.io/SSSD/sssd/issue/3340) - The option enable_files_domain does not work if sssd is not compiled with --enable-files-domain
-- [\#3339](https://pagure.io/SSSD/sssd/issue/3339) - sssd failed to start with missing /etc/sssd/sssd.conf if compiled without --enable-files-domain
-- [\#3332](https://pagure.io/SSSD/sssd/issue/3332) - Issue processing ssh keys from certificates in ssh respoder
-- [\#3448](https://pagure.io/SSSD/sssd/issue/3448) - Idle nss file descriptors should be closed
-- [\#3428](https://pagure.io/SSSD/sssd/issue/3428) - getent failed to fetch netgroup information after changing default_domain_suffix to ADdomin in /etc/sssd/sssd.conf
-- [\#3356](https://pagure.io/SSSD/sssd/issue/3356) - Config file validator doesn't process entries from application domain
-- [\#3331](https://pagure.io/SSSD/sssd/issue/3331) - Wrong pam return code for user from subdomain with
-- [\#3329](https://pagure.io/SSSD/sssd/issue/3329) - Wrong principal found with ad provider and long host name
-- [\#3421](https://pagure.io/SSSD/sssd/issue/3421) - Wrong search base used when SSSD is directly connected to AD child domain
-- [\#3406](https://pagure.io/SSSD/sssd/issue/3406) - sssd goes offline when renewing expired ticket
-- [\#3394](https://pagure.io/SSSD/sssd/issue/3394) - LDAP to IPA migration doesn't work in master
-- [\#3392](https://pagure.io/SSSD/sssd/issue/3392) - org.freedesktop.sssd.infopipe.GetUserGroups does not resolve groups into names with AD
-- [\#3382](https://pagure.io/SSSD/sssd/issue/3382) - SSSD should use memberOf, not originalMemberOf to evaluate group membership for HBAC rules
-- [\#3381](https://pagure.io/SSSD/sssd/issue/3381) - Per-subdomain LDAP filter is not applied for subsequent subdomains
-- [\#3373](https://pagure.io/SSSD/sssd/issue/3373) - Infopipe method ListByCertificate does not return the users with overrides
-- [\#3372](https://pagure.io/SSSD/sssd/issue/3372) - crash in sssd-kcm due to a race-condition between two concurrent requests
-- [\#3369](https://pagure.io/SSSD/sssd/issue/3369) - ldap_purge_cache_timeout in RHEL7.3 invalidate most of the entries once the cleanup task kicks in
-- [\#3362](https://pagure.io/SSSD/sssd/issue/3362) - fiter_users and filter_groups stop working properly in v 1.15
-- [\#3351](https://pagure.io/SSSD/sssd/issue/3351) - User lookup failure due to search-base handling
-- [\#3347](https://pagure.io/SSSD/sssd/issue/3347) - gpo_child fails when log is enabled in smb
-- [\#3318](https://pagure.io/SSSD/sssd/issue/3318) - SSSD in server mode iterates over all domains for group-by-GID requests, causing unnecessary searches
-- [\#3310](https://pagure.io/SSSD/sssd/issue/3310) - Support delivering non-POSIX users and groups through the IFP and PAM interfaces
-- [\#3050](https://pagure.io/SSSD/sssd/issue/3050) - [RFE] Use one smartcard and certificate for authentication to distinct logon accounts
-- [\#3001](https://pagure.io/SSSD/sssd/issue/3001) - [RFE] Short name input format with SSSD for users from all domains when domain autodiscovery is used or when SSSD acts as an IPA client for server with IPA-AD trusts
-- [\#2887](https://pagure.io/SSSD/sssd/issue/2887) - [RFE] KCM ccache daemon in SSSD
-- [\#3419](https://pagure.io/SSSD/sssd/issue/3419) - krb5: properly handle 'password expired' information retured by the KDC during PKINIT/Smartcard authentication
-- [\#3407](https://pagure.io/SSSD/sssd/issue/3407) - IPA: do not lookup IPA users via extdom plugin
-- [\#3405](https://pagure.io/SSSD/sssd/issue/3405) - Handle certmap errors gracefully during user lookups
-- [\#3395](https://pagure.io/SSSD/sssd/issue/3395) - Properly support IPA's promptusername config option
-- [\#3387](https://pagure.io/SSSD/sssd/issue/3387) - Dbus activate InfoPipe does not answer some initial request
-- [\#3385](https://pagure.io/SSSD/sssd/issue/3385) - Smart card login fails if same cert mapped to IdM user and AD user
-- [\#3355](https://pagure.io/SSSD/sssd/issue/3355) - application domain requires inherit_from and cannot be used separately
-- [\#3327](https://pagure.io/SSSD/sssd/issue/3327) - expect sss_ssh_authorizedkeys and sss_ssh_knownhostsproxy manuals to be packaged into sssd-common package
-- [\#3297](https://pagure.io/SSSD/sssd/issue/3297) - selinux_provider fails in a container if libsemanage is not available
-- [\#3268](https://pagure.io/SSSD/sssd/issue/3268) - D-Bus GetUserGroups method of sssd is always qualifying all group names
-- [\#3240](https://pagure.io/SSSD/sssd/issue/3240) - Smartcard authentication with UPN as logon name might fail
-- [\#3210](https://pagure.io/SSSD/sssd/issue/3210) - [RFE] Read prioritized list of trusted domains for unqualified ID resolution from IDM server
-- [\#3192](https://pagure.io/SSSD/sssd/issue/3192) - [sssd-secrets] https proxy talks plain http
-- [\#3182](https://pagure.io/SSSD/sssd/issue/3182) - sssd does not refresh expired cache entries with enumerate=true
-- [\#3065](https://pagure.io/SSSD/sssd/issue/3065) - sssctl: distinguish between autodiscovered and joined domains
-- [\#2940](https://pagure.io/SSSD/sssd/issue/2940) - The member link is not removed when the last group's nested member goes away
-- [\#2714](https://pagure.io/SSSD/sssd/issue/2714) - Add SSSD domain as property to user on D-Bus
-- [\#1498](https://pagure.io/SSSD/sssd/issue/1498) - sss_ssh_knownhostsproxy prevents connection if the network is unreachable via one IP address
-- [\#3330](https://pagure.io/SSSD/sssd/issue/3330) - sssctl config-check does not give any error when default configuration file is not present
-- [\#3292](https://pagure.io/SSSD/sssd/issue/3292) - RFE: Create troubleshooting tool to check authentication, authorization and extended attribute lookup
-- [\#3133](https://pagure.io/SSSD/sssd/issue/3133) - RFE to add option of check user access in SSSD
+- [\#4451](https://github.com/SSSD/sssd/issues/4451) - calling nspr_nss_setup/cleanup repeatedly in sss_encrypt SIGABRTs NSS eventually
+- [\#4479](https://github.com/SSSD/sssd/issues/4479) - ad_account_can_shortcut: allow shortcut for unhandled IDs
+- [\#4474](https://github.com/SSSD/sssd/issues/4474) - files provider should not use LOCAL_pam_handler but call the backend
+- [\#4462](https://github.com/SSSD/sssd/issues/4462) - Create a function to copy search bases between sdap_domain structures
+- [\#4458](https://github.com/SSSD/sssd/issues/4458) - Loading enterprise principals doesn't work with a primed cache
+- [\#4453](https://github.com/SSSD/sssd/issues/4453) - IPA client cannot change AD Trusted User password
+- [\#4445](https://github.com/SSSD/sssd/issues/4445) - Segfault in access_provider = krb5 is set in sssd.conf due to an off-by-one error when constructing the child send buffer
+- [\#4437](https://github.com/SSSD/sssd/issues/4437) - python-sssdconfig doesn't parse hexadecimal debug_level, resulting in set_option(): /usr/lib/python2.7/site-packages/SSSDConfig/__init__.py killed by TypeError
+- [\#4435](https://github.com/SSSD/sssd/issues/4435) - Accept changed principal if krb5_canonicalize=True
+- [\#4431](https://github.com/SSSD/sssd/issues/4431) - man: Update option "ipa_server_mode=True" in "man sssd-ipa"
+- [\#4430](https://github.com/SSSD/sssd/issues/4430) - SSSD doesn't handle conflicts between users from trusted domains with the same name when shortname user resolution is enabled
+- [\#4425](https://github.com/SSSD/sssd/issues/4425) - MAN: The timeout option doesn't say after how many heartbeats will the process be killed
+- [\#4424](https://github.com/SSSD/sssd/issues/4424) - ad provider: Child domains always use autodiscovered search bases
+- [\#4420](https://github.com/SSSD/sssd/issues/4420) - sss_nss_getlistbycert() does not return results from multiple domains
+- [\#4418](https://github.com/SSSD/sssd/issues/4418) - sss_override doesn't work with files provider
+- [\#4416](https://github.com/SSSD/sssd/issues/4416) - subdomain_homedir is not present in cfg_rules.ini
+- [\#4407](https://github.com/SSSD/sssd/issues/4407) - domain_to_basedn() function should use SDAP_SEARCH_BASE value from the domain code
+- [\#4406](https://github.com/SSSD/sssd/issues/4406) - sssd-ad man page should clarify that GSSAPI is used
+- [\#4404](https://github.com/SSSD/sssd/issues/4404) - minor typo fix that might have big impact
+- [\#4391](https://github.com/SSSD/sssd/issues/4391) - sssd_be crashes if ad_enabled_domains is selected
+- [\#4389](https://github.com/SSSD/sssd/issues/4389) - Allow to disable krb5 locator plugin selectively
+- [\#4388](https://github.com/SSSD/sssd/issues/4388) - [abrt] [faf] sssd: vfprintf(): /usr/libexec/sssd/sssd_be killed by 11
+- [\#4384](https://github.com/SSSD/sssd/issues/4384) - ifp: Users.FindByCertificate fails when certificate contains data before encapsilation boundary
+- [\#4375](https://github.com/SSSD/sssd/issues/4375) - Include sssd-secrets in SEE ALSO section of sssd.conf man page
+- [\#4374](https://github.com/SSSD/sssd/issues/4374) - Properly fall back to local Smartcard authentication
+- [\#4371](https://github.com/SSSD/sssd/issues/4371) - The option enable_files_domain does not work if sssd is not compiled with --enable-files-domain
+- [\#4370](https://github.com/SSSD/sssd/issues/4370) - sssd failed to start with missing /etc/sssd/sssd.conf if compiled without --enable-files-domain
+- [\#4363](https://github.com/SSSD/sssd/issues/4363) - Issue processing ssh keys from certificates in ssh respoder
+- [\#4475](https://github.com/SSSD/sssd/issues/4475) - Idle nss file descriptors should be closed
+- [\#4455](https://github.com/SSSD/sssd/issues/4455) - getent failed to fetch netgroup information after changing default_domain_suffix to ADdomin in /etc/sssd/sssd.conf
+- [\#4386](https://github.com/SSSD/sssd/issues/4386) - Config file validator doesn't process entries from application domain
+- [\#4362](https://github.com/SSSD/sssd/issues/4362) - Wrong pam return code for user from subdomain with
+- [\#4360](https://github.com/SSSD/sssd/issues/4360) - Wrong principal found with ad provider and long host name
+- [\#4448](https://github.com/SSSD/sssd/issues/4448) - Wrong search base used when SSSD is directly connected to AD child domain
+- [\#4433](https://github.com/SSSD/sssd/issues/4433) - sssd goes offline when renewing expired ticket
+- [\#4421](https://github.com/SSSD/sssd/issues/4421) - LDAP to IPA migration doesn't work in master
+- [\#4419](https://github.com/SSSD/sssd/issues/4419) - org.freedesktop.sssd.infopipe.GetUserGroups does not resolve groups into names with AD
+- [\#4410](https://github.com/SSSD/sssd/issues/4410) - SSSD should use memberOf, not originalMemberOf to evaluate group membership for HBAC rules
+- [\#4409](https://github.com/SSSD/sssd/issues/4409) - Per-subdomain LDAP filter is not applied for subsequent subdomains
+- [\#4403](https://github.com/SSSD/sssd/issues/4403) - Infopipe method ListByCertificate does not return the users with overrides
+- [\#4402](https://github.com/SSSD/sssd/issues/4402) - crash in sssd-kcm due to a race-condition between two concurrent requests
+- [\#4399](https://github.com/SSSD/sssd/issues/4399) - ldap_purge_cache_timeout in RHEL7.3 invalidate most of the entries once the cleanup task kicks in
+- [\#4392](https://github.com/SSSD/sssd/issues/4392) - fiter_users and filter_groups stop working properly in v 1.15
+- [\#4381](https://github.com/SSSD/sssd/issues/4381) - User lookup failure due to search-base handling
+- [\#4377](https://github.com/SSSD/sssd/issues/4377) - gpo_child fails when log is enabled in smb
+- [\#4351](https://github.com/SSSD/sssd/issues/4351) - SSSD in server mode iterates over all domains for group-by-GID requests, causing unnecessary searches
+- [\#4343](https://github.com/SSSD/sssd/issues/4343) - Support delivering non-POSIX users and groups through the IFP and PAM interfaces
+- [\#4083](https://github.com/SSSD/sssd/issues/4083) - [RFE] Use one smartcard and certificate for authentication to distinct logon accounts
+- [\#4042](https://github.com/SSSD/sssd/issues/4042) - [RFE] Short name input format with SSSD for users from all domains when domain autodiscovery is used or when SSSD acts as an IPA client for server with IPA-AD trusts
+- [\#3928](https://github.com/SSSD/sssd/issues/3928) - [RFE] KCM ccache daemon in SSSD
+- [\#4446](https://github.com/SSSD/sssd/issues/4446) - krb5: properly handle 'password expired' information retured by the KDC during PKINIT/Smartcard authentication
+- [\#4434](https://github.com/SSSD/sssd/issues/4434) - IPA: do not lookup IPA users via extdom plugin
+- [\#4432](https://github.com/SSSD/sssd/issues/4432) - Handle certmap errors gracefully during user lookups
+- [\#4422](https://github.com/SSSD/sssd/issues/4422) - Properly support IPA's promptusername config option
+- [\#4414](https://github.com/SSSD/sssd/issues/4414) - Dbus activate InfoPipe does not answer some initial request
+- [\#4412](https://github.com/SSSD/sssd/issues/4412) - Smart card login fails if same cert mapped to IdM user and AD user
+- [\#4385](https://github.com/SSSD/sssd/issues/4385) - application domain requires inherit_from and cannot be used separately
+- [\#4358](https://github.com/SSSD/sssd/issues/4358) - expect sss_ssh_authorizedkeys and sss_ssh_knownhostsproxy manuals to be packaged into sssd-common package
+- [\#4330](https://github.com/SSSD/sssd/issues/4330) - selinux_provider fails in a container if libsemanage is not available
+- [\#4301](https://github.com/SSSD/sssd/issues/4301) - D-Bus GetUserGroups method of sssd is always qualifying all group names
+- [\#4273](https://github.com/SSSD/sssd/issues/4273) - Smartcard authentication with UPN as logon name might fail
+- [\#4243](https://github.com/SSSD/sssd/issues/4243) - [RFE] Read prioritized list of trusted domains for unqualified ID resolution from IDM server
+- [\#4225](https://github.com/SSSD/sssd/issues/4225) - [sssd-secrets] https proxy talks plain http
+- [\#4215](https://github.com/SSSD/sssd/issues/4215) - sssd does not refresh expired cache entries with enumerate=true
+- [\#4098](https://github.com/SSSD/sssd/issues/4098) - sssctl: distinguish between autodiscovered and joined domains
+- [\#3981](https://github.com/SSSD/sssd/issues/3981) - The member link is not removed when the last group's nested member goes away
+- [\#3755](https://github.com/SSSD/sssd/issues/3755) - Add SSSD domain as property to user on D-Bus
+- [\#2540](https://github.com/SSSD/sssd/issues/2540) - sss_ssh_knownhostsproxy prevents connection if the network is unreachable via one IP address
+- [\#4361](https://github.com/SSSD/sssd/issues/4361) - sssctl config-check does not give any error when default configuration file is not present
+- [\#4325](https://github.com/SSSD/sssd/issues/4325) - RFE: Create troubleshooting tool to check authentication, authorization and extended attribute lookup
+- [\#4166](https://github.com/SSSD/sssd/issues/4166) - RFE to add option of check user access in SSSD
 
 Detailed Changelog
 ------------------

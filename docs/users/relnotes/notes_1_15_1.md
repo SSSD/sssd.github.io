@@ -18,25 +18,25 @@ Packaging Changes
 Documentation Changes
 ---------------------
 
-- A new PAM module option `prompt_always` was added. This option is related to fixing <https://pagure.io/SSSD/sssd/issue/2984which changed the behaviour of the PAM module so that `pam_sss` always uses an auth token that was on stack. The new `prompt_always` option makes it possible to restore the previous behaviour.
+- A new PAM module option `prompt_always` was added. This option is related to fixing <https://github.com/SSSD/sssd/issues/4025which changed the behaviour of the PAM module so that `pam_sss` always uses an auth token that was on stack. The new `prompt_always` option makes it possible to restore the previous behaviour.
 
 Tickets Fixed
 -------------
 
-- [\#3112](https://pagure.io/SSSD/sssd/issue/3112) - When sssd.conf is missing, create one with id_provider=files
-- [\#3220](https://pagure.io/SSSD/sssd/issue/3220) - Improve successful Dynamic DNS update log messages
-- [\#3227](https://pagure.io/SSSD/sssd/issue/3227) - sssd doesn't update PTR records if A/PTR zones are configured as non-secure and secure
-- [\#3230](https://pagure.io/SSSD/sssd/issue/3230) - Use the same logic for matching GC results in initgroups and user lookups
-- [\#3260](https://pagure.io/SSSD/sssd/issue/3260) - handle default_domain_suffix for ssh requests with default_domain_suffix
-- [\#3262](https://pagure.io/SSSD/sssd/issue/3262) - Implement a files provider to mirror the contents of /etc/passwd and /etc/groups
-- [\#3270](https://pagure.io/SSSD/sssd/issue/3270) - [RFE] Add PKINIT support to SSSD Kerberos proivder
-- [\#3298](https://pagure.io/SSSD/sssd/issue/3298) - Socket activation of SSSD doesn't work and leads to chaos
-- [\#3299](https://pagure.io/SSSD/sssd/issue/3299) - SSSD does not start if using only the local provider and services line is empty
-- [\#3300](https://pagure.io/SSSD/sssd/issue/3300) - Avoid running two instances of the same service
-- [\#3309](https://pagure.io/SSSD/sssd/issue/3309) - Coverity warns about an unused value in IPA sudo code
-- [\#3313](https://pagure.io/SSSD/sssd/issue/3313) - cache_req should use an negative cache entry for UPN based lookups
-- [\#2984](https://pagure.io/SSSD/sssd/issue/2984) - Don't prompt for password if there is already one on the stack
-- [\#1126](https://pagure.io/SSSD/sssd/issue/1126) - Reuse cache_req() in responder code
+- [\#4145](https://github.com/SSSD/sssd/issues/4145) - When sssd.conf is missing, create one with id_provider=files
+- [\#4253](https://github.com/SSSD/sssd/issues/4253) - Improve successful Dynamic DNS update log messages
+- [\#4260](https://github.com/SSSD/sssd/issues/4260) - sssd doesn't update PTR records if A/PTR zones are configured as non-secure and secure
+- [\#4263](https://github.com/SSSD/sssd/issues/4263) - Use the same logic for matching GC results in initgroups and user lookups
+- [\#4293](https://github.com/SSSD/sssd/issues/4293) - handle default_domain_suffix for ssh requests with default_domain_suffix
+- [\#4295](https://github.com/SSSD/sssd/issues/4295) - Implement a files provider to mirror the contents of /etc/passwd and /etc/groups
+- [\#4303](https://github.com/SSSD/sssd/issues/4303) - [RFE] Add PKINIT support to SSSD Kerberos proivder
+- [\#4331](https://github.com/SSSD/sssd/issues/4331) - Socket activation of SSSD doesn't work and leads to chaos
+- [\#4332](https://github.com/SSSD/sssd/issues/4332) - SSSD does not start if using only the local provider and services line is empty
+- [\#4333](https://github.com/SSSD/sssd/issues/4333) - Avoid running two instances of the same service
+- [\#4342](https://github.com/SSSD/sssd/issues/4342) - Coverity warns about an unused value in IPA sudo code
+- [\#4346](https://github.com/SSSD/sssd/issues/4346) - cache_req should use an negative cache entry for UPN based lookups
+- [\#4025](https://github.com/SSSD/sssd/issues/4025) - Don't prompt for password if there is already one on the stack
+- [\#2168](https://github.com/SSSD/sssd/issues/2168) - Reuse cache_req() in responder code
 
 Detailed Changelog
 ------------------

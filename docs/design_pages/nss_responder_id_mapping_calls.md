@@ -6,14 +6,14 @@ version: 1.12.x
 
 Related tickets:
 
-  - [RFE Integrate SSSD with CIFS client](https://pagure.io/SSSD/sssd/issue/1534)
-  - [RFE Use the Global Catalog in SSSD for the AD provider](https://pagure.io/SSSD/sssd/issue/1557)
-  - [RFE Use the getpwnam()/getgrnam() interface as a gateway to resolve SID to Names](https://pagure.io/SSSD/sssd/issue/1559)
+  - [RFE Integrate SSSD with CIFS client](https://github.com/SSSD/sssd/issues/2576)
+  - [RFE Use the Global Catalog in SSSD for the AD provider](https://github.com/SSSD/sssd/issues/2599)
+  - [RFE Use the getpwnam()/getgrnam() interface as a gateway to resolve SID to Names](https://github.com/SSSD/sssd/issues/2601)
 
 Related design documents:
 
-  - [Integrate SSSD with CIFS Client](https://docs.pagure.org/SSSD.sssd/design_pages/integrate_sssd_with_cifs_client.html)
-  - [Global Catalog Lookups in SSSD](https://docs.pagure.org/SSSD.sssd/design_pages/global_catalog_lookups.html)
+  - [Integrate SSSD with CIFS Client](integrate_sssd_with_cifs_client.md)
+  - [Global Catalog Lookups in SSSD](global_catalog_lookups.md)
 
 ## Problem Statement
 
@@ -30,7 +30,7 @@ Applications interacting tightly with users and groups from AD domains e.g.
 
 need to know which SID relates to which POSIX ID or name.
 
-Mapping a SID to a user or group would be possible with the current interfaces as described in ticket [\#1559](https://pagure.io/SSSD/sssd/issue/1559). But getting a SID for a user or a group would be at least hard and ugly if not impossible. I think the solution proposed in ticket [\#1559](https://pagure.io/SSSD/sssd/issue/1559) is a good and useful shortcut. But by making the \*bySID lookups also available via a new calls applications will have a more reliable interface, e.g. by allowing more specific error codes (see details below).
+Mapping a SID to a user or group would be possible with the current interfaces as described in ticket [\#2601](https://github.com/SSSD/sssd/issues/2601). But getting a SID for a user or a group would be at least hard and ugly if not impossible. I think the solution proposed in ticket [\#2601](https://github.com/SSSD/sssd/issues/2601) is a good and useful shortcut. But by making the \*bySID lookups also available via a new calls applications will have a more reliable interface, e.g. by allowing more specific error codes (see details below).
 
 ## Overview of the solution
 
@@ -57,7 +57,7 @@ The NSS responder will be extended with four new calls: :
                                         the type (unknown, user, group, both) of the object.
                                     */
 
-Alternatively SSS_NSS_GETSIDBYID and SSS_NSS_GETIDBYSID could be implemented to take an return arrays SIDs and POSIX IDs respectively as the related cifs_idmap API calls (see [Integrate SSSD with CIFS Client](https://docs.pagure.org/SSSD.sssd/design_pages/integrate_sssd_with_cifs_client.html)). I took the approach mentioned above because it better matches the other NSS responder calls and additionally I do not like the implicit required ordering in the input and output array.
+Alternatively SSS_NSS_GETSIDBYID and SSS_NSS_GETIDBYSID could be implemented to take an return arrays SIDs and POSIX IDs respectively as the related cifs_idmap API calls (see [Integrate SSSD with CIFS Client](integrate_sssd_with_cifs_client.md)). I took the approach mentioned above because it better matches the other NSS responder calls and additionally I do not like the implicit required ordering in the input and output array.
 
 After receiving the request the NSS responder will first check if it can create the response from cached data. If not the request is forwarded to the providers. For the \*byName and \*byID calls the corresponding existing interface can be used. For the \*bySID call a new call must be added to the providers. Currently only the IPA and AD provider will support the new calls. If the provider cannot handle the requests it will return an appropriate error code which it return to the client via the NSS responder.
 

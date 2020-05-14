@@ -6,11 +6,11 @@ version: not-implemented
 
 Related ticket(s):
 
-  - <https://pagure.io/SSSD/sssd/issue/2233>
+  - <https://github.com/SSSD/sssd/issues/3275>
 
 Related design page(s):
 
-  - [DBus Responder](https://docs.pagure.org/SSSD.sssd/design_pages/dbus_responder.html)
+  - [DBus Responder](dbus_responder.md)
 
 ## Problem statement
 

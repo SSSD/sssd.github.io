@@ -6,13 +6,13 @@ version: 1.13.x
 
 Related ticket(s):
 
-  - <https://pagure.io/SSSD/sssd/issue/2553>
+  - <https://github.com/SSSD/sssd/issues/3595>
 
 ## Problem statement
 
 The InfoPipe responder adds a listing capability to the frontend code, allowing the user to list users matching a very simple filter. To implement the back end part of this feature properly, we need to add the possibility to retrieve multiple, but not all entries with a single DP request.
 
-For details of the InfoPipe API, please see the [DBus responder design page](https://docs.pagure.org/SSSD.sssd/design_pages/dbus_users_and_groups.html).
+For details of the InfoPipe API, please see the [DBus responder design page](dbus_users_and_groups.md).
 
 ## Use cases
 

@@ -6,7 +6,7 @@ version: 1.16.x
 
 ## Related ticket(s):
 
-* https://pagure.io/SSSD/sssd/issue/2840
+* https://github.com/SSSD/sssd/issues/3881
 
 ## Problem statement
 
@@ -40,9 +40,9 @@ For printing the rules, the tool will simply call `ldb_search`, retrieve all obj
 
 ## Future enhancements
 
-In future, the tool should also print the output in both human-readable and machine-readable formats. For machine readable output, JSON is the best choice, since the KCM responder already depends on `libjansson.` This enhancement is tracked in ticket [\#3581](https://pagure.io/SSSD/sssd/issue/3581).
+In future, the tool should also print the output in both human-readable and machine-readable formats. For machine readable output, JSON is the best choice, since the KCM responder already depends on `libjansson.` This enhancement is tracked in ticket [\#4605](https://github.com/SSSD/sssd/issues/4605).
 
-Additionally, for HBAC rules which are linked to a group, it might be handy to unroll the group members and print them if the administrator wishes. This enhancement is tracked with ticket [\#3580](https://pagure.io/SSSD/sssd/issue/3580)
+Additionally, for HBAC rules which are linked to a group, it might be handy to unroll the group members and print them if the administrator wishes. This enhancement is tracked with ticket [\#4604](https://github.com/SSSD/sssd/issues/4604)
 
 ## How To Test
 

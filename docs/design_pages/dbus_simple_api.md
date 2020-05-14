@@ -6,7 +6,7 @@ version: 1.12.x
 
 Related ticket(s):
 
-  - [Create a library to simplify usage of D-Bus responder](https://pagure.io/SSSD/sssd/issue/2254)
+  - [Create a library to simplify usage of D-Bus responder](https://github.com/SSSD/sssd/issues/3296)
 
 ## Problem Statement
 

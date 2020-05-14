@@ -164,7 +164,7 @@ These all have their equivalent as a sudo option that can be placed in `sudoOpti
 
 **Problems with IPA-AD trust when fully qualified names are required for IPA**
 
-**Fixed in 1.14.0**: <https://pagure.io/SSSD/sssd/issue/2919>
+**Fixed in 1.14.0**: <https://github.com/SSSD/sssd/issues/3960>
 
 In configurations that requires IPA users and groups to use fully qualified names (i.e. `username@IPA.DOMAIN` and `groupname@IPA.DOMAIN`) sudo is not able to resolve the users or groups in sudo rules correctly.
 
@@ -181,7 +181,7 @@ Or: :
 
 **Sudo rule won't work since 1.13.4 if it contains non-POSIX group with IPA provider**
 
-**Won't fix, intentional**: <https://pagure.io/SSSD/sssd/issue/3046>
+**Won't fix, intentional**: <https://github.com/SSSD/sssd/issues/4079>
 
 We switched to IPA sudo rules schema stored at `cn=sudo` in SSSD 1.13.4. The slapi-nis plugin that is used to generate the compat tree `ou=sudoers` unfold members of non-POSIX group and stores each as `sudoUser: member` value. This makes sudo rules work even with non-POSIX group if the compat tree is used.
 

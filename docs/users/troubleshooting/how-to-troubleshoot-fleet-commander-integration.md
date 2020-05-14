@@ -4,7 +4,7 @@ This document consists in a few common issues faced while playing with Fleet Com
 
 It's important to understand that the role played by SSSD in this integration is **only** on the client side and that for general issues related to Fleet Commander you should always refer, in the first place, to: <https://fleet-commander.org/documentation.html>
 
-Also, refer to the following design page in case you'd like to have a better understanding of the feature itself: <https://docs.pagure.org/SSSD.sssd/design_pages/fleet_commander_integration.html>
+Also, refer to the following design page in case you'd like to have a better understanding of the feature itself: <../../design_pages/fleet_commander_integration.md>
 
 ## Common misconfigurations:
 
@@ -239,7 +239,7 @@ For the cases where the profiles haven't been fetched/stored, messages like thos
 ...
 ```
 
-In case anything like those is seen, please, contact open a SSSD bug on https://pagure.io/SSSD/sssd/issues__ with a descriptive name, like: "Fleet Commander: failed to fetch Desktop Profile rules" and add the following logs:
+In case anything like those is seen, please, contact open a SSSD bug on [GitHub](https://github.com/SSSD/sssd/issues/new) with a descriptive name, like: "Fleet Commander: failed to fetch Desktop Profile rules" and add the following logs:
 
   - journalctl messages from Fleet Commander
   - http's error_log messages with after adding `[global]\ndebug=True` to the IPA's config file and restarting httpd;

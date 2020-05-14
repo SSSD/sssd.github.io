@@ -33,69 +33,69 @@ Documentation Changes
 Tickets Fixed
 -------------
 
-- [\#546](https://pagure.io/SSSD/sssd/issue/546) [RFE] Support for smart cards
-- [\#1697](https://pagure.io/SSSD/sssd/issue/1697) sssd: incorrect checks on length values during packet decoding
-- [\#1926](https://pagure.io/SSSD/sssd/issue/1926) [RFE] Start the dynamic DNS update after the SSSD has been setup for the first time
-- [\#1994](https://pagure.io/SSSD/sssd/issue/1994) Complain loudly if backend doesn't start due to missing or invalid keytab
-- [\#2275](https://pagure.io/SSSD/sssd/issue/2275) nested netgroups do not work in IPA provider
-- [\#2283](https://pagure.io/SSSD/sssd/issue/2283) test dyndns failed.
-- [\#2335](https://pagure.io/SSSD/sssd/issue/2335) Investigate using the krb5 responder for driving the PAM conversation with OTPs
-- [\#2463](https://pagure.io/SSSD/sssd/issue/2463) Pass error messages via the extdom plugin
-- [\#2495](https://pagure.io/SSSD/sssd/issue/2495) [RFE]Allow sssd to add a new option that would specify which server to update DNS with
-- [\#2549](https://pagure.io/SSSD/sssd/issue/2549) RFE: Support multiple interfaces with the dyndns_iface option
-- [\#2553](https://pagure.io/SSSD/sssd/issue/2553) RFE: Add support for wildcard-based cache updates
-- [\#2558](https://pagure.io/SSSD/sssd/issue/2558) Add dualstack and multihomed support
-- [\#2561](https://pagure.io/SSSD/sssd/issue/2561) Too much logging
-- [\#2579](https://pagure.io/SSSD/sssd/issue/2579) TRACKER: Support one-way trusts for IPA
-- [\#2581](https://pagure.io/SSSD/sssd/issue/2581) Re-check memcache after acquiring the lock in the client code
-- [\#2584](https://pagure.io/SSSD/sssd/issue/2584) RFE: Support client-side overrides
-- [\#2597](https://pagure.io/SSSD/sssd/issue/2597) Add index for 'objectSIDString' and maybe to other cache attributes
-- [\#2637](https://pagure.io/SSSD/sssd/issue/2637) RFE: Don't mark the main domain as offline if SSSD can't connect to a subdomain
-- [\#2639](https://pagure.io/SSSD/sssd/issue/2639) RFE: Detect re-established trusts in the IPA subdomain code
-- [\#2652](https://pagure.io/SSSD/sssd/issue/2652) KDC proxy not working with SSSD krb5_use_kdcinfo enabled
-- [\#2676](https://pagure.io/SSSD/sssd/issue/2676) Group members are not turned into ghost entries when the user is purged from the SSSD cache
-- [\#2682](https://pagure.io/SSSD/sssd/issue/2682) sudoOrder not honored as expected
-- [\#2688](https://pagure.io/SSSD/sssd/issue/2688) Default to config_file_version=2
-- [\#2691](https://pagure.io/SSSD/sssd/issue/2691) GPO: PAM system error returned for PAM_ACCT_MGMT and offline mode
-- [\#2692](https://pagure.io/SSSD/sssd/issue/2692) GPO: Access denied due to using wrong sam_account_name
-- [\#2699](https://pagure.io/SSSD/sssd/issue/2699) SSSDConfig: wrong return type returned on python3
-- [\#2700](https://pagure.io/SSSD/sssd/issue/2700) krb5_child should always consider online state to allow use of MS-KKDC proxy
-- [\#2708](https://pagure.io/SSSD/sssd/issue/2708) Logging messages from user point of view
-- [\#2711](https://pagure.io/SSSD/sssd/issue/2711) [RFE] Provide interface for SSH to fetch user certificate
-- [\#2712](https://pagure.io/SSSD/sssd/issue/2712) Initgroups memory cache does not work with fq names
-- [\#2716](https://pagure.io/SSSD/sssd/issue/2716) Initgroups mmap cache needs update after db changes
-- [\#2717](https://pagure.io/SSSD/sssd/issue/2717) well-known SID check is broken for NetBIOS prefixes
-- [\#2718](https://pagure.io/SSSD/sssd/issue/2718) SSSD keytab validation check expects root ownership
-- [\#2719](https://pagure.io/SSSD/sssd/issue/2719) IPA: returned unknown dp error code with disabled migration mode
-- [\#2722](https://pagure.io/SSSD/sssd/issue/2722) Missing config options in gentoo init script
-- [\#2723](https://pagure.io/SSSD/sssd/issue/2723) Could not resolve AD user from root domain
-- [\#2724](https://pagure.io/SSSD/sssd/issue/2724) getgrgid for user's UID on a trust client prevents getpw\*
-- [\#2725](https://pagure.io/SSSD/sssd/issue/2725) If AD site detection fails, not even ad_site override skipped
-- [\#2729](https://pagure.io/SSSD/sssd/issue/2729) Do not send SSS_OTP if both factors were entered separately
-- [\#2731](https://pagure.io/SSSD/sssd/issue/2731) searching SID by ID always checks all domains
-- [\#2733](https://pagure.io/SSSD/sssd/issue/2733) Don't use deprecated libraries (libsystemd-\*)
-- [\#2737](https://pagure.io/SSSD/sssd/issue/2737) sss_override: add import and export commands
-- [\#2738](https://pagure.io/SSSD/sssd/issue/2738) Cannot build rpms from upstream spec file on rawhide
-- [\#2742](https://pagure.io/SSSD/sssd/issue/2742) When certificate is added via user-add-cert, it cannot be looked up via org.freedesktop.sssd.infopipe.Users.FindByCertificate
-- [\#2743](https://pagure.io/SSSD/sssd/issue/2743) memory cache can work intermittently
-- [\#2744](https://pagure.io/SSSD/sssd/issue/2744) cleanup_groups should sanitize dn of groups
-- [\#2746](https://pagure.io/SSSD/sssd/issue/2746) the PAM srv test often fails on RHEL-7
-- [\#2748](https://pagure.io/SSSD/sssd/issue/2748) test_memory_cache failed in invalidation cache before stop
-- [\#2749](https://pagure.io/SSSD/sssd/issue/2749) Fix crash in nss responder
-- [\#2754](https://pagure.io/SSSD/sssd/issue/2754) Clear environment and set restrictive umask in p11_child
-- [\#2757](https://pagure.io/SSSD/sssd/issue/2757) sss_override does not work correctly when 'use_fully_qualified_names = True'
-- [\#2758](https://pagure.io/SSSD/sssd/issue/2758) sss_override contains an extra parameter --debug but is not listed in the man page or in the arguments help
-- [\#2762](https://pagure.io/SSSD/sssd/issue/2762) [RFE] sssd: better feedback form constraint password change
-- [\#2768](https://pagure.io/SSSD/sssd/issue/2768) Test 'test_id_cleanup_exp_group' failed
-- [\#2772](https://pagure.io/SSSD/sssd/issue/2772) sssd cannot resolve user names containing backslash with ldap provider
-- [\#2773](https://pagure.io/SSSD/sssd/issue/2773) Make p11_child timeout configurable
-- [\#2777](https://pagure.io/SSSD/sssd/issue/2777) Fix memory leak in GPO
-- [\#2782](https://pagure.io/SSSD/sssd/issue/2782) sss_override : The local override user is not found
-- [\#2783](https://pagure.io/SSSD/sssd/issue/2783) REGRESSION: Dyndns soes not update reverse DNS records
-- [\#2790](https://pagure.io/SSSD/sssd/issue/2790) sss_override --name doesn't work with RFC2307 and ghost users
-- [\#2799](https://pagure.io/SSSD/sssd/issue/2799) unit tests do not link correctly on Debian
-- [\#2803](https://pagure.io/SSSD/sssd/issue/2803) Memory leak / possible DoS with krb auth.
-- [\#2805](https://pagure.io/SSSD/sssd/issue/2805) AD: Conditional jump or move depends on uninitialised value
+- [\#1588](https://github.com/SSSD/sssd/issues/1588) [RFE] Support for smart cards
+- [\#2739](https://github.com/SSSD/sssd/issues/2739) sssd: incorrect checks on length values during packet decoding
+- [\#2968](https://github.com/SSSD/sssd/issues/2968) [RFE] Start the dynamic DNS update after the SSSD has been setup for the first time
+- [\#3036](https://github.com/SSSD/sssd/issues/3036) Complain loudly if backend doesn't start due to missing or invalid keytab
+- [\#3317](https://github.com/SSSD/sssd/issues/3317) nested netgroups do not work in IPA provider
+- [\#3325](https://github.com/SSSD/sssd/issues/3325) test dyndns failed.
+- [\#3377](https://github.com/SSSD/sssd/issues/3377) Investigate using the krb5 responder for driving the PAM conversation with OTPs
+- [\#3505](https://github.com/SSSD/sssd/issues/3505) Pass error messages via the extdom plugin
+- [\#3537](https://github.com/SSSD/sssd/issues/3537) [RFE]Allow sssd to add a new option that would specify which server to update DNS with
+- [\#3591](https://github.com/SSSD/sssd/issues/3591) RFE: Support multiple interfaces with the dyndns_iface option
+- [\#3595](https://github.com/SSSD/sssd/issues/3595) RFE: Add support for wildcard-based cache updates
+- [\#3600](https://github.com/SSSD/sssd/issues/3600) Add dualstack and multihomed support
+- [\#3603](https://github.com/SSSD/sssd/issues/3603) Too much logging
+- [\#3620](https://github.com/SSSD/sssd/issues/3620) TRACKER: Support one-way trusts for IPA
+- [\#3622](https://github.com/SSSD/sssd/issues/3622) Re-check memcache after acquiring the lock in the client code
+- [\#3625](https://github.com/SSSD/sssd/issues/3625) RFE: Support client-side overrides
+- [\#3638](https://github.com/SSSD/sssd/issues/3638) Add index for 'objectSIDString' and maybe to other cache attributes
+- [\#3678](https://github.com/SSSD/sssd/issues/3678) RFE: Don't mark the main domain as offline if SSSD can't connect to a subdomain
+- [\#3680](https://github.com/SSSD/sssd/issues/3680) RFE: Detect re-established trusts in the IPA subdomain code
+- [\#3693](https://github.com/SSSD/sssd/issues/3693) KDC proxy not working with SSSD krb5_use_kdcinfo enabled
+- [\#3717](https://github.com/SSSD/sssd/issues/3717) Group members are not turned into ghost entries when the user is purged from the SSSD cache
+- [\#3723](https://github.com/SSSD/sssd/issues/3723) sudoOrder not honored as expected
+- [\#3729](https://github.com/SSSD/sssd/issues/3729) Default to config_file_version=2
+- [\#3732](https://github.com/SSSD/sssd/issues/3732) GPO: PAM system error returned for PAM_ACCT_MGMT and offline mode
+- [\#3733](https://github.com/SSSD/sssd/issues/3733) GPO: Access denied due to using wrong sam_account_name
+- [\#3740](https://github.com/SSSD/sssd/issues/3740) SSSDConfig: wrong return type returned on python3
+- [\#3741](https://github.com/SSSD/sssd/issues/3741) krb5_child should always consider online state to allow use of MS-KKDC proxy
+- [\#3749](https://github.com/SSSD/sssd/issues/3749) Logging messages from user point of view
+- [\#3752](https://github.com/SSSD/sssd/issues/3752) [RFE] Provide interface for SSH to fetch user certificate
+- [\#3753](https://github.com/SSSD/sssd/issues/3753) Initgroups memory cache does not work with fq names
+- [\#3757](https://github.com/SSSD/sssd/issues/3757) Initgroups mmap cache needs update after db changes
+- [\#3758](https://github.com/SSSD/sssd/issues/3758) well-known SID check is broken for NetBIOS prefixes
+- [\#3759](https://github.com/SSSD/sssd/issues/3759) SSSD keytab validation check expects root ownership
+- [\#3760](https://github.com/SSSD/sssd/issues/3760) IPA: returned unknown dp error code with disabled migration mode
+- [\#3763](https://github.com/SSSD/sssd/issues/3763) Missing config options in gentoo init script
+- [\#3764](https://github.com/SSSD/sssd/issues/3764) Could not resolve AD user from root domain
+- [\#3765](https://github.com/SSSD/sssd/issues/3765) getgrgid for user's UID on a trust client prevents getpw\*
+- [\#3766](https://github.com/SSSD/sssd/issues/3766) If AD site detection fails, not even ad_site override skipped
+- [\#3770](https://github.com/SSSD/sssd/issues/3770) Do not send SSS_OTP if both factors were entered separately
+- [\#3772](https://github.com/SSSD/sssd/issues/3772) searching SID by ID always checks all domains
+- [\#3774](https://github.com/SSSD/sssd/issues/3774) Don't use deprecated libraries (libsystemd-\*)
+- [\#3778](https://github.com/SSSD/sssd/issues/3778) sss_override: add import and export commands
+- [\#3779](https://github.com/SSSD/sssd/issues/3779) Cannot build rpms from upstream spec file on rawhide
+- [\#3783](https://github.com/SSSD/sssd/issues/3783) When certificate is added via user-add-cert, it cannot be looked up via org.freedesktop.sssd.infopipe.Users.FindByCertificate
+- [\#3784](https://github.com/SSSD/sssd/issues/3784) memory cache can work intermittently
+- [\#3785](https://github.com/SSSD/sssd/issues/3785) cleanup_groups should sanitize dn of groups
+- [\#3787](https://github.com/SSSD/sssd/issues/3787) the PAM srv test often fails on RHEL-7
+- [\#3789](https://github.com/SSSD/sssd/issues/3789) test_memory_cache failed in invalidation cache before stop
+- [\#3790](https://github.com/SSSD/sssd/issues/3790) Fix crash in nss responder
+- [\#3795](https://github.com/SSSD/sssd/issues/3795) Clear environment and set restrictive umask in p11_child
+- [\#3798](https://github.com/SSSD/sssd/issues/3798) sss_override does not work correctly when 'use_fully_qualified_names = True'
+- [\#3799](https://github.com/SSSD/sssd/issues/3799) sss_override contains an extra parameter --debug but is not listed in the man page or in the arguments help
+- [\#3803](https://github.com/SSSD/sssd/issues/3803) [RFE] sssd: better feedback form constraint password change
+- [\#3809](https://github.com/SSSD/sssd/issues/3809) Test 'test_id_cleanup_exp_group' failed
+- [\#3813](https://github.com/SSSD/sssd/issues/3813) sssd cannot resolve user names containing backslash with ldap provider
+- [\#3814](https://github.com/SSSD/sssd/issues/3814) Make p11_child timeout configurable
+- [\#3818](https://github.com/SSSD/sssd/issues/3818) Fix memory leak in GPO
+- [\#3823](https://github.com/SSSD/sssd/issues/3823) sss_override : The local override user is not found
+- [\#3824](https://github.com/SSSD/sssd/issues/3824) REGRESSION: Dyndns soes not update reverse DNS records
+- [\#3831](https://github.com/SSSD/sssd/issues/3831) sss_override --name doesn't work with RFC2307 and ghost users
+- [\#3840](https://github.com/SSSD/sssd/issues/3840) unit tests do not link correctly on Debian
+- [\#3844](https://github.com/SSSD/sssd/issues/3844) Memory leak / possible DoS with krb auth.
+- [\#3846](https://github.com/SSSD/sssd/issues/3846) AD: Conditional jump or move depends on uninitialised value
 Detailed Changelog
 ------------------
 
@@ -217,7 +217,7 @@ Michal Židek (13):
 - Makefile.am: Add missing AM_CFLAGS
 - SYSDB: Add function to expire entry
 - cleanup task: Expire all memberof targets when removing user
-- CI: Add regression test for [\#2676](https://pagure.io/SSSD/sssd/issue/2676)
+- CI: Add regression test for [\#3717](https://github.com/SSSD/sssd/issues/3717)
 - intg: Fix some PEP 8 violations
 - PAM: Make p11_child timeout configurable
 - tests: Set p11_child_timeout to 30 in tests

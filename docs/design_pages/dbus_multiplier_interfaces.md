@@ -6,7 +6,7 @@ version: 1.13.x
 
 Related ticket(s):
 
-  - [IFP: support multiple interfaces for object](https://pagure.io/SSSD/sssd/issue/2339)
+  - [IFP: support multiple interfaces for object](https://github.com/SSSD/sssd/issues/3381)
 
 ## Problem Statement
 

@@ -5,7 +5,7 @@ version: 1.12.x
 # Specify the DNS site a client is using
 
 Related ticket(s):
-  - https://pagure.io/SSSD/sssd/issue/2486
+  - https://github.com/SSSD/sssd/issues/3528
 
 ## Problem statement
 

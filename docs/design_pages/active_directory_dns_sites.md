@@ -6,7 +6,7 @@ version: 1.10.x
 
 Related ticket(s):
 
-  - [RFE sssd should support DNS sites](https://pagure.io/SSSD/sssd/issue/1032)
+  - [RFE sssd should support DNS sites](https://github.com/SSSD/sssd/issues/2074)
 
 ## Problem Statement
 

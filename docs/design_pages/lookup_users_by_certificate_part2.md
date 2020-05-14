@@ -6,11 +6,11 @@ version: 1.14.x
 
 Related ticket(s):
 
-  - <https://pagure.io/SSSD/sssd/issue/2897>
+  - <https://github.com/SSSD/sssd/issues/3938>
 
 ## Problem statement
 
-So far the main focus of the SSSD certificate and Smartcard authentication support in SSSD was on FreeIPA. Although it is possible to use it with the AD provider as well (see [SmartcardAuthenticationTestingWithAD](https://docs.pagure.org/SSSD.sssd/design_pages/smartcard-authentication-testing-with-ad.html) for details) it requires some manual configuration.
+So far the main focus of the SSSD certificate and Smartcard authentication support in SSSD was on FreeIPA. Although it is possible to use it with the AD provider as well (see [SmartcardAuthenticationTestingWithAD](smartcard-authentication-testing-with-ad.md) for details) it requires some manual configuration.
 
 On this page we describe the enhanced support for certificates in AD and in override data for the direct (AD provider) and indirect (IPA with trust to AD) integration.
 
@@ -64,7 +64,7 @@ The *sss_override user-add* utility has a new option *--certificate* (*-x*) whic
 
 ## How To Test
 
-Testing can be done with *dbus-send* as described in [LookupUsersByCertificate](https://docs.pagure.org/SSSD.sssd/design_pages/lookup_users_by_certificate.html#how-to-test). Instead of storing the certificate in the user object of an IPA user it should be now stored in the user object of an AD user as e.g. described in [WritingthecertificatetoAD](https://docs.pagure.org/SSSD.sssd/design_pages/smartcard_authentication_testing_with_ad.html#writing-the-certificate-to-AD). Additionally certificates overrides can be written with the *sss_override* utility for the direct integration or the *ipa idoverrideuser_add_cert* command for the indirect integration.
+Testing can be done with *dbus-send* as described in [LookupUsersByCertificate](lookup_users_by_certificate.md#how-to-test). Instead of storing the certificate in the user object of an IPA user it should be now stored in the user object of an AD user as e.g. described in [WritingthecertificatetoAD](smartcard_authentication_testing_with_ad.md#writing-the-certificate-to-AD). Additionally certificates overrides can be written with the *sss_override* utility for the direct integration or the *ipa idoverrideuser_add_cert* command for the indirect integration.
 
 If multiple certificate are added it should be noted that a user my have multiple different certificates but a single certificate should be only assigned to a single user. If a certificate is assigned to multiple users no matter if in the user object or in the override the lookup will fail sooner or later.
 

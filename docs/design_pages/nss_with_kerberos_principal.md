@@ -6,9 +6,9 @@ version: 1.12.x
 
 Related ticket(s):
 
-  - [RFE Implement localauth plugin for MIT krb5 1.12](https://pagure.io/SSSD/sssd/issue/1835)
-  - [RFE Allow email-address in ldap_user_principal](https://pagure.io/SSSD/sssd/issue/1749)
-  - [RFE: Add a configuration option to specify where a snippet with sssd_krb5_localauth_plugin.so is generated](https://pagure.io/SSSD/sssd/issue/2473)
+  - [RFE Implement localauth plugin for MIT krb5 1.12](https://github.com/SSSD/sssd/issues/2877)
+  - [RFE Allow email-address in ldap_user_principal](https://github.com/SSSD/sssd/issues/2791)
+  - [RFE: Add a configuration option to specify where a snippet with sssd_krb5_localauth_plugin.so is generated](https://github.com/SSSD/sssd/issues/3515)
 
 ## Problem Statement
 

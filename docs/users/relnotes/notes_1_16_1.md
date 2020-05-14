@@ -6,17 +6,17 @@ Highlights
 
 ### New Features
 
-- A new option `auto_private_groups` was added. If this option is enabled, SSSD will automatically create user private groups based on user's UID number. The GID number is ignored in this case. Please see <https://docs.pagure.org/SSSD.sssd/design_pages/auto_private_groups.htmlfor more details on the feature.
-- The SSSD smart card integration now supports a special type of PAM conversation implemented by GDM which allows the user to select the appropriate smrt card certificate in GDM. Please refer to <https://docs.pagure.org/SSSD.sssd/design_pages/smartcard_multiple_certificates.htmlfor more details about this feature.
-- A new API for accessing user and group information was added. This API is similar to the tradiional Name Service Switch API, but allows the consumer to talk to SSSD directly as well as to fine-tune the query with e.g. how cache should be evaluated. Please see <https://docs.pagure.org/SSSD.sssd/design_pages/enhanced_nss_api.htmlfor more information on the new API.
-- The `sssctl` command line tool gained a new command `access-report`, which can generate who can access the client machine. Currently only generating the report on an IPA client based on HBAC rules is supported. Please see <https://docs.pagure.org/SSSD.sssd/design_pages/attestation_report.htmlfor more information about this new feature.
+- A new option `auto_private_groups` was added. If this option is enabled, SSSD will automatically create user private groups based on user's UID number. The GID number is ignored in this case. Please see <../../design_pages/auto_private_groups.mdfor more details on the feature.
+- The SSSD smart card integration now supports a special type of PAM conversation implemented by GDM which allows the user to select the appropriate smrt card certificate in GDM. Please refer to <../../design_pages/smartcard_multiple_certificates.mdfor more details about this feature.
+- A new API for accessing user and group information was added. This API is similar to the tradiional Name Service Switch API, but allows the consumer to talk to SSSD directly as well as to fine-tune the query with e.g. how cache should be evaluated. Please see <../../design_pages/enhanced_nss_api.mdfor more information on the new API.
+- The `sssctl` command line tool gained a new command `access-report`, which can generate who can access the client machine. Currently only generating the report on an IPA client based on HBAC rules is supported. Please see <../../design_pages/attestation_report.mdfor more information about this new feature.
 - The `hostid` provider was moved from the IPA specific code to the generic LDAP code. This allows SSH host keys to be access by the generic LDAP provider as well. See the `ldap_host_*` options in the `sssd-ldap` manual page for more details.
 - Setting the `memcache_timeout` option to 0 disabled creating the memory cache files altogether. This can be useful in cases there is a bug in the memory cache that needs working around.
 
 ### Performance enhancements
 
 - Several internal changes to how objects are stored in the cache improve SSSD performance in environments with large number of objects of the same type (e.g. many users, many groups). In particular, several useless indexes were removed and the most common object types no longer use the indexed `objectClass` attribute, but use unindexed `objectCategory` instead (\#3503)
-- In setups with `id_provider=ad` that use POSIX attributes which are replicated to the Global Catalog, SSSD uses the Global Catalog to determine which domain should be contacted for a by-ID lookup instead of iterating over all domains. More details about this feature can be found at <https://docs.pagure.org/SSSD.sssd/design_pages/uid_negative_global_catalog.html>
+- In setups with `id_provider=ad` that use POSIX attributes which are replicated to the Global Catalog, SSSD uses the Global Catalog to determine which domain should be contacted for a by-ID lookup instead of iterating over all domains. More details about this feature can be found at <../../design_pages/uid_negative_global_catalog.md>
 
 ### Notable bug fixes
 
@@ -53,59 +53,59 @@ There are no notable documentation changes such as options changing default valu
 Tickets Fixed
 -------------
 
-- [3648](https://pagure.io/SSSD/sssd/issue/3648) - Mention in the manpages that Fleet Commander does *not* work when SSSD is running as the unprivileged user
-- [3639](https://pagure.io/SSSD/sssd/issue/3639) - sssd_be consumes more memory on RHEL 7.4 systems.
-- [3627](https://pagure.io/SSSD/sssd/issue/3627) - MAN: Explain how does auto_private_groups affect subdomains
-- [3621](https://pagure.io/SSSD/sssd/issue/3621) - FleetCommander integration must not require capability DAC_OVERRIDE
-- [3618](https://pagure.io/SSSD/sssd/issue/3618) - selinux_child segfaults in a docker container
-- [3615](https://pagure.io/SSSD/sssd/issue/3615) - Requesting an AD user's private group and then the user itself returns an emty homedir
-- [3613](https://pagure.io/SSSD/sssd/issue/3613) - auto_private_groups does not work with trusted domains with direct AD integration
-- [3610](https://pagure.io/SSSD/sssd/issue/3610) - AD provider - AD BUILTIN groups are cached with gidNumber = 0
-- [3608](https://pagure.io/SSSD/sssd/issue/3608) - dbus-send unable to find user by CAC cert
-- [3603](https://pagure.io/SSSD/sssd/issue/3603) - Certificate is not removed from cache when it's removed from the override
-- [3602](https://pagure.io/SSSD/sssd/issue/3602) - SSH public key authentication keeps working after keys are removed from ID view
-- [3601](https://pagure.io/SSSD/sssd/issue/3601) - race condition: sssd_be in a one-way trust accepts request before ipa-getkeytab finishes, marking the sssd offline
-- [3599](https://pagure.io/SSSD/sssd/issue/3599) - getent output is not showing home directory for IPA AD trusted user
-- [3594](https://pagure.io/SSSD/sssd/issue/3594) - sssd used wrong search base with wrong AD server
-- [3592](https://pagure.io/SSSD/sssd/issue/3592) - Write a regression test for false possitive "corrupted" memory cache
-- [3590](https://pagure.io/SSSD/sssd/issue/3590) - proxy to files does not work with implicit_files_domain
-- [3588](https://pagure.io/SSSD/sssd/issue/3588) - sssd_nss consumes more memory until restarted or machine swaps
-- [3586](https://pagure.io/SSSD/sssd/issue/3586) - Give a more detailed debug and system-log message if krb5_init_context() failed
-- [3585](https://pagure.io/SSSD/sssd/issue/3585) - Reset password with two factor authentication fails
-- [3579](https://pagure.io/SSSD/sssd/issue/3579) - SSSD fails to fetch group information after switching IPA client to a non-default view
-- [3571](https://pagure.io/SSSD/sssd/issue/3571) - mmap cache: consistency check might fail if there are hash collisions
-- [3570](https://pagure.io/SSSD/sssd/issue/3570) - The cache-req debug string representation uses a wrong format specifier for by-ID requests
-- [3569](https://pagure.io/SSSD/sssd/issue/3569) - The cache_req code doesn't check the min_id/max_id boundaries for requests by ID
-- [3564](https://pagure.io/SSSD/sssd/issue/3564) - Smartcard authentication fails if SSSD is offline and 'krb5_store_password_if_offline = True'
-- [3563](https://pagure.io/SSSD/sssd/issue/3563) - Some sysdb tests fail because they expect a certain order of entries returned from ldb
-- [3562](https://pagure.io/SSSD/sssd/issue/3562) - Use-after free if more sudo requests run and one of them fails, causing a fail-over to a next server
-- [3560](https://pagure.io/SSSD/sssd/issue/3560) - Improve Smartcard integration if multiple certificates or multiple mapped identities are available
-- [3551](https://pagure.io/SSSD/sssd/issue/3551) - Race condition between refreshing the cr_domain list and a request that is using the list can cause a segfault is sssd_nss
-- [3547](https://pagure.io/SSSD/sssd/issue/3547) - data from ipa returned with id_provider=file
-- [3545](https://pagure.io/SSSD/sssd/issue/3545) - SSSD creates bad override search filter due to AD Trust object with parenthesis
-- [3539](https://pagure.io/SSSD/sssd/issue/3539) - Do not autostart the implicit files domain if sssd configures id_provider=proxy and proxy_target_files
-- [3529](https://pagure.io/SSSD/sssd/issue/3529) - SSSD-kcm/secrets failed to restart during/after upgrade
-- [3528](https://pagure.io/SSSD/sssd/issue/3528) - sssd refuses to start when pidfile is present, but the process is gone
-- [3523](https://pagure.io/SSSD/sssd/issue/3523) - ABRT crash - /usr/libexec/sssd/sssd_nss in setnetgrent_result_timeout
-- [3503](https://pagure.io/SSSD/sssd/issue/3503) - Do not index objectclass, add and index objectcategory instead
-- [3496](https://pagure.io/SSSD/sssd/issue/3496) - [RFE] Add a configuration option to SSSD to disable the memory cache
-- [3486](https://pagure.io/SSSD/sssd/issue/3486) - Improve `enumerate` documentation/troubleshooting guide
-- [3484](https://pagure.io/SSSD/sssd/issue/3484) - MAN: Describe the constrains of ipa_server_mode better in the man page
-- [3468](https://pagure.io/SSSD/sssd/issue/3468) - SSSD doesn't use AD global catalog for gidnumber lookup, resulting in unacceptable delay for large forests
-- [3454](https://pagure.io/SSSD/sssd/issue/3454) - sssd-kcm crashes with multiple parallel requests
-- [3451](https://pagure.io/SSSD/sssd/issue/3451) - When sssd is configured with id_provider proxy and auth_provider ldap, login fails if the LDAP server is not allowing anonymous binds.
-- [3444](https://pagure.io/SSSD/sssd/issue/3444) - document information on why SSSD does not use host-based security filtering when processing AD GPOs
-- [3433](https://pagure.io/SSSD/sssd/issue/3433) - SYSLOG_IDENTIFIER is different
-- [3293](https://pagure.io/SSSD/sssd/issue/3293) - Log when SSSD authentication fails because when two IPA accounts share an email address
-- [3285](https://pagure.io/SSSD/sssd/issue/3285) - SSSD needs restart after incorrect clock is corrected with AD
-- [3265](https://pagure.io/SSSD/sssd/issue/3265) - [RFE] sssd should remember DNS sites from first search
-- [3198](https://pagure.io/SSSD/sssd/issue/3198) - Incorrect error code returned from krb5_child for expired/locked user with id_provider AD
-- [2976](https://pagure.io/SSSD/sssd/issue/2976) - sdap code can mark the whole sssd_be offline
-- [2840](https://pagure.io/SSSD/sssd/issue/2840) - [RFE] Produce access control attestation report for IPA domains
-- [2823](https://pagure.io/SSSD/sssd/issue/2823) - Integration tests: Use dbus-daemon in cwrap enviroment for test
-- `2478](https://pagure.io/SSSD/sssd/issue/2478) - Provide [sss_nss*()` API to directly query SSSD instead of nsswitch.conf route
-- [1872](https://pagure.io/SSSD/sssd/issue/1872) - [RFE] Support User Private Groups for main domains, too
-- [1729](https://pagure.io/SSSD/sssd/issue/1729) - Enumerating large number of users makes sssd_be hog the cpu for a long time.
+- [\#4668](https://github.com/SSSD/sssd/issues/4668) - Mention in the manpages that Fleet Commander does *not* work when SSSD is running as the unprivileged user
+- [\#4660](https://github.com/SSSD/sssd/issues/4660) - sssd_be consumes more memory on RHEL 7.4 systems.
+- [\#4648](https://github.com/SSSD/sssd/issues/4648) - MAN: Explain how does auto_private_groups affect subdomains
+- [\#4642](https://github.com/SSSD/sssd/issues/4642) - FleetCommander integration must not require capability DAC_OVERRIDE
+- [\#4639](https://github.com/SSSD/sssd/issues/4639) - selinux_child segfaults in a docker container
+- [\#4636](https://github.com/SSSD/sssd/issues/4636) - Requesting an AD user's private group and then the user itself returns an emty homedir
+- [\#4634](https://github.com/SSSD/sssd/issues/4634) - auto_private_groups does not work with trusted domains with direct AD integration
+- [\#4632](https://github.com/SSSD/sssd/issues/4632) - AD provider - AD BUILTIN groups are cached with gidNumber = 0
+- [\#4631](https://github.com/SSSD/sssd/issues/4631) - dbus-send unable to find user by CAC cert
+- [\#4626](https://github.com/SSSD/sssd/issues/4626) - Certificate is not removed from cache when it's removed from the override
+- [\#4625](https://github.com/SSSD/sssd/issues/4625) - SSH public key authentication keeps working after keys are removed from ID view
+- [\#4624](https://github.com/SSSD/sssd/issues/4624) - race condition: sssd_be in a one-way trust accepts request before ipa-getkeytab finishes, marking the sssd offline
+- [\#4622](https://github.com/SSSD/sssd/issues/4622) - getent output is not showing home directory for IPA AD trusted user
+- [\#4617](https://github.com/SSSD/sssd/issues/4617) - sssd used wrong search base with wrong AD server
+- [\#4615](https://github.com/SSSD/sssd/issues/4615) - Write a regression test for false possitive "corrupted" memory cache
+- [\#4613](https://github.com/SSSD/sssd/issues/4613) - proxy to files does not work with implicit_files_domain
+- [\#4612](https://github.com/SSSD/sssd/issues/4612) - sssd_nss consumes more memory until restarted or machine swaps
+- [\#4610](https://github.com/SSSD/sssd/issues/4610) - Give a more detailed debug and system-log message if krb5_init_context() failed
+- [\#4609](https://github.com/SSSD/sssd/issues/4609) - Reset password with two factor authentication fails
+- [\#4603](https://github.com/SSSD/sssd/issues/4603) - SSSD fails to fetch group information after switching IPA client to a non-default view
+- [\#4595](https://github.com/SSSD/sssd/issues/4595) - mmap cache: consistency check might fail if there are hash collisions
+- [\#4594](https://github.com/SSSD/sssd/issues/4594) - The cache-req debug string representation uses a wrong format specifier for by-ID requests
+- [\#4593](https://github.com/SSSD/sssd/issues/4593) - The cache_req code doesn't check the min_id/max_id boundaries for requests by ID
+- [\#4588](https://github.com/SSSD/sssd/issues/4588) - Smartcard authentication fails if SSSD is offline and 'krb5_store_password_if_offline = True'
+- [\#4587](https://github.com/SSSD/sssd/issues/4587) - Some sysdb tests fail because they expect a certain order of entries returned from ldb
+- [\#4586](https://github.com/SSSD/sssd/issues/4586) - Use-after free if more sudo requests run and one of them fails, causing a fail-over to a next server
+- [\#4585](https://github.com/SSSD/sssd/issues/4585) - Improve Smartcard integration if multiple certificates or multiple mapped identities are available
+- [\#4577](https://github.com/SSSD/sssd/issues/4577) - Race condition between refreshing the cr_domain list and a request that is using the list can cause a segfault is sssd_nss
+- [\#4573](https://github.com/SSSD/sssd/issues/4573) - data from ipa returned with id_provider=file
+- [\#4571](https://github.com/SSSD/sssd/issues/4571) - SSSD creates bad override search filter due to AD Trust object with parenthesis
+- [\#4565](https://github.com/SSSD/sssd/issues/4565) - Do not autostart the implicit files domain if sssd configures id_provider=proxy and proxy_target_files
+- [\#4555](https://github.com/SSSD/sssd/issues/4555) - SSSD-kcm/secrets failed to restart during/after upgrade
+- [\#4554](https://github.com/SSSD/sssd/issues/4554) - sssd refuses to start when pidfile is present, but the process is gone
+- [\#4549](https://github.com/SSSD/sssd/issues/4549) - ABRT crash - /usr/libexec/sssd/sssd_nss in setnetgrent_result_timeout
+- [\#4529](https://github.com/SSSD/sssd/issues/4529) - Do not index objectclass, add and index objectcategory instead
+- [\#4522](https://github.com/SSSD/sssd/issues/4522) - [RFE] Add a configuration option to SSSD to disable the memory cache
+- [\#4512](https://github.com/SSSD/sssd/issues/4512) - Improve `enumerate` documentation/troubleshooting guide
+- [\#4510](https://github.com/SSSD/sssd/issues/4510) - MAN: Describe the constrains of ipa_server_mode better in the man page
+- [\#4494](https://github.com/SSSD/sssd/issues/4494) - SSSD doesn't use AD global catalog for gidnumber lookup, resulting in unacceptable delay for large forests
+- [\#4481](https://github.com/SSSD/sssd/issues/4481) - sssd-kcm crashes with multiple parallel requests
+- [\#4478](https://github.com/SSSD/sssd/issues/4478) - When sssd is configured with id_provider proxy and auth_provider ldap, login fails if the LDAP server is not allowing anonymous binds.
+- [\#4471](https://github.com/SSSD/sssd/issues/4471) - document information on why SSSD does not use host-based security filtering when processing AD GPOs
+- [\#4460](https://github.com/SSSD/sssd/issues/4460) - SYSLOG_IDENTIFIER is different
+- [\#4326](https://github.com/SSSD/sssd/issues/4326) - Log when SSSD authentication fails because when two IPA accounts share an email address
+- [\#4318](https://github.com/SSSD/sssd/issues/4318) - SSSD needs restart after incorrect clock is corrected with AD
+- [\#4298](https://github.com/SSSD/sssd/issues/4298) - [RFE] sssd should remember DNS sites from first search
+- [\#4231](https://github.com/SSSD/sssd/issues/4231) - Incorrect error code returned from krb5_child for expired/locked user with id_provider AD
+- [\#4017](https://github.com/SSSD/sssd/issues/4017) - sdap code can mark the whole sssd_be offline
+- [\#3881](https://github.com/SSSD/sssd/issues/3881) - [RFE] Produce access control attestation report for IPA domains
+- [\#3864](https://github.com/SSSD/sssd/issues/3864) - Integration tests: Use dbus-daemon in cwrap enviroment for test
+- `2478](https://github.com/SSSD/sssd/issues/3520) - Provide [sss_nss*()` API to directly query SSSD instead of nsswitch.conf route
+- [\#2914](https://github.com/SSSD/sssd/issues/2914) - [RFE] Support User Private Groups for main domains, too
+- [\#2771](https://github.com/SSSD/sssd/issues/2771) - Enumerating large number of users makes sssd_be hog the cpu for a long time.
 
 Detailed Changelog
 ------------------

@@ -6,11 +6,11 @@ version: 1.14.x
 
 Related ticket(s):
 
-  - <https://pagure.io/SSSD/sssd/issue/385>
+  - <https://github.com/SSSD/sssd/issues/1427>
 
 ## Problem statement
 
-Current state of data provider interface is not extensible enough to fulfill needs of planned SSSD features such as [SSSD Status Tool](https://docs.pagure.org/SSSD.sssd/design_pages/sssctl.html). The main flaw that we aim to solve is to simplify adding of new methods, properties and possibly signals using our *sbus* interface. As a side effect we will also solve the following issues that are in current code:
+Current state of data provider interface is not extensible enough to fulfill needs of planned SSSD features such as [SSSD Status Tool](sssctl.md). The main flaw that we aim to solve is to simplify adding of new methods, properties and possibly signals using our *sbus* interface. As a side effect we will also solve the following issues that are in current code:
 
   - encapsulate data provider from the rest of the code
   - fix poor memory hierarchy which creates occasional race condition on shutdown

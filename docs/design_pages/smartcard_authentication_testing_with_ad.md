@@ -4,7 +4,7 @@ version: 1.13.x
 
 # Smartcard authentication - Testing with AD
 
-As mentioned on [SmartcardAuthenticationStep1](https://docs.pagure.org/SSSD.sssd/design_pages/smartcard_authentication_step1.html) the primary focus of the development was the authentication to an IPA client. Nevertheless, the general authentication code path is the same and when the needed requirements are met it can be used to authenticate on a AD domain client as well. But please note that as with an IPA client this will only be a local authentication, so far no Kerberos tickets will be available after authentication. pkinit will be added in one of the next steps.
+As mentioned on [SmartcardAuthenticationStep1](smartcard_authentication_step1.md) the primary focus of the development was the authentication to an IPA client. Nevertheless, the general authentication code path is the same and when the needed requirements are met it can be used to authenticate on a AD domain client as well. But please note that as with an IPA client this will only be a local authentication, so far no Kerberos tickets will be available after authentication. pkinit will be added in one of the next steps.
 
 As with IPA the current requirement is that the full certificate is stored in the user's LDAP entry in AD. Since the AD CA uses the userCertificate attribute for this as well we will further assume that this attribute is used to store the certificate.
 
@@ -111,7 +111,7 @@ Now the Smartcard content should look like :
       label:      My Label
       ID:         0123456789abcdef0123456789abcdef01234567
 
-If the PKCS\#11 module is properly added to the system's NSS database (see [<https://docs.pagure.org/SSSD.sssd/design_pages/smartcard_authentication_step1#configuring-ipa-client-for-local-authentication-with-a-smartcard>](https://docs.pagure.org/SSSD.sssd/design_pages/smartcard_authentication_step1.html#configuring-ipa-client-for-local-authentication-with-a-smartcard) for details) p11_child should be able to return the certificate :
+If the PKCS\#11 module is properly added to the system's NSS database (see [<smartcard_authentication_step1#configuring-ipa-client-for-local-authentication-with-a-smartcard>](smartcard_authentication_step1.md#configuring-ipa-client-for-local-authentication-with-a-smartcard) for details) p11_child should be able to return the certificate :
 
     /usr/libexec/sssd/p11_child --pre --nssdb=/etc/pki/nssdb
 

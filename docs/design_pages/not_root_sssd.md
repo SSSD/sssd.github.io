@@ -6,7 +6,7 @@ version: 1.12.x
 
 Related ticket(s):
 
-  - <https://pagure.io/SSSD/sssd/issue/2370>
+  - <https://github.com/SSSD/sssd/issues/3412>
 
 ## Problem statement
 
@@ -47,7 +47,7 @@ The goal is for the "worker" processes (that is, both responders and providers) 
 
 ### Monitor (sssd)
 
-The monitor process would keep running as root. This is in order to be able to fork and exec processes that are initially privileged without making them all setuid. As a future enhancement, the process management functionality of the monitor will be delegated to systemd (see ticket [\#2243](https://pagure.io/SSSD/sssd/issue/2243)).
+The monitor process would keep running as root. This is in order to be able to fork and exec processes that are initially privileged without making them all setuid. As a future enhancement, the process management functionality of the monitor will be delegated to systemd (see ticket [\#3285](https://github.com/SSSD/sssd/issues/3285)).
 
 ### Responders
 
@@ -69,7 +69,7 @@ The InfoPipe responder can drop privileges after startup. The files that the Inf
 
 Contrary to other responders, the InfoPipe responder doesn't have a public pipe. The InfoPipe responder also binds to the system bus, we must also convert the bus policy file to allow the sssd user to bind to the bus.
 
-Currently there is also functionality to modify sssd.conf from the InfoPipe. During the feature design review, it was suggested that a configuration interface doesn't belong to the InfoPipe code at all and should be moved to a separate helper. Until that is done, the InfoPipe responder must keep running as root. The work on splitting the InfoPipe is tracked by <https://pagure.io/SSSD/sssd/issue/2395>
+Currently there is also functionality to modify sssd.conf from the InfoPipe. During the feature design review, it was suggested that a configuration interface doesn't belong to the InfoPipe code at all and should be moved to a separate helper. Until that is done, the InfoPipe responder must keep running as root. The work on splitting the InfoPipe is tracked by <https://github.com/SSSD/sssd/issues/3437>
 
 #### Autofs, SUDO and SSH responders
 
@@ -272,27 +272,27 @@ During the design or implementation, we identified several ideas for improvement
 
 In 1.12.3, sssd.conf is still owned by root, mostly because there is a number of programs like authconfig that generate sssd.conf as root. Moreover, in enterprise setups, the sssd.conf would be pushed to the client with a tool such as puppet that would still use the same privileges.
 
-Therefore, even rootless sssd needs to handle sssd.conf owned by root, at least for the time being. We can even chown the file to sssd user after startup or move the write-operation in [InfoPipe?](https://docs.pagure.org/sssd-test2/InfoPipe.html) to a privileged helper.
+Therefore, even rootless sssd needs to handle sssd.conf owned by root, at least for the time being. We can even chown the file to sssd user after startup or move the write-operation in `InfoPipe` to a privileged helper.
 
-  - Tracked by: <https://pagure.io/SSSD/sssd/issue/2395>
+  - Tracked by: <https://github.com/SSSD/sssd/issues/3437>
 
 ### Allow the command line tools to run unprivileged
 
 Some command line tools can be run unprivileged - see the section called "Command Line Tools". However, changing them is not a priority as they are short-lived and in general only accept switches, not free-form input.
 
-  - Tracked by: <https://pagure.io/SSSD/sssd/issue/2500>
+  - Tracked by: <https://github.com/SSSD/sssd/issues/3542>
 
 ### Splitting the back end initialization into privileged and unprivileged part
 
 It was proposed on the sssd-devel list that the initialization of the sssd_be process is split into a privileged and non-privileged function. The back end would open all providers, call the privileged initialization functions and then drop privileges. Currently all initialization is done as root, which is not strictly required in many setups.
 
-  - Tracked by: <https://pagure.io/SSSD/sssd/issue/2504>
+  - Tracked by: <https://github.com/SSSD/sssd/issues/3546>
 
 ### Using Kerberos MEMORY cache to avoid further restrict running Kerberos helpers as root
 
 Sumit proposed that the keytab is read to a MEMORY type after child process startup so krb5_child and ldap_child can drop root privileges sooner. There are even some proof-of-concept patches [on sssd-devel](https://lists.fedorahosted.org/archives/list/sssd-devel@lists.fedorahosted.org/message/XREVGCOZ4OP4VM337M5TUQYHUUPS54HH/)
 
-  - Tracked by: <https://pagure.io/SSSD/sssd/issue/2503>
+  - Tracked by: <https://github.com/SSSD/sssd/issues/3545>
 
 ### Using libcap-ng to drop the privileges
 
@@ -302,13 +302,13 @@ The downside is obviously the extra dependency, but libcap-ng has a small footpr
 
 We would keep the existing code around as a fallback for environments that don't have the libcap-ngs library available, such as non-Linux systems or embedded systems. Because the code wouldn't be enabled by default, it's important to have unit tests for the privilege drop. For unit testing both options (libcap-ng and our own code), [uid_wrapper](http://cwrap.org/uid_wrapper.html) and [nss_wrapper](http://cwrap.org/nss_wrapper.html) are the best choice.
 
-  - Tracked by: <https://pagure.io/SSSD/sssd/issue/2482>
+  - Tracked by: <https://github.com/SSSD/sssd/issues/3524>
 
 ### Merge the ldap_child and krb5_child processes
 
 During design review, it was also proposed to look into merging the ldap_child and krb5_child as the code performs similar tasks The new krb5_child would act as an ldap_child based on a command line option value.
 
-  - Tracked by: <https://pagure.io/SSSD/sssd/issue/2502>
+  - Tracked by: <https://github.com/SSSD/sssd/issues/3544>
 
 ## Authors
 

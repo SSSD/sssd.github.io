@@ -6,8 +6,8 @@ version: 1.12.x
 
 Related ticket(s):
 
-  - [Provide an experimental DBus responder to retrieve custom attributes from SSSD cache](https://pagure.io/SSSD/sssd/issue/2072)
-  - [Extend the LDAP backend to retrieve extended set of attributes](https://pagure.io/SSSD/sssd/issue/2073)
+  - [Provide an experimental DBus responder to retrieve custom attributes from SSSD cache](https://github.com/SSSD/sssd/issues/3114)
+  - [Extend the LDAP backend to retrieve extended set of attributes](https://github.com/SSSD/sssd/issues/3115)
 
 ## Problem Statement
 
@@ -19,7 +19,7 @@ This section gathers feedback expressed in mailing lists, private e-mail convers
 
 ### Cached objects
 
-[D-Bus Interface: Cached Objects](https://docs.pagure.org/SSSD.sssd/design_pages/dbus_cached_objects.html)
+[D-Bus Interface: Cached Objects](dbus_cached_objects.md)
 
 ### Object exposed on the bus
 
@@ -29,7 +29,7 @@ The interface will support users, groups and domains.
 
 ### Representing users and groups on the bus
 
-[D-Bus Interface: Users and Groups](https://docs.pagure.org/SSSD.sssd/design_pages/dbus_users_and_groups.html)
+[D-Bus Interface: Users and Groups](dbus_users_and_groups.md)
 
 ### Representing SSSD processes on the bus
 

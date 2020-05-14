@@ -24,41 +24,41 @@ Highlights
 Tickets Fixed
 -------------
 
-- [3960](https://pagure.io/SSSD/sssd/issue/3960) - cached_auth_timeout not honored for AD users authenticated via trust with FreeIPA
-- [3974](https://pagure.io/SSSD/sssd/issue/3974) - Write a list of host names up to a configurable limit to the kdcinfo files
-- [3867](https://pagure.io/SSSD/sssd/issue/3867) - [RFE] Need an option in SSSD so that it will skip GPOs that have groupPolicyContainers, unreadable by SSSD
-- [3965](https://pagure.io/SSSD/sssd/issue/3965) - [RFE]: Optionally disable generating auto private groups for subdomains of an AD provider
-- [3957](https://pagure.io/SSSD/sssd/issue/3957) - sudo: runAsUser/Group does not work with domain_resolution_order
-- [3838](https://pagure.io/SSSD/sssd/issue/3838) - KCM: If the default ccache cannot be found, fall back to the first one
-- [3467](https://pagure.io/SSSD/sssd/issue/3467) - online detection in case sssd starts before network does appears to be broken
-- [3964](https://pagure.io/SSSD/sssd/issue/3964) - Responders: `is_user_local_by_name()` should avoid calling nss API entirely
-- [3975](https://pagure.io/SSSD/sssd/issue/3975) - Lookahead resolving of host names to provide names for the kdcinfo plugin
-- [4015](https://pagure.io/SSSD/sssd/issue/4015) - The server error message is not returned if password change fails
-- [3917](https://pagure.io/SSSD/sssd/issue/3917) - Double free error in tev_curl
-- [3905](https://pagure.io/SSSD/sssd/issue/3905) - SSSD doesn't clear cache entries for IDs below min_id.
-- [2854](https://pagure.io/SSSD/sssd/issue/2854) - FAIL test-find-uid
-- [2878](https://pagure.io/SSSD/sssd/issue/2878) - sssd failover does not work on connecting to non-responsive <ldaps://server
-- [4050](https://pagure.io/SSSD/sssd/issue/4050) - nss_cmd_endservent resets the wrong index
-- [4009](https://pagure.io/SSSD/sssd/issue/4009) - Removing domain from ad_enabled_domains is not reflected in cache
-- [4058](https://pagure.io/SSSD/sssd/issue/4058) - Paging not enabled when fetching external groups, limits the number of external groups to 2000
-- [2607](https://pagure.io/SSSD/sssd/issue/2607) - sssd should not always read entire autofs map from ldap
-- [4065](https://pagure.io/SSSD/sssd/issue/4065) - IFP: GetUserAttr does not search by UPN
-- [4078](https://pagure.io/SSSD/sssd/issue/4078) - Trusted domain user logins succeed after using ipa trustdomain-disable
-- [4074](https://pagure.io/SSSD/sssd/issue/4074) - Integration tests use python2 unconditionally
-- [4116](https://pagure.io/SSSD/sssd/issue/4116) - autofs: delete possible duplicate of an autofs entry
-- [2660](https://pagure.io/SSSD/sssd/issue/2660) - SSSD service is crashing: dbus_watch_handle() is invoked with corrupted 'watch' value
-- [3996](https://pagure.io/SSSD/sssd/issue/3996) - sudo: do not update last usn when updating expired rules
-- [3997](https://pagure.io/SSSD/sssd/issue/3997) - sudo: always use server highest usn for smart refresh
-- [4046](https://pagure.io/SSSD/sssd/issue/4046) - sudo: incorrect usn value for openldap
-- [4085](https://pagure.io/SSSD/sssd/issue/4085) - support for defaults entry is failing in sssd sudo against Openldap server
-- [4124](https://pagure.io/SSSD/sssd/issue/4124) - Impossible to enforce GID on the AD's "domain users" group in the IPA-AD trust setup
-- [3463](https://pagure.io/SSSD/sssd/issue/3463) - TESTS: make intgcheck is not always passing in the internal CI (enumeration tests)
-- [4131](https://pagure.io/SSSD/sssd/issue/4131) - Force LDAPS over 636 with AD Provider
-- [4089](https://pagure.io/SSSD/sssd/issue/4089) - Watchdog implementation or usage is incorrect
-- [3636](https://pagure.io/SSSD/sssd/issue/3636) - nested group missing after updates on provider
-- [4112](https://pagure.io/SSSD/sssd/issue/4112) - ldap_uri failover doesn't work with different ports
-- [4148](https://pagure.io/SSSD/sssd/issue/4148) - Expecting appropriate error message when new password length is less than 8 characters when ldap_pwmodify_mode = ldap_modify in sssd.conf
-- [4168](https://pagure.io/SSSD/sssd/issue/4168) - SSSD-1-16: sbus_auto_reconnect(): "off-by-one error" in `reconnection_retries` interpretation \`
+- [\#4933](https://github.com/SSSD/sssd/issues/4933) - cached_auth_timeout not honored for AD users authenticated via trust with FreeIPA
+- [\#4947](https://github.com/SSSD/sssd/issues/4947) - Write a list of host names up to a configurable limit to the kdcinfo files
+- [\#4857](https://github.com/SSSD/sssd/issues/4857) - [RFE] Need an option in SSSD so that it will skip GPOs that have groupPolicyContainers, unreadable by SSSD
+- [\#4938](https://github.com/SSSD/sssd/issues/4938) - [RFE]: Optionally disable generating auto private groups for subdomains of an AD provider
+- [\#4931](https://github.com/SSSD/sssd/issues/4931) - sudo: runAsUser/Group does not work with domain_resolution_order
+- [\#4832](https://github.com/SSSD/sssd/issues/4832) - KCM: If the default ccache cannot be found, fall back to the first one
+- [\#4493](https://github.com/SSSD/sssd/issues/4493) - online detection in case sssd starts before network does appears to be broken
+- [\#4937](https://github.com/SSSD/sssd/issues/4937) - Responders: `is_user_local_by_name()` should avoid calling nss API entirely
+- [\#4948](https://github.com/SSSD/sssd/issues/4948) - Lookahead resolving of host names to provide names for the kdcinfo plugin
+- [\#4986](https://github.com/SSSD/sssd/issues/4986) - The server error message is not returned if password change fails
+- [\#4902](https://github.com/SSSD/sssd/issues/4902) - Double free error in tev_curl
+- [\#4890](https://github.com/SSSD/sssd/issues/4890) - SSSD doesn't clear cache entries for IDs below min_id.
+- [\#3895](https://github.com/SSSD/sssd/issues/3895) - FAIL test-find-uid
+- [\#3919](https://github.com/SSSD/sssd/issues/3919) - sssd failover does not work on connecting to non-responsive <ldaps://server
+- [\#5018](https://github.com/SSSD/sssd/issues/5018) - nss_cmd_endservent resets the wrong index
+- [\#4980](https://github.com/SSSD/sssd/issues/4980) - Removing domain from ad_enabled_domains is not reflected in cache
+- [\#5026](https://github.com/SSSD/sssd/issues/5026) - Paging not enabled when fetching external groups, limits the number of external groups to 2000
+- [\#3648](https://github.com/SSSD/sssd/issues/3648) - sssd should not always read entire autofs map from ldap
+- [\#5033](https://github.com/SSSD/sssd/issues/5033) - IFP: GetUserAttr does not search by UPN
+- [\#5044](https://github.com/SSSD/sssd/issues/5044) - Trusted domain user logins succeed after using ipa trustdomain-disable
+- [\#5042](https://github.com/SSSD/sssd/issues/5042) - Integration tests use python2 unconditionally
+- [\#5077](https://github.com/SSSD/sssd/issues/5077) - autofs: delete possible duplicate of an autofs entry
+- [\#3701](https://github.com/SSSD/sssd/issues/3701) - SSSD service is crashing: dbus_watch_handle() is invoked with corrupted 'watch' value
+- [\#4968](https://github.com/SSSD/sssd/issues/4968) - sudo: do not update last usn when updating expired rules
+- [\#4969](https://github.com/SSSD/sssd/issues/4969) - sudo: always use server highest usn for smart refresh
+- [\#5014](https://github.com/SSSD/sssd/issues/5014) - sudo: incorrect usn value for openldap
+- [\#5049](https://github.com/SSSD/sssd/issues/5049) - support for defaults entry is failing in sssd sudo against Openldap server
+- [\#5085](https://github.com/SSSD/sssd/issues/5085) - Impossible to enforce GID on the AD's "domain users" group in the IPA-AD trust setup
+- [\#4489](https://github.com/SSSD/sssd/issues/4489) - TESTS: make intgcheck is not always passing in the internal CI (enumeration tests)
+- [\#5092](https://github.com/SSSD/sssd/issues/5092) - Force LDAPS over 636 with AD Provider
+- [\#5053](https://github.com/SSSD/sssd/issues/5053) - Watchdog implementation or usage is incorrect
+- [\#4657](https://github.com/SSSD/sssd/issues/4657) - nested group missing after updates on provider
+- [\#5073](https://github.com/SSSD/sssd/issues/5073) - ldap_uri failover doesn't work with different ports
+- [\#5106](https://github.com/SSSD/sssd/issues/5106) - Expecting appropriate error message when new password length is less than 8 characters when ldap_pwmodify_mode = ldap_modify in sssd.conf
+- [\#5123](https://github.com/SSSD/sssd/issues/5123) - SSSD-1-16: sbus_auto_reconnect(): "off-by-one error" in `reconnection_retries` interpretation \`
 
 Packaging Changes
 -----------------

@@ -6,7 +6,7 @@ version: 1.15.x
 
   - Related ticket(s):
     
-    - <https://pagure.io/SSSD/sssd/issue/2599>
+    - <https://github.com/SSSD/sssd/issues/3640>
 
 ## Problem statement
 
@@ -51,13 +51,13 @@ available in the new subdomain section. Here are some options that will be suppo
   - `ad_site`
   - `use_fully_qualified_names`
 
-Other options might be added later as appropriate. Upstream already plans on making it possible to add the options previously settable with `subdomain_inherit` with [ticket 3337](https://pagure.io/SSSD/sssd/issue/3337).
+Other options might be added later as appropriate. Upstream already plans on making it possible to add the options previously settable with `subdomain_inherit` with [ticket 3337](https://github.com/SSSD/sssd/issues/4368).
 
 ## Implementation details
 
 In the first iteration, the subdomain initialization code will read the options directly from the subdomain section, if set.
 
-As an additional improvement, the `dp_options` structure will be expanded with a boolean flag that signifies whether the option is overridable or not so the code can be made a bit more generic. This work is tracked separately with [ticket 3336](https://pagure.io/SSSD/sssd/issue/3336).
+As an additional improvement, the `dp_options` structure will be expanded with a boolean flag that signifies whether the option is overridable or not so the code can be made a bit more generic. This work is tracked separately with [ticket 3336](https://github.com/SSSD/sssd/issues/4367).
 
 ## How To Test
 
@@ -90,7 +90,7 @@ The best way to debug the search base restrictions is to watch the SSSD logs. Th
 
 ### Test the AD site and AD server pinning
 
-Similar to the previous test, the configuration differs for direct AD clients and for IPA-AD trusts. For direct AD clients, the configuration file on all clients must be modified. For IPA-AD trusts, only the configuration file on the IPA masters must be changed. However, note that while user and group resolution in IPA-AD trust scenario flows through the IPA masters, authentication is performed directly against the AD DCs. Currently there is no way, except modifying `krb5.conf` on the IPA clients to pin IPA clients to a particular AD DC server for authentication. This work is tracked [in a separate ticket](https://pagure.io/SSSD/sssd/issue/3291)
+Similar to the previous test, the configuration differs for direct AD clients and for IPA-AD trusts. For direct AD clients, the configuration file on all clients must be modified. For IPA-AD trusts, only the configuration file on the IPA masters must be changed. However, note that while user and group resolution in IPA-AD trust scenario flows through the IPA masters, authentication is performed directly against the AD DCs. Currently there is no way, except modifying `krb5.conf` on the IPA clients to pin IPA clients to a particular AD DC server for authentication. This work is tracked [in a separate ticket](https://github.com/SSSD/sssd/issues/4324)
 
 For direct AD integration, restricting the AD DCs or the sites would also work for authentication, as the SSSD would write the address to the AD DC to contact into a libkrb5 kdcinfo file (see `man sssd_krb5_locator_plugin`).
 

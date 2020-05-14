@@ -25,20 +25,20 @@ Tickets Fixed
 -------------
 
 
-- [\#1632](https://pagure.io/SSSD/sssd/issue/1632) [RFE] Unable to use AD provider for automount lookups
-- [\#1943](https://pagure.io/SSSD/sssd/issue/1943) convert sudo timer to be_ptask
-- [\#2672](https://pagure.io/SSSD/sssd/issue/2672) sudo: reload hostinfo when going online
-- [\#2732](https://pagure.io/SSSD/sssd/issue/2732) Add Integration tests for local views feature
-- [\#2747](https://pagure.io/SSSD/sssd/issue/2747) get_object_from_cache() does not handle services
-- [\#2755](https://pagure.io/SSSD/sssd/issue/2755) Review p11_child hardening
-- [\#2787](https://pagure.io/SSSD/sssd/issue/2787) We should mention SSS_NSS_USE_MEMCACHE in man sssd.conf(5) as well
-- [\#2796](https://pagure.io/SSSD/sssd/issue/2796) fix man page for sssd-ldap
-- [\#2801](https://pagure.io/SSSD/sssd/issue/2801) Check next certificate on smart card if first is not valid
-- [\#2812](https://pagure.io/SSSD/sssd/issue/2812) Smartcard login when certificate on the card is revoked and ocsp check enabled is not supported
-- [\#2830](https://pagure.io/SSSD/sssd/issue/2830) Try to suppress "Could not parse domain SID from [(null)]" for IPA users
-- [\#2846](https://pagure.io/SSSD/sssd/issue/2846) Inform about SSSD PAC timeout better
-- [\#2868](https://pagure.io/SSSD/sssd/issue/2868) AD provider and ignore_group_members=True might cause flaky group memberships
-- [\#2874](https://pagure.io/SSSD/sssd/issue/2874) sssd: [sysdb_add_user] (0x0400): Error: 17 (File exists)
+- [\#2674](https://github.com/SSSD/sssd/issues/2674) [RFE] Unable to use AD provider for automount lookups
+- [\#2985](https://github.com/SSSD/sssd/issues/2985) convert sudo timer to be_ptask
+- [\#3713](https://github.com/SSSD/sssd/issues/3713) sudo: reload hostinfo when going online
+- [\#3773](https://github.com/SSSD/sssd/issues/3773) Add Integration tests for local views feature
+- [\#3788](https://github.com/SSSD/sssd/issues/3788) get_object_from_cache() does not handle services
+- [\#3796](https://github.com/SSSD/sssd/issues/3796) Review p11_child hardening
+- [\#3828](https://github.com/SSSD/sssd/issues/3828) We should mention SSS_NSS_USE_MEMCACHE in man sssd.conf(5) as well
+- [\#3837](https://github.com/SSSD/sssd/issues/3837) fix man page for sssd-ldap
+- [\#3842](https://github.com/SSSD/sssd/issues/3842) Check next certificate on smart card if first is not valid
+- [\#3853](https://github.com/SSSD/sssd/issues/3853) Smartcard login when certificate on the card is revoked and ocsp check enabled is not supported
+- [\#3871](https://github.com/SSSD/sssd/issues/3871) Try to suppress "Could not parse domain SID from [(null)]" for IPA users
+- [\#3887](https://github.com/SSSD/sssd/issues/3887) Inform about SSSD PAC timeout better
+- [\#3909](https://github.com/SSSD/sssd/issues/3909) AD provider and ignore_group_members=True might cause flaky group memberships
+- [\#3915](https://github.com/SSSD/sssd/issues/3915) sssd: [sysdb_add_user] (0x0400): Error: 17 (File exists)
 
 Detailed Changelog
 ------------------

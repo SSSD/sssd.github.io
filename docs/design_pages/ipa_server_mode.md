@@ -6,8 +6,8 @@ version: 1.11.x
 
 Related tickets:
 
-  - [RFE Allow using UIDs and GIDs from AD in trust case](https://pagure.io/SSSD/sssd/issue/1821)
-  - [RFE Determine how to map SID to UID/GID based on IdM server configuration](https://pagure.io/SSSD/sssd/issue/1881)
+  - [RFE Allow using UIDs and GIDs from AD in trust case](https://github.com/SSSD/sssd/issues/2863)
+  - [RFE Determine how to map SID to UID/GID based on IdM server configuration](https://github.com/SSSD/sssd/issues/2923)
   - more to come
 
 ## Problem Statement
@@ -28,7 +28,7 @@ All of the above can basically be solved with the current layout of the FreeIPA 
 
 ## Overview of the solution
 
-First sssd needs to know that it is running on an IPA server and should not look up trusted users and groups with the help of the extdom plugin but do the lookups on its own. For this a new boolean configuration option, e.g. ipa_server_mode, should be introduced (SSSD ticket [\#1993](https://pagure.io/SSSD/sssd/issue/1993)) which defaults to *false* but is set to *true* during ipa-server-install or during updates of the FreeIPA server (<https://pagure.io/freeipa/issue/3652>) if it is not already set.
+First sssd needs to know that it is running on an IPA server and should not look up trusted users and groups with the help of the extdom plugin but do the lookups on its own. For this a new boolean configuration option, e.g. ipa_server_mode, should be introduced (SSSD ticket [\#3035](https://github.com/SSSD/sssd/issues/3035)) which defaults to *false* but is set to *true* during ipa-server-install or during updates of the FreeIPA server (<https://pagure.io/freeipa/issue/3652>) if it is not already set.
 
 Since AD by default requires an authenticate LDAP bind to do searches SSSD needs credentials which are accepted by a trusted AD server. Because if the trust relationship this can even be credentials from the FreeIPA domain if Kerberos is user for authentication. So the easiest way is just to use the local keytab which requires no changes on the SSSD side, because the generic LDAP provider already knows how to handle SASL bind with the local keytab. But currently AD LDAP server does not accept the Kerberos ticket from a FreeIPA host, because the FreeIPA KDC does not attach a PAC to the TGTs of host/ principals (<https://pagure.io/freeipa/issue/3651>, until this is fixed some dummy credentials, e.g. a keytab for a dummy user, can be used).
 
@@ -44,8 +44,8 @@ A new boolean option ipa_server_mode which defaults to false should be added to 
 
 ### Enhance libsss_idmap
 
-1.  Allow algorithmic mapping where the first RID is not 0 Currently it is implicitly assumed that the first POSIX ID of a range is mapped to the RID 0. To support multiple ranges for a single domain a different first RID must handled as well. Ticket: [\#1938](https://pagure.io/SSSD/sssd/issue/1938)
-2.  Add a range type to handle mappings in AD The idea is that ranges for IDs from AD can be used in libsss_idmap as well, but whenever a mapping is requested for this range a specific error code like IDMAP_ASK_AD_FOR_MAPPING is returned to tell SSSD to do an AD lookup. This way SSSD does not need to inspect the ranges itself but all is done inside if libsss_idmap. Additionally a new call is needed to check whether the returned externally managed ID belongs to a configured range, if not the ID cannot be mapped in the given configuration and the related object should be ignored. Ticket: [\#1960](https://pagure.io/SSSD/sssd/issue/1960)
+1.  Allow algorithmic mapping where the first RID is not 0 Currently it is implicitly assumed that the first POSIX ID of a range is mapped to the RID 0. To support multiple ranges for a single domain a different first RID must handled as well. Ticket: [\#2980](https://github.com/SSSD/sssd/issues/2980)
+2.  Add a range type to handle mappings in AD The idea is that ranges for IDs from AD can be used in libsss_idmap as well, but whenever a mapping is requested for this range a specific error code like IDMAP_ASK_AD_FOR_MAPPING is returned to tell SSSD to do an AD lookup. This way SSSD does not need to inspect the ranges itself but all is done inside if libsss_idmap. Additionally a new call is needed to check whether the returned externally managed ID belongs to a configured range, if not the ID cannot be mapped in the given configuration and the related object should be ignored. Ticket: [\#3002](https://github.com/SSSD/sssd/issues/3002)
 3.  Add an optional unique range identifier To be able to detect configuration changes in idranges managed by FreeIPA an identifier should be stored on the client together with the other idrange related data. For simplicity the DN of the related LDAP object on the FreeIPA server can be used here. The identifier should be optional, but if it is missing the range cannot be updated or deleted at runtime.
 4.  Allow updates and removal of ranges To support configuration changes at runtime, it must be possible to update and remove ranges. As a first step I would recommend that the changes will only affect new requests and not the cached data, because in general changes to centrally manages ranges should be done with care to avoid conflicts. In a later release we can decided if we just want to invalidate all cached entries of the domain which idrange was modified or if a smarter check is needed to invalidate only objects which are affected by the change.
 
@@ -79,7 +79,7 @@ This is a nice to have feature.
 
 ### Implement or Improve enumeration
 
-If enumeration is enable SSSD tries to update all users and groups at startup. As a result the startup time where SSSD is basically blocked and cannot serve requests even for data in the cache can be quite long. A new tevent_req task should be created which can read users and groups from the AD domain in smaller chunks so that other request can always slip in between. Ticket [\#1829](https://pagure.io/SSSD/sssd/issue/1829) contains a similar request for the general use in SSSD. If we find a good scheme here, it might be used for the general enumerations as well.
+If enumeration is enable SSSD tries to update all users and groups at startup. As a result the startup time where SSSD is basically blocked and cannot serve requests even for data in the cache can be quite long. A new tevent_req task should be created which can read users and groups from the AD domain in smaller chunks so that other request can always slip in between. Ticket [\#2871](https://github.com/SSSD/sssd/issues/2871) contains a similar request for the general use in SSSD. If we find a good scheme here, it might be used for the general enumerations as well.
 
 The task should make sure all users and groups are read after a while without reading objects twice in a single run. Maybe it is possible to add a special paged-search tevent request which returns after the first page is read to the caller (instead of doing the paging behind the scenes) which the results and a handle which would allow to continue the the search with the next page? If this is a way to go creating this new request would be another development subtask.
 

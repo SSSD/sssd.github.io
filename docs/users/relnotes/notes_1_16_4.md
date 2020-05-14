@@ -34,34 +34,34 @@ Highlights
 Tickets Fixed
 -------------
 
-- [3967](https://pagure.io/SSSD/sssd/issue/3967) - NSS responder does no refresh domain list when busy
-- [2926](https://pagure.io/SSSD/sssd/issue/2926) - Make list of local PAM services allowed for Smartcard authentication configurable
-- [3819](https://pagure.io/SSSD/sssd/issue/3819) - sssd only sets the SELinux login context if it differs from the default
-- [3820](https://pagure.io/SSSD/sssd/issue/3820) - sudo: search with lower cased name for case insensitive domains
-- [3870](https://pagure.io/SSSD/sssd/issue/3870) - nss: memory leak in netgroups
-- [3451](https://pagure.io/SSSD/sssd/issue/3451) - When sssd is configured with id_provider proxy and auth_provider ldap, login fails if the LDAP server is not allowing anonymous binds.
-- [3875](https://pagure.io/SSSD/sssd/issue/3875) - CURLE_SSL_CACERT is deprecated in recent curl versions
-- [3902](https://pagure.io/SSSD/sssd/issue/3902) - SSSD must be cleared/restarted periodically in order to retrieve AD users through IPA Trust
-- [3901](https://pagure.io/SSSD/sssd/issue/3901) - sssd returns '/' for emtpy home directories
-- [3919](https://pagure.io/SSSD/sssd/issue/3919) - sss_cache prints spurious error messages when invoked from shadow-utils on package install
-- [3845](https://pagure.io/SSSD/sssd/issue/3845) - The config file validator says that certmap options are not allowed
-- [3937](https://pagure.io/SSSD/sssd/issue/3937) - If p11_child spawned from sssd_ssh times out, sssd_ssh fails completely
-- [3961](https://pagure.io/SSSD/sssd/issue/3961) - sssd config-check reports an error for a valid configuration option
-- [3701](https://pagure.io/SSSD/sssd/issue/3701) - [RFE] Allow changing default behavior of SSSD from an allow-any default to a deny-any default when it can't find any GPOs to apply to a user login.
-- [2474](https://pagure.io/SSSD/sssd/issue/2474) - AD: do not override existing home-dir or shell if they are not available in the global catalog
-- [3958](https://pagure.io/SSSD/sssd/issue/3958) - sssd_krb5_locator_plugin introduces delay in cifs.upcall krb5 calls
-- [3890](https://pagure.io/SSSD/sssd/issue/3890) - SSSD changes the memory cache file ownership away from the SSSD user when running as root
-- [3942](https://pagure.io/SSSD/sssd/issue/3942) - RemovedInPytest4Warning: Fixture "passwd_ops_setup" called directly
-- [3276](https://pagure.io/SSSD/sssd/issue/3276) - Revert workaround in CI for bug in python-{request,urllib3}
-- [3978](https://pagure.io/SSSD/sssd/issue/3978) - UPN negative cache does not use values from 'filter_users' config option
-- [3983](https://pagure.io/SSSD/sssd/issue/3983) - filter_users option is not applied to sub-domains if SSSD starts offline
-- [3947](https://pagure.io/SSSD/sssd/issue/3947) - SSSD netgroups do not honor entry_cache_nowait_percentage
-- [3984](https://pagure.io/SSSD/sssd/issue/3984) - IPA: Deleted user from trusted domain is not removed properly from the cache on IPA clients
-- [3976](https://pagure.io/SSSD/sssd/issue/3976) - crash in dp_failover_active_server
-- [3957](https://pagure.io/SSSD/sssd/issue/3957) - sudo: runAsUser/Group does not work with domain_resolution_order
-- [1314](https://pagure.io/SSSD/sssd/issue/1314) - RFE Request for allowing password changes using SSSD in DS which dont follow OID's from RFC 3062
-- [3822](https://pagure.io/SSSD/sssd/issue/3822) - Enable generating user private groups only for users with no primary GID
-- [3963](https://pagure.io/SSSD/sssd/issue/3963) - Responders: processing of `filter_users</span>/<span class="title-ref">filter_groups` should avoid calling blocking NSS API
+- [\#4940](https://github.com/SSSD/sssd/issues/4940) - NSS responder does no refresh domain list when busy
+- [\#3967](https://github.com/SSSD/sssd/issues/3967) - Make list of local PAM services allowed for Smartcard authentication configurable
+- [\#4813](https://github.com/SSSD/sssd/issues/4813) - sssd only sets the SELinux login context if it differs from the default
+- [\#4814](https://github.com/SSSD/sssd/issues/4814) - sudo: search with lower cased name for case insensitive domains
+- [\#4860](https://github.com/SSSD/sssd/issues/4860) - nss: memory leak in netgroups
+- [\#4478](https://github.com/SSSD/sssd/issues/4478) - When sssd is configured with id_provider proxy and auth_provider ldap, login fails if the LDAP server is not allowing anonymous binds.
+- [\#4865](https://github.com/SSSD/sssd/issues/4865) - CURLE_SSL_CACERT is deprecated in recent curl versions
+- [\#4887](https://github.com/SSSD/sssd/issues/4887) - SSSD must be cleared/restarted periodically in order to retrieve AD users through IPA Trust
+- [\#4886](https://github.com/SSSD/sssd/issues/4886) - sssd returns '/' for emtpy home directories
+- [\#4904](https://github.com/SSSD/sssd/issues/4904) - sss_cache prints spurious error messages when invoked from shadow-utils on package install
+- [\#4839](https://github.com/SSSD/sssd/issues/4839) - The config file validator says that certmap options are not allowed
+- [\#4917](https://github.com/SSSD/sssd/issues/4917) - If p11_child spawned from sssd_ssh times out, sssd_ssh fails completely
+- [\#4934](https://github.com/SSSD/sssd/issues/4934) - sssd config-check reports an error for a valid configuration option
+- [\#4715](https://github.com/SSSD/sssd/issues/4715) - [RFE] Allow changing default behavior of SSSD from an allow-any default to a deny-any default when it can't find any GPOs to apply to a user login.
+- [\#3516](https://github.com/SSSD/sssd/issues/3516) - AD: do not override existing home-dir or shell if they are not available in the global catalog
+- [\#4932](https://github.com/SSSD/sssd/issues/4932) - sssd_krb5_locator_plugin introduces delay in cifs.upcall krb5 calls
+- [\#4876](https://github.com/SSSD/sssd/issues/4876) - SSSD changes the memory cache file ownership away from the SSSD user when running as root
+- [\#4920](https://github.com/SSSD/sssd/issues/4920) - RemovedInPytest4Warning: Fixture "passwd_ops_setup" called directly
+- [\#4309](https://github.com/SSSD/sssd/issues/4309) - Revert workaround in CI for bug in python-{request,urllib3}
+- [\#4950](https://github.com/SSSD/sssd/issues/4950) - UPN negative cache does not use values from 'filter_users' config option
+- [\#4955](https://github.com/SSSD/sssd/issues/4955) - filter_users option is not applied to sub-domains if SSSD starts offline
+- [\#4925](https://github.com/SSSD/sssd/issues/4925) - SSSD netgroups do not honor entry_cache_nowait_percentage
+- [\#4956](https://github.com/SSSD/sssd/issues/4956) - IPA: Deleted user from trusted domain is not removed properly from the cache on IPA clients
+- [\#4949](https://github.com/SSSD/sssd/issues/4949) - crash in dp_failover_active_server
+- [\#4931](https://github.com/SSSD/sssd/issues/4931) - sudo: runAsUser/Group does not work with domain_resolution_order
+- [\#2356](https://github.com/SSSD/sssd/issues/2356) - RFE Request for allowing password changes using SSSD in DS which dont follow OID's from RFC 3062
+- [\#4816](https://github.com/SSSD/sssd/issues/4816) - Enable generating user private groups only for users with no primary GID
+- [\#4936](https://github.com/SSSD/sssd/issues/4936) - Responders: processing of `filter_users</span>/<span class="title-ref">filter_groups` should avoid calling blocking NSS API
 
 Packaging Changes
 -----------------

@@ -42,48 +42,48 @@ Documentation Changes
 Tickets Fixed
 -------------
 
-- [3752](https://pagure.io/SSSD/sssd/issue/3752) - /usr/libexec/sssd/sssd_autofs SIGABRT crash daily due to a double free
-- [3749](https://pagure.io/SSSD/sssd/issue/3749) - [RFE] sssd.conf should mention the FILES provider as valid config value for the 'id_provider'
-- [3748](https://pagure.io/SSSD/sssd/issue/3748) - home dir disappear in sssd cache on the IPA master for AD users
-- [3744](https://pagure.io/SSSD/sssd/issue/3744) - Race condition between concurrent initgroups requests can cause one of them to return incomplete information
-- [3743](https://pagure.io/SSSD/sssd/issue/3743) - Weirdness when using files provider and domain resolution order
-- [3742](https://pagure.io/SSSD/sssd/issue/3742) - Change of: User may not run sudo --&gt; a password is required
-- [3741](https://pagure.io/SSSD/sssd/issue/3741) - Samba can not register sss idmap module because it's using an outdated SMB_IDMAP_INTERFACE_VERSION
-- [3740](https://pagure.io/SSSD/sssd/issue/3740) - Utilizing domain_resolution_order in sssd.conf breaks SELinux user map
-- [3733](https://pagure.io/SSSD/sssd/issue/3733) - sssd fails to download known_hosts from freeipa
-- [3728](https://pagure.io/SSSD/sssd/issue/3728) - Request by ID outside the min_id/max_id limit of a first domain does not reach the second domain
-- [3726](https://pagure.io/SSSD/sssd/issue/3726) - SSSD with ID provider 'ad' should give a warning in case the ldap schema is manually changed to something different than 'ad'.
-- [3725](https://pagure.io/SSSD/sssd/issue/3725) - sssd not honoring dyndns_server if the DNS update process is terminated with a signal
-- [3719](https://pagure.io/SSSD/sssd/issue/3719) - The SSSD IPA provider allocates information about external groups on a long lived memory context, causing memory growth of the sssd_be process
-- [3715](https://pagure.io/SSSD/sssd/issue/3715) - ipa 389-ds-base crash in krb5-libs - k5_copy_etypes list out of bound?
-- [3706](https://pagure.io/SSSD/sssd/issue/3706) - Hide debug message domain not found for well known sid
-- [3694](https://pagure.io/SSSD/sssd/issue/3694) - externalUser sudo attribute must be fully-qualified
-- [3684](https://pagure.io/SSSD/sssd/issue/3684) - A group is not updated if its member is removed with the cleanup task, but the group does not change
-- [3680](https://pagure.io/SSSD/sssd/issue/3680) - GPO: SSSD fails to process GPOs If a rule is defined, but contains no SIDs
-- [3679](https://pagure.io/SSSD/sssd/issue/3679) - Make nss netgroup requests more robust
-- [3674](https://pagure.io/SSSD/sssd/issue/3674) - The tcurl module logs the payload
-- [3671](https://pagure.io/SSSD/sssd/issue/3671) - KCM: Payload buffer is too small
-- [3666](https://pagure.io/SSSD/sssd/issue/3666) - Fix usage of str.decode() in our tests
-- [3664](https://pagure.io/SSSD/sssd/issue/3664) - LOGS: Improve debugging in case the PAM service is not mapped to any GPO rule
-- [3660](https://pagure.io/SSSD/sssd/issue/3660) - confdb_expand_app_domains() always fails
-- [3658](https://pagure.io/SSSD/sssd/issue/3658) - Application domain is not interpreted correctly
-- [3656](https://pagure.io/SSSD/sssd/issue/3656) - PyErr_NewExceptionWithDoc configure check should not use cached results for different python versions
-- [3646](https://pagure.io/SSSD/sssd/issue/3646) - SSSD's GPO code ignores ad_site option
-- [3644](https://pagure.io/SSSD/sssd/issue/3644) - sss_groupshow no longer labels MPG groups
-- [3634](https://pagure.io/SSSD/sssd/issue/3634) - sssctl COMMAND --help fails if sssd is not configured
-- [3633](https://pagure.io/SSSD/sssd/issue/3633) - Reset the last_request_time when any activity happens on Secrets and KCM responders
-- [3629](https://pagure.io/SSSD/sssd/issue/3629) - Implement sss_nss_getsidbyuid and sss_nss_etsidbygid for situations where customers define UID == GID
-- [3619](https://pagure.io/SSSD/sssd/issue/3619) - Enable local_negative_timeout by default
-- [3605](https://pagure.io/SSSD/sssd/issue/3605) - Fix pep8 issues on our python files.
-- [3595](https://pagure.io/SSSD/sssd/issue/3595) - ID override GID from Default Trust View is not properly resolved in case domain resolution order is set
-- [3558](https://pagure.io/SSSD/sssd/issue/3558) - sudo: report error when two rules share cn
-- [3550](https://pagure.io/SSSD/sssd/issue/3550) - refresh_expired_interval does not work with netgrous in 1.15
-- [3520](https://pagure.io/SSSD/sssd/issue/3520) - Files provider supports only BE_FILTER_ENUM
-- [3469](https://pagure.io/SSSD/sssd/issue/3469) - extend sss-certmap man page regarding priority processing
-- [3436](https://pagure.io/SSSD/sssd/issue/3436) - Certificates used in unit tests have limited lifetime
-- [3402](https://pagure.io/SSSD/sssd/issue/3402) - Support alternative sources for the files provider
-- [3335](https://pagure.io/SSSD/sssd/issue/3335) - GPO retrieval doesn't work if SMB1 is disabled
-- [2653](https://pagure.io/SSSD/sssd/issue/2653) - Group renaming issue when "id_provider = ldap" is set.
+- [\#4758](https://github.com/SSSD/sssd/issues/4758) - /usr/libexec/sssd/sssd_autofs SIGABRT crash daily due to a double free
+- [\#4756](https://github.com/SSSD/sssd/issues/4756) - [RFE] sssd.conf should mention the FILES provider as valid config value for the 'id_provider'
+- [\#4755](https://github.com/SSSD/sssd/issues/4755) - home dir disappear in sssd cache on the IPA master for AD users
+- [\#4752](https://github.com/SSSD/sssd/issues/4752) - Race condition between concurrent initgroups requests can cause one of them to return incomplete information
+- [\#4751](https://github.com/SSSD/sssd/issues/4751) - Weirdness when using files provider and domain resolution order
+- [\#4750](https://github.com/SSSD/sssd/issues/4750) - Change of: User may not run sudo --&gt; a password is required
+- [\#4749](https://github.com/SSSD/sssd/issues/4749) - Samba can not register sss idmap module because it's using an outdated SMB_IDMAP_INTERFACE_VERSION
+- [\#4748](https://github.com/SSSD/sssd/issues/4748) - Utilizing domain_resolution_order in sssd.conf breaks SELinux user map
+- [\#4741](https://github.com/SSSD/sssd/issues/4741) - sssd fails to download known_hosts from freeipa
+- [\#4737](https://github.com/SSSD/sssd/issues/4737) - Request by ID outside the min_id/max_id limit of a first domain does not reach the second domain
+- [\#4735](https://github.com/SSSD/sssd/issues/4735) - SSSD with ID provider 'ad' should give a warning in case the ldap schema is manually changed to something different than 'ad'.
+- [\#4734](https://github.com/SSSD/sssd/issues/4734) - sssd not honoring dyndns_server if the DNS update process is terminated with a signal
+- [\#4729](https://github.com/SSSD/sssd/issues/4729) - The SSSD IPA provider allocates information about external groups on a long lived memory context, causing memory growth of the sssd_be process
+- [\#4725](https://github.com/SSSD/sssd/issues/4725) - ipa 389-ds-base crash in krb5-libs - k5_copy_etypes list out of bound?
+- [\#4720](https://github.com/SSSD/sssd/issues/4720) - Hide debug message domain not found for well known sid
+- [\#4711](https://github.com/SSSD/sssd/issues/4711) - externalUser sudo attribute must be fully-qualified
+- [\#4703](https://github.com/SSSD/sssd/issues/4703) - A group is not updated if its member is removed with the cleanup task, but the group does not change
+- [\#4699](https://github.com/SSSD/sssd/issues/4699) - GPO: SSSD fails to process GPOs If a rule is defined, but contains no SIDs
+- [\#4698](https://github.com/SSSD/sssd/issues/4698) - Make nss netgroup requests more robust
+- [\#4693](https://github.com/SSSD/sssd/issues/4693) - The tcurl module logs the payload
+- [\#4690](https://github.com/SSSD/sssd/issues/4690) - KCM: Payload buffer is too small
+- [\#4686](https://github.com/SSSD/sssd/issues/4686) - Fix usage of str.decode() in our tests
+- [\#4684](https://github.com/SSSD/sssd/issues/4684) - LOGS: Improve debugging in case the PAM service is not mapped to any GPO rule
+- [\#4680](https://github.com/SSSD/sssd/issues/4680) - confdb_expand_app_domains() always fails
+- [\#4678](https://github.com/SSSD/sssd/issues/4678) - Application domain is not interpreted correctly
+- [\#4676](https://github.com/SSSD/sssd/issues/4676) - PyErr_NewExceptionWithDoc configure check should not use cached results for different python versions
+- [\#4666](https://github.com/SSSD/sssd/issues/4666) - SSSD's GPO code ignores ad_site option
+- [\#4665](https://github.com/SSSD/sssd/issues/4665) - sss_groupshow no longer labels MPG groups
+- [\#4655](https://github.com/SSSD/sssd/issues/4655) - sssctl COMMAND --help fails if sssd is not configured
+- [\#4654](https://github.com/SSSD/sssd/issues/4654) - Reset the last_request_time when any activity happens on Secrets and KCM responders
+- [\#4650](https://github.com/SSSD/sssd/issues/4650) - Implement sss_nss_getsidbyuid and sss_nss_etsidbygid for situations where customers define UID == GID
+- [\#4640](https://github.com/SSSD/sssd/issues/4640) - Enable local_negative_timeout by default
+- [\#4628](https://github.com/SSSD/sssd/issues/4628) - Fix pep8 issues on our python files.
+- [\#4618](https://github.com/SSSD/sssd/issues/4618) - ID override GID from Default Trust View is not properly resolved in case domain resolution order is set
+- [\#4583](https://github.com/SSSD/sssd/issues/4583) - sudo: report error when two rules share cn
+- [\#4576](https://github.com/SSSD/sssd/issues/4576) - refresh_expired_interval does not work with netgrous in 1.15
+- [\#4546](https://github.com/SSSD/sssd/issues/4546) - Files provider supports only BE_FILTER_ENUM
+- [\#4495](https://github.com/SSSD/sssd/issues/4495) - extend sss-certmap man page regarding priority processing
+- [\#4463](https://github.com/SSSD/sssd/issues/4463) - Certificates used in unit tests have limited lifetime
+- [\#4429](https://github.com/SSSD/sssd/issues/4429) - Support alternative sources for the files provider
+- [\#4366](https://github.com/SSSD/sssd/issues/4366) - GPO retrieval doesn't work if SMB1 is disabled
+- [\#3694](https://github.com/SSSD/sssd/issues/3694) - Group renaming issue when "id_provider = ldap" is set.
 
 Detailed Changelog
 ------------------

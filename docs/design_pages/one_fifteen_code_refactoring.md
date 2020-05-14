@@ -34,13 +34,13 @@ Currently each responder (except the InfoPipe responder and several parts of the
 
 In 1.15, we should look at allowing lookups from trusted domain with a shortname. But we need to take performance into account and avoid cycling over all domains including their LDAP server. Then we could switch to checking the caches of all domains first before checking each domain's cache and then its server.
 
-This goal is tracked by <https://pagure.io/SSSD/sssd/issue/843(Login time increases strongly if more than one domain is configured) and ultimately by <https://pagure.io/SSSD/sssd/issue/3001([RFE] Short name input format with SSSD for users from all domains when domain autodiscovery is used).
+This goal is tracked by <https://github.com/SSSD/sssd/issues/1885(Login time increases strongly if more than one domain is configured) and ultimately by <https://github.com/SSSD/sssd/issues/4042([RFE] Short name input format with SSSD for users from all domains when domain autodiscovery is used).
 
 #### Tracking tickets
 
-  - <https://pagure.io/SSSD/sssd/issue/3151>
+  - <https://github.com/SSSD/sssd/issues/4184>
     - cache_req: complete the needs of NSS responders
-  - <https://pagure.io/SSSD/sssd/issue/1126>
+  - <https://github.com/SSSD/sssd/issues/2168>
     - Reuse cache_req() in responder code
 
 #### Testing
@@ -63,7 +63,7 @@ The `sdap_async_groups.c` module would be better maintainable and we would remov
 
 #### Tracking tickets
 
-  - <https://pagure.io/SSSD/sssd/issue/3211>
+  - <https://github.com/SSSD/sssd/issues/4244>
     - Refactor the sdap_async_groups.c module
 
 #### Testing
@@ -86,14 +86,14 @@ The module would be better maintainable (currently there are some codepaths wher
 
 #### Tracking tickets
 
-  - <https://pagure.io/SSSD/sssd/issue/1507>
+  - <https://github.com/SSSD/sssd/issues/2549>
     \- Investigate terminating connections in sdap_ops.c and comment the code some more
 
 Other related tickets include:
 
-  - <https://pagure.io/SSSD/sssd/issue/2767>
+  - <https://github.com/SSSD/sssd/issues/3808>
     - The sdap_op code always ends request with EAGAIN
-  - <https://pagure.io/SSSD/sssd/issue/2976>
+  - <https://github.com/SSSD/sssd/issues/4017>
     - sdap code can mark the whole sssd_be offline
 
 #### Testing
@@ -114,7 +114,7 @@ Performance benefit in case SSSD must call identity lookup requests from differe
 
 #### Tracking tickets
 
-  - <https://pagure.io/SSSD/sssd/issue/2943>
+  - <https://github.com/SSSD/sssd/issues/3984>
     \- Split out the requests for IPA users and groups that include overrides into reusable requests
 
 #### Testing
@@ -135,7 +135,7 @@ SSSD integration tests would allow us to write tests for the AD provider.
 
 #### Tracking tickets
 
-  - <https://pagure.io/SSSD/sssd/issue/2818>
+  - <https://github.com/SSSD/sssd/issues/3859>
     - Investigate if Samba4 in Fedora can be used for SSSD CI
 
 #### Testing
@@ -158,7 +158,7 @@ Socket-activatable services would be better manageable by SSSD.
 
 #### Tracking tickets
 
-  - <https://pagure.io/SSSD/sssd/issue/2231>
+  - <https://github.com/SSSD/sssd/issues/3273>
     - RFE: Drop the monitor process
 
 #### Testing
@@ -179,9 +179,9 @@ Better performance through leveraging memory cache for SID lookups and lookups i
 
 #### Tracking tickets
 
-  - <https://pagure.io/SSSD/sssd/issue/3193>
+  - <https://github.com/SSSD/sssd/issues/4226>
     - [RFE] Support aliases in the memory cache
-  - <https://pagure.io/SSSD/sssd/issue/2727>
+  - <https://github.com/SSSD/sssd/issues/3768>
     - Add a memcache for SID-by-id lookups
 
 #### Testing
@@ -228,8 +228,8 @@ We remove old and problematic code that nobody understands. We can improve site 
 
 #### Tracking tickets
 
-  - <https://pagure.io/SSSD/sssd/issue/2393>
-  - <https://pagure.io/SSSD/sssd/issue/2394>
+  - <https://github.com/SSSD/sssd/issues/3435>
+  - <https://github.com/SSSD/sssd/issues/3436>
 
 #### Testing
 

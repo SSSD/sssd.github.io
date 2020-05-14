@@ -4,7 +4,7 @@ Unfortunately, SSSD is not perfect and sometimes, you might encounter a bug. Thi
 
 ## Where to file the bugs?
 
-You'll need a [Fedora Account System](https://admin.fedoraproject.org/accounts) login to file a bug. When you have one, navigate to [the new ticket form](https://pagure.io/SSSD/sssd/new_issue).
+You'll need a [Fedora Account System](https://admin.fedoraproject.org/accounts) login to file a bug. When you have one, navigate to [the new ticket form](https://github.com/SSSD/sssd/issues/new).
 
 Some bugs will be automatically cloned from distribution bug-trackers, such as <http://bugzilla.redhat.com>.
 

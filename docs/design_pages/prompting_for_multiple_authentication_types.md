@@ -6,7 +6,7 @@ version: 1.14.x
 
 Related ticket(s):
 
-  - <https://pagure.io/SSSD/sssd/issue/2988>
+  - <https://github.com/SSSD/sssd/issues/4029>
 
 ## Problem statement
 
@@ -43,7 +43,7 @@ Depending on the available authentication types SSSD will show different login p
 | otp                  | First factor: Second factor:                                                       |
 | password + otp       | First factor or password: Second factor, press return for Password authentication: |
 
-If Smartcard authentication is enabled (*pam_cert_auth = True*) and a Smartcard is inserted in a reader with a certificate matching the user who wants to login the login prompt will ask for the Smartcard PIN for local authentication. ([<https://docs.pagure.org/SSSD.sssd/design_pages/smartcard_authentication_step1>](https://docs.pagure.org/SSSD.sssd/design_pages/smartcard_authentication_step1.html)). Upcoming support for pkinit might lead to another extension of the prompting scheme.
+If Smartcard authentication is enabled (*pam_cert_auth = True*) and a Smartcard is inserted in a reader with a certificate matching the user who wants to login the login prompt will ask for the Smartcard PIN for local authentication. ([<smartcard_authentication_step1>](smartcard_authentication_step1.md)). Upcoming support for pkinit might lead to another extension of the prompting scheme.
 
 ## Implementation details
 

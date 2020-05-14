@@ -6,13 +6,13 @@ version: 1.14.x
 
 Related ticket(s):
 
-  - <https://pagure.io/SSSD/sssd/issue/2247>
-  - <https://pagure.io/SSSD/sssd/issue/2028>
-  - <https://pagure.io/SSSD/sssd/issue/1308>
-  - <https://pagure.io/SSSD/sssd/issue/2249>
-  - <https://pagure.io/SSSD/sssd/issue/2269>
-  - <https://pagure.io/SSSD/sssd/issue/2465>
-  - <https://pagure.io/SSSD/sssd/issue/2687>
+  - <https://github.com/SSSD/sssd/issues/3289>
+  - <https://github.com/SSSD/sssd/issues/3070>
+  - <https://github.com/SSSD/sssd/issues/2350>
+  - <https://github.com/SSSD/sssd/issues/3291>
+  - <https://github.com/SSSD/sssd/issues/3311>
+  - <https://github.com/SSSD/sssd/issues/3507>
+  - <https://github.com/SSSD/sssd/issues/3728>
   - ...and more
 
 ## Problem statement

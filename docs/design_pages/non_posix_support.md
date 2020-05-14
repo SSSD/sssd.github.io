@@ -6,7 +6,7 @@ version: 1.15.x
 
 ## Related ticket(s):
 
-<https://pagure.io/SSSD/sssd/issue/3310>
+<https://github.com/SSSD/sssd/issues/4343>
 
 ## Problem statement
 
@@ -71,7 +71,7 @@ The last change needed is for Kerberos authentication. Since the Kerberos ticket
 
 The best way of testing this feature is to test the "full stack" together with an application and the Apache modules. However, at the moment there is a [bug in mod_lookup_identity](https://bugzilla.redhat.com/show_bug.cgi?id=14367331) that prevents the non-POSIX lookups from working.
 
-However, isolated testing can be performed as well. All tests expect that the LDAP server is populated with entries that do not contain POSIX attributes or might contain POSIX attributes in the case of mixed setup tests. For testing PAM authn and authz, the `pam_test_client` binary built from SSSD sources can be used until `sssctl` provides a better way by fixing <https://pagure.io/SSSD/sssd/issue/3292>.
+However, isolated testing can be performed as well. All tests expect that the LDAP server is populated with entries that do not contain POSIX attributes or might contain POSIX attributes in the case of mixed setup tests. For testing PAM authn and authz, the `pam_test_client` binary built from SSSD sources can be used until `sssctl` provides a better way by fixing <https://github.com/SSSD/sssd/issues/4325>.
 
 The users in the test setup should be members of non-POSIX groups, or a mix of POSIX and non-POSIX groups in the mixed scenario setups.
 

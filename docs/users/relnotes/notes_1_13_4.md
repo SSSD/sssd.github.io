@@ -32,46 +32,46 @@ Tickets Fixed
 -------------
 
 
-- [\#1041](https://pagure.io/SSSD/sssd/issue/1041) [RFE] Support Automatic Renewing of Kerberos Host Keytabs
-- [\#1108](https://pagure.io/SSSD/sssd/issue/1108) [RFE] SUDO: Support the IPA schema
-- [\#2188](https://pagure.io/SSSD/sssd/issue/2188) automatically assign new slices for any AD domain
-- [\#2522](https://pagure.io/SSSD/sssd/issue/2522) [RFE] IPA: resolve external group memberships of IPA groups during getgrnam and getgrgid
-- [\#2626](https://pagure.io/SSSD/sssd/issue/2626) Retry EPIPE from clients
-- [\#2764](https://pagure.io/SSSD/sssd/issue/2764) the colondb intreface has no unit tests
-- [\#2765](https://pagure.io/SSSD/sssd/issue/2765) ad_site parameter does not work
-- [\#2785](https://pagure.io/SSSD/sssd/issue/2785) incompatibility between sparkleshare and sss_ssh_knownhostsproxy due to setlocale()
-- [\#2791](https://pagure.io/SSSD/sssd/issue/2791) sssd dereference processing failed : Input/output error
-- [\#2829](https://pagure.io/SSSD/sssd/issue/2829) collapse_srv_lookups frees fo_server structure that is returned by fail over API
-- [\#2839](https://pagure.io/SSSD/sssd/issue/2839) Allow SSSD to notify user of denial due to AD account lockout
-- [\#2849](https://pagure.io/SSSD/sssd/issue/2849) cache_req: don't search override values in LDAP when using LOCAL view
-- [\#2865](https://pagure.io/SSSD/sssd/issue/2865) sssd_nss memory usage keeps growing on sssd-1.12.4-47.el6.x86_64 (RHEL6.7) when trying to retrieve non-existing netgroups
-- [\#2881](https://pagure.io/SSSD/sssd/issue/2881) MAN: Clarify that subdomains always use service discovery
-- [\#2888](https://pagure.io/SSSD/sssd/issue/2888) SRV lookups with id_provider=proxy and auth_provider=krb5
-- [\#2899](https://pagure.io/SSSD/sssd/issue/2899) [sssd] Trusted (AD) user's info stays in sssd cache for much more than expected.
-- [\#2902](https://pagure.io/SSSD/sssd/issue/2902) Review and update wiki pages for 1.13.4
-- [\#2904](https://pagure.io/SSSD/sssd/issue/2904) sssd_be AD segfaults on missing A record
-- [\#2906](https://pagure.io/SSSD/sssd/issue/2906) Cannot retrieve users after upgrade from 1.12 to 1.13
-- [\#2909](https://pagure.io/SSSD/sssd/issue/2909) extreme memory usage in libnfsidmap sss.so plug-in when resolving groups with many members
-- [\#2910](https://pagure.io/SSSD/sssd/issue/2910) sssd mixup nested group from AD trusted domains
-- [\#2912](https://pagure.io/SSSD/sssd/issue/2912) refresh_expired_interval stops sss_cache from working
-- [\#2917](https://pagure.io/SSSD/sssd/issue/2917) Properly remove OriginalMemberOf attribute in SSSD cache if user has no secondary groups anymore
-- [\#2922](https://pagure.io/SSSD/sssd/issue/2922) ID mapping - bug in computing max id for slice range
-- [\#2925](https://pagure.io/SSSD/sssd/issue/2925) Add gnome-screensaver to the list of PAM services considered for Smartcard authentication
-- [\#2931](https://pagure.io/SSSD/sssd/issue/2931) Warn if user cannot read krb5.conf
-- [\#2934](https://pagure.io/SSSD/sssd/issue/2934) After removing certificate from user in IPA and even after sss_cache, FindByCertificate still finds the user
-- [\#2937](https://pagure.io/SSSD/sssd/issue/2937) sss_obfuscate: SyntaxError: Missing parentheses in call to 'print'
-- [\#2938](https://pagure.io/SSSD/sssd/issue/2938) Cannot start sssd after switching to non-root
-- [\#2959](https://pagure.io/SSSD/sssd/issue/2959) The delete operation of the memberof plugin allocates memory on NULL context
-- [\#2960](https://pagure.io/SSSD/sssd/issue/2960) IPA view: view name not stored properly with default FreeIPA installation
-- [\#2961](https://pagure.io/SSSD/sssd/issue/2961) Initgroups in AD provider might fail if user is stored in a non-default ou
-- [\#2962](https://pagure.io/SSSD/sssd/issue/2962) GPO: Access denied in non-root mode
-- [\#2964](https://pagure.io/SSSD/sssd/issue/2964) GPO: Access denied after blocking connection to AD.
-- [\#2969](https://pagure.io/SSSD/sssd/issue/2969) sudorule not working with ipa sudo_provider on older freeipa
-- [\#2970](https://pagure.io/SSSD/sssd/issue/2970) sudo smart refresh does not work correctly on openldap
-- [\#2971](https://pagure.io/SSSD/sssd/issue/2971) SSSD PAM module does not support multiple password prompts (e.g. Password + Token) with sudo
-- [\#2972](https://pagure.io/SSSD/sssd/issue/2972) IPA sudo: support the externalUser attribute
-- [\#2980](https://pagure.io/SSSD/sssd/issue/2980) sssd_be[11010]: segfault at 0 ip 00007ff889ff61bb sp 00007ffc7d66a3b0 error 4 in libsss_ipa.so[7ff889fcf000+5d000]
-- [\#2989](https://pagure.io/SSSD/sssd/issue/2989) local overrides: issues with sub-domain users and mixed case names
+- [\#2083](https://github.com/SSSD/sssd/issues/2083) [RFE] Support Automatic Renewing of Kerberos Host Keytabs
+- [\#2150](https://github.com/SSSD/sssd/issues/2150) [RFE] SUDO: Support the IPA schema
+- [\#3230](https://github.com/SSSD/sssd/issues/3230) automatically assign new slices for any AD domain
+- [\#3564](https://github.com/SSSD/sssd/issues/3564) [RFE] IPA: resolve external group memberships of IPA groups during getgrnam and getgrgid
+- [\#3667](https://github.com/SSSD/sssd/issues/3667) Retry EPIPE from clients
+- [\#3805](https://github.com/SSSD/sssd/issues/3805) the colondb intreface has no unit tests
+- [\#3806](https://github.com/SSSD/sssd/issues/3806) ad_site parameter does not work
+- [\#3826](https://github.com/SSSD/sssd/issues/3826) incompatibility between sparkleshare and sss_ssh_knownhostsproxy due to setlocale()
+- [\#3832](https://github.com/SSSD/sssd/issues/3832) sssd dereference processing failed : Input/output error
+- [\#3870](https://github.com/SSSD/sssd/issues/3870) collapse_srv_lookups frees fo_server structure that is returned by fail over API
+- [\#3880](https://github.com/SSSD/sssd/issues/3880) Allow SSSD to notify user of denial due to AD account lockout
+- [\#3890](https://github.com/SSSD/sssd/issues/3890) cache_req: don't search override values in LDAP when using LOCAL view
+- [\#3906](https://github.com/SSSD/sssd/issues/3906) sssd_nss memory usage keeps growing on sssd-1.12.4-47.el6.x86_64 (RHEL6.7) when trying to retrieve non-existing netgroups
+- [\#3922](https://github.com/SSSD/sssd/issues/3922) MAN: Clarify that subdomains always use service discovery
+- [\#3929](https://github.com/SSSD/sssd/issues/3929) SRV lookups with id_provider=proxy and auth_provider=krb5
+- [\#3940](https://github.com/SSSD/sssd/issues/3940) [sssd] Trusted (AD) user's info stays in sssd cache for much more than expected.
+- [\#3943](https://github.com/SSSD/sssd/issues/3943) Review and update wiki pages for 1.13.4
+- [\#3945](https://github.com/SSSD/sssd/issues/3945) sssd_be AD segfaults on missing A record
+- [\#3947](https://github.com/SSSD/sssd/issues/3947) Cannot retrieve users after upgrade from 1.12 to 1.13
+- [\#3950](https://github.com/SSSD/sssd/issues/3950) extreme memory usage in libnfsidmap sss.so plug-in when resolving groups with many members
+- [\#3951](https://github.com/SSSD/sssd/issues/3951) sssd mixup nested group from AD trusted domains
+- [\#3953](https://github.com/SSSD/sssd/issues/3953) refresh_expired_interval stops sss_cache from working
+- [\#3958](https://github.com/SSSD/sssd/issues/3958) Properly remove OriginalMemberOf attribute in SSSD cache if user has no secondary groups anymore
+- [\#3963](https://github.com/SSSD/sssd/issues/3963) ID mapping - bug in computing max id for slice range
+- [\#3966](https://github.com/SSSD/sssd/issues/3966) Add gnome-screensaver to the list of PAM services considered for Smartcard authentication
+- [\#3972](https://github.com/SSSD/sssd/issues/3972) Warn if user cannot read krb5.conf
+- [\#3975](https://github.com/SSSD/sssd/issues/3975) After removing certificate from user in IPA and even after sss_cache, FindByCertificate still finds the user
+- [\#3978](https://github.com/SSSD/sssd/issues/3978) sss_obfuscate: SyntaxError: Missing parentheses in call to 'print'
+- [\#3979](https://github.com/SSSD/sssd/issues/3979) Cannot start sssd after switching to non-root
+- [\#4000](https://github.com/SSSD/sssd/issues/4000) The delete operation of the memberof plugin allocates memory on NULL context
+- [\#4001](https://github.com/SSSD/sssd/issues/4001) IPA view: view name not stored properly with default FreeIPA installation
+- [\#4002](https://github.com/SSSD/sssd/issues/4002) Initgroups in AD provider might fail if user is stored in a non-default ou
+- [\#4003](https://github.com/SSSD/sssd/issues/4003) GPO: Access denied in non-root mode
+- [\#4005](https://github.com/SSSD/sssd/issues/4005) GPO: Access denied after blocking connection to AD.
+- [\#4010](https://github.com/SSSD/sssd/issues/4010) sudorule not working with ipa sudo_provider on older freeipa
+- [\#4011](https://github.com/SSSD/sssd/issues/4011) sudo smart refresh does not work correctly on openldap
+- [\#4012](https://github.com/SSSD/sssd/issues/4012) SSSD PAM module does not support multiple password prompts (e.g. Password + Token) with sudo
+- [\#4013](https://github.com/SSSD/sssd/issues/4013) IPA sudo: support the externalUser attribute
+- [\#4021](https://github.com/SSSD/sssd/issues/4021) sssd_be[11010]: segfault at 0 ip 00007ff889ff61bb sp 00007ffc7d66a3b0 error 4 in libsss_ipa.so[7ff889fcf000+5d000]
+- [\#4030](https://github.com/SSSD/sssd/issues/4030) local overrides: issues with sub-domain users and mixed case names
 
 Detailed Changelog
 ------------------

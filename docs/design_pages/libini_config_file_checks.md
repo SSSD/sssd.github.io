@@ -6,8 +6,8 @@ version: 1.14.x
 
 Related ticket(s):
 
-  - <https://pagure.io/SSSD/sssd/issue/2269>
-  - <https://pagure.io/SSSD/sssd/issue/133>
+  - <https://github.com/SSSD/sssd/issues/3311>
+  - <https://github.com/SSSD/sssd/issues/1175>
 
 ## Problem statement
 

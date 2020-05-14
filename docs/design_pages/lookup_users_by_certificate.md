@@ -6,19 +6,19 @@ version: 1.13.x
 
 Related ticket(s):
 
-  - <https://pagure.io/SSSD/sssd/issue/2596>
-  - <https://pagure.io/SSSD/sssd/issue/546>
+  - <https://github.com/SSSD/sssd/issues/3637>
+  - <https://github.com/SSSD/sssd/issues/1588>
   - <https://pagure.io/freeipa/issue/4238> Design page: [http://www.freeipa.org/page/V4/User_Certificates](http://www.freeipa.org/page/V4/User_Certificates)
 
 ## Problem statement
 
-As stated in ticket [\#2596](https://pagure.io/SSSD/sssd/issue/2596) applications doing user authentication based on certificates, e.g. web servers, need a way to map the certificate presented by the client to a specific user. Although there are various ways to derive a user name from special entries in the certificate so far there is no generally accepted scheme. The most general and in some cases the only possible way is to look up the certificate directly in the LDAP server. This requires that the certificate is stored in the LDAP server which we will assume for this initial design. (In a second part user lookups based on the certificate content will be added, this requires that the syntax for the mapping is specified in [<http://www.freeipa.org/page/V4/User_Certificates#Certificate_Identity_Mapping>](http://www.freeipa.org/page/V4/User_Certificates#Certificate_Identity_Mapping))
+As stated in ticket [\#3637](https://github.com/SSSD/sssd/issues/3637) applications doing user authentication based on certificates, e.g. web servers, need a way to map the certificate presented by the client to a specific user. Although there are various ways to derive a user name from special entries in the certificate so far there is no generally accepted scheme. The most general and in some cases the only possible way is to look up the certificate directly in the LDAP server. This requires that the certificate is stored in the LDAP server which we will assume for this initial design. (In a second part user lookups based on the certificate content will be added, this requires that the syntax for the mapping is specified in [<http://www.freeipa.org/page/V4/User_Certificates#Certificate_Identity_Mapping>](http://www.freeipa.org/page/V4/User_Certificates#Certificate_Identity_Mapping))
 
 The primary interface to lookup users by certificate would be D-BUS.
 
 ## Use cases
 
-The primary use case is described in ticket [\#2596](https://pagure.io/SSSD/sssd/issue/2596). If Apache is configured to use certificate based client authentication modules like mod_lookup_identity has access to the PAM encoded certificate via environment variables. With this data as input mod_lookup_identity should call a D-BUS method like *org.freedesktop.sssd.infopipe.GetUserAttrByCert* which will return the data of the user the certificate belongs similar to the *GetUserAttr* method.
+The primary use case is described in ticket [\#3637](https://github.com/SSSD/sssd/issues/3637). If Apache is configured to use certificate based client authentication modules like mod_lookup_identity has access to the PAM encoded certificate via environment variables. With this data as input mod_lookup_identity should call a D-BUS method like *org.freedesktop.sssd.infopipe.GetUserAttrByCert* which will return the data of the user the certificate belongs similar to the *GetUserAttr* method.
 
 ## Overview of the solution
 

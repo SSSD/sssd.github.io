@@ -6,11 +6,11 @@ version: 1.13.x
 
 Related ticket(s):
 
-  - [​https://pagure.io/SSSD/sssd/issue/2150](https://pagure.io/SSSD/sssd/issue/2150)
+  - [​https://github.com/SSSD/sssd/issues/3192](https://github.com/SSSD/sssd/issues/3192)
 
 Related design page(s):
 
-  - [DBus Responder](https://docs.pagure.org/SSSD.sssd/design_pages/dbus_responder.html)
+  - [DBus Responder](dbus_responder.md)
 
 ## Problem statement
 
@@ -148,7 +148,7 @@ The following options will be created in the [ifp] and [domain] sections:
 
   - wildcard_search_limit (uint32)
 
-See the [wildcard refresh design page](https://docs.pagure.org/SSSD.sssd/design_pages/wildcard_refresh.html) for more details.
+See the [wildcard refresh design page](wildcard_refresh.md) for more details.
 
 ## How To Test
 

@@ -6,7 +6,7 @@ version: 1.10.x
 
 Related ticket(s):
 
-  - [Add a task to the SSSD to periodically refresh cached entries](https://pagure.io/SSSD/sssd/issue/1713)
+  - [Add a task to the SSSD to periodically refresh cached entries](https://github.com/SSSD/sssd/issues/2755)
 
 ## Problem Statement
 
@@ -14,7 +14,7 @@ Large deployments may suffer from latency when refreshing a big number of expire
 
 ## Overview of the solution
 
-We will create a back end task, that will periodically search and update all expired NSS entries. The periodic task it self is provider independent and it leverage new [periodic tasks API](https://docs.pagure.org/SSSD.sssd/design_pages/periodic_tasks.html). The task will fetch all expired entries and invoke a provider specific callback to update those entries.
+We will create a back end task, that will periodically search and update all expired NSS entries. The periodic task it self is provider independent and it leverage new [periodic tasks API](periodic_tasks.md). The task will fetch all expired entries and invoke a provider specific callback to update those entries.
 
 ## Implementation details
 

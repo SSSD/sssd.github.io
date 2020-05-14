@@ -10,7 +10,7 @@ version: not-implemented
 
 1.  Disentangle sdap_id_op setup from failover configuration
 2.  Handle async resolver needs for referrals. We need to look up referred servers and take the first IP returned by DNS.
-3.  Add idle disconnection timer for connections (see Ticket [\#1036](https://pagure.io/SSSD/sssd/issue/1036), needs to have its priority bumped up). We don't want to be hanging onto referred servers forever.
+3.  Add idle disconnection timer for connections (see Ticket [\#2078](https://github.com/SSSD/sssd/issues/2078), needs to have its priority bumped up). We don't want to be hanging onto referred servers forever.
 
 ## Single-entry lookup
 
@@ -35,13 +35,13 @@ First approximation: just process each referral as a series of single-entry look
 
 Only the primary server will need multiple bases. The referrals will end up as base searches, thereby ignoring the multiple search base values.
 
-Referrals should *ignore* the base filtering of ticket [\#960](https://pagure.io/SSSD/sssd/issue/960).
+Referrals should *ignore* the base filtering of ticket [\#2002](https://github.com/SSSD/sssd/issues/2002).
 
 How do we handle originalDN? I think we need to save originalDN as it would have appeared on the primary server, not the referred server.
 
 Research: how are we doing this now? I remember that we hit this before when dealing with referrals. Did we solve it for all referral types or only some?
 
-Finally, related to the search filtering, ticket [\#960](https://pagure.io/SSSD/sssd/issue/960) should do its filtering based on the originalDN value, not the referred DN.
+Finally, related to the search filtering, ticket [\#2002](https://github.com/SSSD/sssd/issues/2002) should do its filtering based on the originalDN value, not the referred DN.
 
 ## Questions needing research
 

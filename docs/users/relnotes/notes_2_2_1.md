@@ -31,35 +31,35 @@ A new option `dns_resolver_server_timeout` was added A new option `max_ccaches` 
 Tickets Fixed
 -------------
 
-- [2878](https://pagure.io/SSSD/sssd/issue/2878) - sssd failover does not work on connecting to non-responsive <ldaps://server
-- [3217](https://pagure.io/SSSD/sssd/issue/3217) - Conflicting default timeout values
-- [3386](https://pagure.io/SSSD/sssd/issue/3386) - sssd-kcm cannot handle big tickets
-- [3489](https://pagure.io/SSSD/sssd/issue/3489) - p11_child should work wit openssl1.0+
-- [3685](https://pagure.io/SSSD/sssd/issue/3685) - KCM: Default to a new back end that would write to the secrets database directly
-- [3833](https://pagure.io/SSSD/sssd/issue/3833) - port to pcre2
-- [3894](https://pagure.io/SSSD/sssd/issue/3894) - multihost tests: ldb-tools is needed for multihost tests
-- [3905](https://pagure.io/SSSD/sssd/issue/3905) - SSSD doesn't clear cache entries for IDs below min_id.
-- [4012](https://pagure.io/SSSD/sssd/issue/4012) - SSSD is not refreshing cached user data for the ipa sub-domain in a IPA/AD trust
-- [4026](https://pagure.io/SSSD/sssd/issue/4026) - EVP_PKEY_new_raw_private_key() was only added in OpenSSL 1.1.1
-- [4028](https://pagure.io/SSSD/sssd/issue/4028) - sssd-kcm calls sssd-genconf which triggers nscd warning
-- [4037](https://pagure.io/SSSD/sssd/issue/4037) - Logins fail after upgrade to 2.2.0
-- [4040](https://pagure.io/SSSD/sssd/issue/4040) - Reasonable to Restart sssd on crashes?
-- [4046](https://pagure.io/SSSD/sssd/issue/4046) - sudo: incorrect usn value for openldap
-- [4047](https://pagure.io/SSSD/sssd/issue/4047) - dyndns_update = True is no longer not enough to get the IP address of the machine updated in IPA upon sssd.service startup
-- [4050](https://pagure.io/SSSD/sssd/issue/4050) - nss_cmd_endservent resets the wrong index
-- [4052](https://pagure.io/SSSD/sssd/issue/4052) - sssd config option "default_domain_suffix" should not cause the files domain entries to be qualified
-- [3931](https://pagure.io/SSSD/sssd/issue/3931) - proxy provider is not working with enumerate=true when trying to fetch all groups
-- [4043](https://pagure.io/SSSD/sssd/issue/4043) - Typo in systemd.m4 prevents detection of systemd.pc
-- [3978](https://pagure.io/SSSD/sssd/issue/3978) - UPN negative cache does not use values from 'filter_users' config option
-- [4032](https://pagure.io/SSSD/sssd/issue/4032) - p11_child::do_ocsp() function implementation is not FIPS140 compliant
-- [4039](https://pagure.io/SSSD/sssd/issue/4039) - p11_child::sign_data() function implementation is not FIPS140 compliant
-- [4056](https://pagure.io/SSSD/sssd/issue/4056) - permission denied on logs when running sssd as non-root user
-- [4024](https://pagure.io/SSSD/sssd/issue/4024) - Non FIPS140 compliant usage of PRNG
-- [2854](https://pagure.io/SSSD/sssd/issue/2854) - FAIL test-find-uid
-- [3962](https://pagure.io/SSSD/sssd/issue/3962) - Problem with tests/cmocka/test_dyndns.c
-- [4022](https://pagure.io/SSSD/sssd/issue/4022) - utils: sss_hmac_sha1() function implementation is not FIPS140 compliant
-- [4024](https://pagure.io/SSSD/sssd/issue/4024) - Non FIPS140 compliant usage of PRNG
-- [4026](https://pagure.io/SSSD/sssd/issue/4026) - EVP_PKEY_new_raw_private_key() was only added in OpenSSL 1.1.1
+- [\#3919](https://github.com/SSSD/sssd/issues/3919) - sssd failover does not work on connecting to non-responsive <ldaps://server
+- [\#4250](https://github.com/SSSD/sssd/issues/4250) - Conflicting default timeout values
+- [\#4413](https://github.com/SSSD/sssd/issues/4413) - sssd-kcm cannot handle big tickets
+- [\#4515](https://github.com/SSSD/sssd/issues/4515) - p11_child should work wit openssl1.0+
+- [\#4704](https://github.com/SSSD/sssd/issues/4704) - KCM: Default to a new back end that would write to the secrets database directly
+- [\#4827](https://github.com/SSSD/sssd/issues/4827) - port to pcre2
+- [\#4880](https://github.com/SSSD/sssd/issues/4880) - multihost tests: ldb-tools is needed for multihost tests
+- [\#4890](https://github.com/SSSD/sssd/issues/4890) - SSSD doesn't clear cache entries for IDs below min_id.
+- [\#4983](https://github.com/SSSD/sssd/issues/4983) - SSSD is not refreshing cached user data for the ipa sub-domain in a IPA/AD trust
+- [\#4996](https://github.com/SSSD/sssd/issues/4996) - EVP_PKEY_new_raw_private_key() was only added in OpenSSL 1.1.1
+- [\#4998](https://github.com/SSSD/sssd/issues/4998) - sssd-kcm calls sssd-genconf which triggers nscd warning
+- [\#5006](https://github.com/SSSD/sssd/issues/5006) - Logins fail after upgrade to 2.2.0
+- [\#5009](https://github.com/SSSD/sssd/issues/5009) - Reasonable to Restart sssd on crashes?
+- [\#5014](https://github.com/SSSD/sssd/issues/5014) - sudo: incorrect usn value for openldap
+- [\#5015](https://github.com/SSSD/sssd/issues/5015) - dyndns_update = True is no longer not enough to get the IP address of the machine updated in IPA upon sssd.service startup
+- [\#5018](https://github.com/SSSD/sssd/issues/5018) - nss_cmd_endservent resets the wrong index
+- [\#5020](https://github.com/SSSD/sssd/issues/5020) - sssd config option "default_domain_suffix" should not cause the files domain entries to be qualified
+- [\#4911](https://github.com/SSSD/sssd/issues/4911) - proxy provider is not working with enumerate=true when trying to fetch all groups
+- [\#5012](https://github.com/SSSD/sssd/issues/5012) - Typo in systemd.m4 prevents detection of systemd.pc
+- [\#4950](https://github.com/SSSD/sssd/issues/4950) - UPN negative cache does not use values from 'filter_users' config option
+- [\#5002](https://github.com/SSSD/sssd/issues/5002) - p11_child::do_ocsp() function implementation is not FIPS140 compliant
+- [\#5008](https://github.com/SSSD/sssd/issues/5008) - p11_child::sign_data() function implementation is not FIPS140 compliant
+- [\#5024](https://github.com/SSSD/sssd/issues/5024) - permission denied on logs when running sssd as non-root user
+- [\#4995](https://github.com/SSSD/sssd/issues/4995) - Non FIPS140 compliant usage of PRNG
+- [\#3895](https://github.com/SSSD/sssd/issues/3895) - FAIL test-find-uid
+- [\#4935](https://github.com/SSSD/sssd/issues/4935) - Problem with tests/cmocka/test_dyndns.c
+- [\#4993](https://github.com/SSSD/sssd/issues/4993) - utils: sss_hmac_sha1() function implementation is not FIPS140 compliant
+- [\#4995](https://github.com/SSSD/sssd/issues/4995) - Non FIPS140 compliant usage of PRNG
+- [\#4996](https://github.com/SSSD/sssd/issues/4996) - EVP_PKEY_new_raw_private_key() was only added in OpenSSL 1.1.1
 
 Detailed changelog
 ------------------

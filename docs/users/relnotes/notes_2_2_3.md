@@ -35,34 +35,34 @@ Documentation Changes
 Tickets Fixed
 -------------
 
-- [2607](https://pagure.io/SSSD/sssd/issue/2607) - sssd should not always read entire autofs map from ldap
-- [2660](https://pagure.io/SSSD/sssd/issue/2660) - SSSD service is crashing: dbus_watch_handle() is invoked with corrupted 'watch' value
-- [2710](https://pagure.io/SSSD/sssd/issue/2710) - Propagate error about multiple entries found from cache_req to responder
-- [3078](https://pagure.io/SSSD/sssd/issue/3078) - use the ERROR and PRINT macros consistently
-- [3219](https://pagure.io/SSSD/sssd/issue/3219) - [RFE] Regular expression used in sssd.conf not being able to consume an @-sign in the user/group name.
-- [3583](https://pagure.io/SSSD/sssd/issue/3583) - Stop calling umask(0) in selinux_child now that libsemanage has been fixed
-- [3677](https://pagure.io/SSSD/sssd/issue/3677) - [RFE] SSSD smart smard card, configure to soft fail when CRL not available
-- [3864](https://pagure.io/SSSD/sssd/issue/3864) - sss_ssh_authorizedkeys: no output when attribute value contains trailing whitespace
-- [3914](https://pagure.io/SSSD/sssd/issue/3914) - test_pam_responder.py needs improvement
-- [3938](https://pagure.io/SSSD/sssd/issue/3938) - sssctl config-check giving the wrong error message when there are only snippet files and no sssd. conf
-- [3995](https://pagure.io/SSSD/sssd/issue/3995) - SSSDConfig: some options are unknown
-- [4024](https://pagure.io/SSSD/sssd/issue/4024) - Non FIPS140 compliant usage of PRNG
-- [4030](https://pagure.io/SSSD/sssd/issue/4030) - sss_obfuscate fails to rewriting comments
-- [4073](https://pagure.io/SSSD/sssd/issue/4073) - Let IPA client read IPA objects via LDAP and not via extdom plugin when resolving trusted users and groups
-- [4078](https://pagure.io/SSSD/sssd/issue/4078) - Trusted domain user logins succeed after using ipa trustdomain-disable
-- [4080](https://pagure.io/SSSD/sssd/issue/4080) - Improve `sssd_nss` debug messages
-- [4081](https://pagure.io/SSSD/sssd/issue/4081) - systemctl status sssd says No such file or directory about "default" when keytab exists but is empty file
-- [4085](https://pagure.io/SSSD/sssd/issue/4085) - support for defaults entry is failing in sssd sudo against Openldap server
-- [4094](https://pagure.io/SSSD/sssd/issue/4094) - sss_client: usage of srand()/rand() may be disruptive for the user of lib
-- [4100](https://pagure.io/SSSD/sssd/issue/4100) - KCM: ccache is created with kdc_offset=INT32_MAX
-- [4101](https://pagure.io/SSSD/sssd/issue/4101) - [RFE] pam_sss allow_missing_name should allow whitespace-only string
-- [4102](https://pagure.io/SSSD/sssd/issue/4102) - Null dereference in sssctl/sssctl_domains.c:sssctl_domain_status_active_server()
-- [4111](https://pagure.io/SSSD/sssd/issue/4111) - automount on RHEL7 gives the message 'lookup(sss): setautomntent: No such file or directory'
-- [4112](https://pagure.io/SSSD/sssd/issue/4112) - ldap_uri failover doesn't work with different ports
-- [4114](https://pagure.io/SSSD/sssd/issue/4114) - sssd failover leads to delayed and failed logins
-- [4115](https://pagure.io/SSSD/sssd/issue/4115) - Smart Card authentication in polkit
-- [4116](https://pagure.io/SSSD/sssd/issue/4116) - autofs: delete possible duplicate of an autofs entry
-- [689](https://pagure.io/SSSD/sssd/issue/689) - Split sssd-ldap man page
+- [\#3648](https://github.com/SSSD/sssd/issues/3648) - sssd should not always read entire autofs map from ldap
+- [\#3701](https://github.com/SSSD/sssd/issues/3701) - SSSD service is crashing: dbus_watch_handle() is invoked with corrupted 'watch' value
+- [\#3751](https://github.com/SSSD/sssd/issues/3751) - Propagate error about multiple entries found from cache_req to responder
+- [\#4111](https://github.com/SSSD/sssd/issues/4111) - use the ERROR and PRINT macros consistently
+- [\#4252](https://github.com/SSSD/sssd/issues/4252) - [RFE] Regular expression used in sssd.conf not being able to consume an @-sign in the user/group name.
+- [\#4607](https://github.com/SSSD/sssd/issues/4607) - Stop calling umask(0) in selinux_child now that libsemanage has been fixed
+- [\#4696](https://github.com/SSSD/sssd/issues/4696) - [RFE] SSSD smart smard card, configure to soft fail when CRL not available
+- [\#4854](https://github.com/SSSD/sssd/issues/4854) - sss_ssh_authorizedkeys: no output when attribute value contains trailing whitespace
+- [\#4899](https://github.com/SSSD/sssd/issues/4899) - test_pam_responder.py needs improvement
+- [\#4918](https://github.com/SSSD/sssd/issues/4918) - sssctl config-check giving the wrong error message when there are only snippet files and no sssd. conf
+- [\#4967](https://github.com/SSSD/sssd/issues/4967) - SSSDConfig: some options are unknown
+- [\#4995](https://github.com/SSSD/sssd/issues/4995) - Non FIPS140 compliant usage of PRNG
+- [\#5000](https://github.com/SSSD/sssd/issues/5000) - sss_obfuscate fails to rewriting comments
+- [\#5041](https://github.com/SSSD/sssd/issues/5041) - Let IPA client read IPA objects via LDAP and not via extdom plugin when resolving trusted users and groups
+- [\#5044](https://github.com/SSSD/sssd/issues/5044) - Trusted domain user logins succeed after using ipa trustdomain-disable
+- [\#5045](https://github.com/SSSD/sssd/issues/5045) - Improve `sssd_nss` debug messages
+- [\#5046](https://github.com/SSSD/sssd/issues/5046) - systemctl status sssd says No such file or directory about "default" when keytab exists but is empty file
+- [\#5049](https://github.com/SSSD/sssd/issues/5049) - support for defaults entry is failing in sssd sudo against Openldap server
+- [\#5058](https://github.com/SSSD/sssd/issues/5058) - sss_client: usage of srand()/rand() may be disruptive for the user of lib
+- [\#5064](https://github.com/SSSD/sssd/issues/5064) - KCM: ccache is created with kdc_offset=INT32_MAX
+- [\#5065](https://github.com/SSSD/sssd/issues/5065) - [RFE] pam_sss allow_missing_name should allow whitespace-only string
+- [\#5066](https://github.com/SSSD/sssd/issues/5066) - Null dereference in sssctl/sssctl_domains.c:sssctl_domain_status_active_server()
+- [\#5072](https://github.com/SSSD/sssd/issues/5072) - automount on RHEL7 gives the message 'lookup(sss): setautomntent: No such file or directory'
+- [\#5073](https://github.com/SSSD/sssd/issues/5073) - ldap_uri failover doesn't work with different ports
+- [\#5075](https://github.com/SSSD/sssd/issues/5075) - sssd failover leads to delayed and failed logins
+- [\#5076](https://github.com/SSSD/sssd/issues/5076) - Smart Card authentication in polkit
+- [\#5077](https://github.com/SSSD/sssd/issues/5077) - autofs: delete possible duplicate of an autofs entry
+- [\#1731](https://github.com/SSSD/sssd/issues/1731) - Split sssd-ldap man page
 
 Detailed changelog
 ------------------

@@ -31,17 +31,15 @@ Documentation Changes
 Tickets Fixed
 -------------
 
-Please note that due to a bug in the pagure.io tracker, some tickets that have dependencies set to other tickets cannot be closed at the moment.
-
-- [\#3317](https://pagure.io/SSSD/sssd/issue/3317) - Newline characters (n) must be sanitized before LDAP requests take place
-- [\#3316](https://pagure.io/SSSD/sssd/issue/3316) - sssd-secrets doesn't exit on idle
-- [\#3314](https://pagure.io/SSSD/sssd/issue/3314) - sssd ignores entire groups from proxy provider if one member is listed twice
-- [\#3164](https://pagure.io/SSSD/sssd/issue/3164) - when group is invalidated using sss_cache dataExpireTimestamp entry in the domain and timestamps cache are inconsistent
-- [\#2668](https://pagure.io/SSSD/sssd/issue/2668) - [RFE] Add more flexible templating for override_homedir config option
-- [\#2599](https://pagure.io/SSSD/sssd/issue/2599) - Make it possible to configure AD subdomain in the server mode
-- [\#3322](https://pagure.io/SSSD/sssd/issue/3322) - chown in ExecStartPre of sssd-nss.service hangs forever
-- [\#843](https://pagure.io/SSSD/sssd/issue/843) - Login time increases strongly if more than one domain is configured
-- [\#2320](https://pagure.io/SSSD/sssd/issue/2320) - use the sss_parse_inp request in other responders than dbus
+- [\#4350](https://github.com/SSSD/sssd/issues/4350) - Newline characters (n) must be sanitized before LDAP requests take place
+- [\#4349](https://github.com/SSSD/sssd/issues/4349) - sssd-secrets doesn't exit on idle
+- [\#4347](https://github.com/SSSD/sssd/issues/4347) - sssd ignores entire groups from proxy provider if one member is listed twice
+- [\#4197](https://github.com/SSSD/sssd/issues/4197) - when group is invalidated using sss_cache dataExpireTimestamp entry in the domain and timestamps cache are inconsistent
+- [\#3709](https://github.com/SSSD/sssd/issues/3709) - [RFE] Add more flexible templating for override_homedir config option
+- [\#3640](https://github.com/SSSD/sssd/issues/3640) - Make it possible to configure AD subdomain in the server mode
+- [\#4354](https://github.com/SSSD/sssd/issues/4354) - chown in ExecStartPre of sssd-nss.service hangs forever
+- [\#1885](https://github.com/SSSD/sssd/issues/1885) - Login time increases strongly if more than one domain is configured
+- [\#3362](https://github.com/SSSD/sssd/issues/3362) - use the sss_parse_inp request in other responders than dbus
 
 Detailed Changelog
 ------------------

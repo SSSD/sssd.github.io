@@ -6,13 +6,13 @@ version: 1.11.x
 
 Related ticket(s):
 
-  - [RFE:Add a new option ad_access_filter](https://pagure.io/SSSD/sssd/issue/2082)
-  - [RFE:Change the default of ldap_access_order](https://pagure.io/SSSD/sssd/issue/1975)
-  - [issues when combining the AD provider and ldap_access_filter](https://pagure.io/SSSD/sssd/issue/1977)
+  - [RFE:Add a new option ad_access_filter](https://github.com/SSSD/sssd/issues/3124)
+  - [RFE:Change the default of ldap_access_order](https://github.com/SSSD/sssd/issues/3017)
+  - [issues when combining the AD provider and ldap_access_filter](https://github.com/SSSD/sssd/issues/3019)
 
 Somewhat related:
 
-  - [Document the best practices for AD access control](https://pagure.io/SSSD/sssd/issue/2083)
+  - [Document the best practices for AD access control](https://github.com/SSSD/sssd/issues/3125)
 
 ## Problem Statement
 

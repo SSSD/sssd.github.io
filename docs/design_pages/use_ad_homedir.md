@@ -6,7 +6,7 @@ version: 1.13.x
 
 Related ticket(s):
 
-  - <https://pagure.io/SSSD/sssd/issue/2583>
+  - <https://github.com/SSSD/sssd/issues/3624>
 
 ## Problem statement
 

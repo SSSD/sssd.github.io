@@ -6,7 +6,7 @@ version: 2.0.x
 
 ## Related ticket(s):
 
-* <https://pagure.io/SSSD/sssd/issue/3500>
+* <https://github.com/SSSD/sssd/issues/4526>
 
 ## Problem statement
 
@@ -26,7 +26,7 @@ SSSD should be used as a replacement for `pam_pkcs11` to authenticate users defi
 
 ## Overview of the solution
 
-In general mapping and matching certificates and users is already discussed in [Matching and Mapping Certificates](https://docs.pagure.org/SSSD.sssd/design_pages/matching_and_mapping_certificates.html). This page already contains some discussion about how the rules can be added to the SSSD configuration file `sssd.conf` in section [Storing matching and mapping configuration](https://docs.pagure.org/SSSD.sssd/design_pages/matching_and_mapping_certificates.html#storing-matching-and-mapping-configuration).
+In general mapping and matching certificates and users is already discussed in [Matching and Mapping Certificates](matching_and_mapping_certificates.md). This page already contains some discussion about how the rules can be added to the SSSD configuration file `sssd.conf` in section [Storing matching and mapping configuration](matching_and_mapping_certificates.md#storing-matching-and-mapping-configuration).
 
 To make it easy to drop rules even as config snippet in `/etc/sssd/conf.d/` the rules contain the domain name of the related SSSD domain in the section name. Additionally the list of applicable domain in the rule can be used to make sure the right rules are uses in a multi domain configuration (AD provider).
 

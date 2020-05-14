@@ -6,8 +6,8 @@ version: 1.10.x
 
 Related tickets:
 
-  - [RFE Use the Global Catalog in SSSD for the AD provider](https://pagure.io/SSSD/sssd/issue/1557)
-  - [RFE sssd should support DNS sites](https://pagure.io/SSSD/sssd/issue/1032)
+  - [RFE Use the Global Catalog in SSSD for the AD provider](https://github.com/SSSD/sssd/issues/2599)
+  - [RFE sssd should support DNS sites](https://github.com/SSSD/sssd/issues/2074)
 
 ## Problem Statement
 
@@ -37,7 +37,7 @@ If SSSD is running on an IPA server with trust configured, the keytab will be ge
 
 ### New NSS-Responder calls for SID-to-Name and Name-to-SID lookups
 
-Two new calls should be added to the NSS-Responder to give other applications (the first user would be the FreeIPA directory server) a simple interface for SID-to-Name and Name-to-SID lookups. It has to be sorted out if and how those two new call will interact with lookup by SID feature described in [\#1559](https://pagure.io/SSSD/sssd/issue/1559) "Use the getpwnam()/getgrnam() interface as a gateway to resolve SID to Names".
+Two new calls should be added to the NSS-Responder to give other applications (the first user would be the FreeIPA directory server) a simple interface for SID-to-Name and Name-to-SID lookups. It has to be sorted out if and how those two new call will interact with lookup by SID feature described in [\#2601](https://github.com/SSSD/sssd/issues/2601) "Use the getpwnam()/getgrnam() interface as a gateway to resolve SID to Names".
 
 #### Memory cache for the new lookups
 

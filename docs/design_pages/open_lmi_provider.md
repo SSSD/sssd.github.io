@@ -21,7 +21,7 @@ The first iteration will implement the following features:
 
 ## Overview
 
-The OpenLMI provide will use [​D-Bus responder](https://docs.pagure.org/SSSD.sssd/design_pages/dbus_responder.html) for communication with SSSD. The provider will implement SSSD CIM schema, which describes the objects and their properties and methods. The schema should define a low level model of SSSD architecture. To simplify the most common tasks, we will also implement several python scripts that will follow the OpenLMI scripts interface. That will allow to run these scripts as single command from the command line via *lmi* tool.
+The OpenLMI provide will use [​D-Bus responder](dbus_responder.md) for communication with SSSD. The provider will implement SSSD CIM schema, which describes the objects and their properties and methods. The schema should define a low level model of SSSD architecture. To simplify the most common tasks, we will also implement several python scripts that will follow the OpenLMI scripts interface. That will allow to run these scripts as single command from the command line via *lmi* tool.
 
 ## LMI scripts design
 

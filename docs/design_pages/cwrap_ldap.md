@@ -6,8 +6,8 @@ version: 1.12.x
 
 Related tickets:
 
-  - https://pagure.io/SSSD/sssd/issue/2541
-  - https://pagure.io/SSSD/sssd/issue/2545
+  - https://github.com/SSSD/sssd/issues/3583
+  - https://github.com/SSSD/sssd/issues/3587
 
 ## Problem statement
 
@@ -35,7 +35,7 @@ All tests are invoked with src/tests/cwrap/cwrap_test_setup.sh sourced into the 
 
 At the moment, running the tests requires configuring the build to have data and sockets located in user-writeable directories. The specific locations might be communicated to the test suite via a configure-generated Python or Bash module, or a C program outputting them when invoked. If at least one of these locations is non-writeable, the test suite will exit to Automake with code 77, indicating SKIPPED status.
 
-However, a way to change these at startup time might be implemented later, removing this requirement. E.g. data and socket directories might be specified in the configuration file for the sssd daemons, and the socket location might be specified to libnss_sss and pam_sss via an environment variable. See [\#2545](https://pagure.io/SSSD/sssd/issue/2545).
+However, a way to change these at startup time might be implemented later, removing this requirement. E.g. data and socket directories might be specified in the configuration file for the sssd daemons, and the socket location might be specified to libnss_sss and pam_sss via an environment variable. See [\#3587](https://github.com/SSSD/sssd/issues/3587).
 
 The OpenLDAP server can be executed with configuration and databases located under arbitrary (temporary) directories which will be created during testing. It is unknown yet how to make 389-ds do the same.
 
