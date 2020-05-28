@@ -4,6 +4,7 @@ description: >-
   SSSD is a daemon that serves local and remote identity and authentication
   resources to the system. It can be joined to AD, IPA and LDAP domain as
   well as provide local users and groups from standard files.
+url: "https://sssd.io"
 
 # Build settings
 markdown: kramdown
