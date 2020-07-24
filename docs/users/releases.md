@@ -10,6 +10,7 @@ Other branches are not maintained.
 
 ## 2.x Series
 
+| [sssd-2.3.1.tar.gz](https://github.com/SSSD/sssd/releases/download/sssd-2_3_1/sssd-2.3.1.tar.gz)   | [sssd-2.3.1.tar.gz.asc](https://github.com/SSSD/sssd/releases/download/sssd-2_3_1/sssd-2.3.1.tar.gz.asc) | SHA256SUM: `ef8b047e6d0452a585862dffd16db725ac828e0d3fb594a8dea6d2f24a61ad17` | 2020-07-24 | [Release notes](relnotes/notes_2_3_1) | |
 | [sssd-2.3.0.tar.gz](https://github.com/SSSD/sssd/releases/download/sssd-2_3_0/sssd-2.3.0.tar.gz)   | [sssd-2.3.0.tar.gz.asc](https://github.com/SSSD/sssd/releases/download/sssd-2_3_0/sssd-2.3.0.tar.gz.asc) | SHA256SUM: `f755a105433399fff0f5788ee04795e07299b9d7bf976d02c4910cb6dcbe3a99` | 2020-05-19 | [Release notes](relnotes/notes_2_3_0) | |
 | [sssd-2.2.3.tar.gz](https://github.com/SSSD/sssd/releases/download/sssd-2_2_3/sssd-2.2.3.tar.gz)   | [sssd-2.2.3.tar.gz.asc](https://github.com/SSSD/sssd/releases/download/sssd-2_2_3/sssd-2.2.3.tar.gz.asc) | SHA256SUM: `11565446290e7432dbd208c4db02fcb42ab17e853d8ba4f994af9a9c57bbbb11` | 2019-12-02 | [Release notes](relnotes/notes_2_2_3) | [Manpages](http://mzidek.fedorapeople.org/sssd/2.2.3/man/)  |
 | [sssd-2.2.2.tar.gz](https://github.com/SSSD/sssd/releases/download/sssd-2_2_2/sssd-2.2.2.tar.gz)   | [sssd-2.2.2.tar.gz.asc](https://github.com/SSSD/sssd/releases/download/sssd-2_2_2/sssd-2.2.2.tar.gz.asc) | SHA256SUM: `5349a809d2e79ed6bbd875a49532e7e03c1e2e732c75e8d15e9e7de57d5a07d7` | 2019-09-12 | [Release notes](relnotes/notes_2_2_2) | [Manpages](http://mzidek.fedorapeople.org/sssd/2.2.2/man/)  |
