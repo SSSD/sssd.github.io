@@ -1276,49 +1276,53 @@ The following example illustrates the material presented in this section. In thi
 
 Pseudocode follows:
 
-  - struct tevent_req *read_bytes_send(mem_ctx, ev, fd) {
-      - ...
+```c
+  struct tevent_req *read_bytes_send(mem_ctx, ev, fd) {
+      ...
          req = tevent_req_create(talloc_ctx, &state, struct read_bytes_state);
          state->fd = fd;
          state->buf = talloc_size(state, BUFSIZE);
          state->len = 0;
          fde = tevent_add_fd(ev, state, fd, TEVENT_FD_READ, read_bytes_handler, req);
          return req;
-  - }
+  }
     
-  - void read_bytes_handler(struct tevent_context *ev, struct tevent_fd *fde, void *pvt) {
-      - ...
-      - req = talloc_get_type(pvt, struct tevent_req);
-      - state = tevent_req_data(req, struct read_bytes_state);
-      - read(state->fd, buf, BUFSIZE);
-      - return;
-    }
+  void read_bytes_handler(struct tevent_context *ev, struct tevent_fd *fde, void *pvt) {
+      ...
+      req = talloc_get_type(pvt, struct tevent_req);
+      state = tevent_req_data(req, struct read_bytes_state);
+      read(state->fd, buf, BUFSIZE);
+      return;
+  }
     
-  - int read_bytes_recv(req, tmem_ctx, uint8_t **buf, ssize_t *len) {
-      - ...
-      - state = tevent_req_data(req, struct read_bytes_state);
-      - *buf = talloc_steal(mem_ctx, state->buf);
-      - *len = state->len;
-      - return EOK;
-  - }
+  int read_bytes_recv(req, tmem_ctx, uint8_t **buf, ssize_t *len) {
+      ...
+      state = tevent_req_data(req, struct read_bytes_state);
+      *buf = talloc_steal(mem_ctx, state->buf);
+      *len = state->len;
+      return EOK;
+  }
+```
 
 ##### Caller Code
 
 Pseudocode follows:
 
-  - void caller_func(fd, caller_data) {
-      - ...
-      - tevent_req *req = read_bytes_send(mem_ctx, ev, fd)
-      - tevent_req_set_callback(req, caller_func_complete, caller_data);
-      }
+```c
+  void caller_func(fd, caller_data) {
+      ...
+      tevent_req *req = read_bytes_send(mem_ctx, ev, fd)
+      tevent_req_set_callback(req, caller_func_complete, caller_data);
+  }
     
-  - int caller_func_complete(tevent_req *req) {
-      - ...
-      - caller_data = tevent_req_callback_data(req, struct caller_data);
-      - ... do something with caller_data ...
-      - read_bytes_recv(req, state, &dp_error);
-      - return dp_error;
-      }
+  int caller_func_complete(tevent_req *req) {
+      ...
+      caller_data = tevent_req_callback_data(req, struct caller_data);
+      ... do something with caller_data ...
+      read_bytes_recv(req, state, &dp_error);
+      return dp_error;
+  }
+```
 
 Note the distinction between an event handler and a request callback. While they are both similar in function, the tevent main loop is only aware of the events and handlers in the event context that it is monitoring. A tevent request is not managed by the main loop. Rather, the request's implementation determines when the request has completed, resulting in the request's callback being called, which uses the callback data to continue where it left off. Unlike an event, a tevent request is quite flexible, as it represents a generic asynchronous function call. Also, when a main loop calls a handler, the main loop can not call a second handler until control has been returned to it by the first handler. However, the first handler's code may “send” a tevent request, which may itself “send” a second tevent request, and so on, all before returning control to the main loop.
 
@@ -1328,21 +1332,22 @@ Additionally, an event's handler and `handler_data` are registered using one of 
 
 If the async computation relies on a sub-computation taking place before the async function can make progress, it can create a request with its state, and then register the subcomputation by creating a subrequest (representing the subcomputation) and setting the subrequest's callback to a function which will allow the original computation to make progress. For example, you will often see the following pattern in the codebase (note that the code listing can be read from top to bottom, almost as if the calls were synchronous):
 
-  - comp_send(memctx, inputs)
-      - req = tevent_req_create(memctx, &state, struct comp_state);
-      - ...populate state's input fields (using inputs)...
-      - subreq = subcomp_send(...);
-      - tevent_req_set_callback(subreq, comp_done, req);
-      - return req;
-  - comp_done(subreq)
-      - req = tevent_req_callback_data(subreq, tevent_req)
-      - comp_state = tevent_req_data(req, comp_state)
-      - ...populate state's output fields by calling comp_recv(subreq, *state->outputs)...
-      - ...call tevent_req_done or tevent_req_error, as appropriate...
+```c
+  comp_send(memctx, inputs)
+      req = tevent_req_create(memctx, &state, struct comp_state);
+      ...populate state's input fields (using inputs)...
+      subreq = subcomp_send(...);
+      tevent_req_set_callback(subreq, comp_done, req);
+      return req;
 
-In order to examine a nested chain of subrequests, it can be useful to create a diagram to help visualize it. The following diagram displays two such Kerberos-related visualizations. It is left as an exercise for the reader to create an SDAP-related visualization\! ;)
+  comp_done(subreq)
+      req = tevent_req_callback_data(subreq, tevent_req)
+      comp_state = tevent_req_data(req, comp_state)
+      ...populate state's output fields by calling comp_recv(subreq, *state->outputs)...
+      ...call tevent_req_done or tevent_req_error, as appropriate...
+```
 
-![image](internals_tevent.jpg)
+In order to examine a nested chain of subrequests, it can be useful to create a diagram to help visualize it.
 
 ### Functions
 
