@@ -210,6 +210,20 @@ Now we can finally move on to running the test\!. Navigate to the `src/tests/mul
 
 You can also add the `-v` switch to `py.test` to see more debug messages, including the commands that are executed on the test VM.
 
+When running multihost tests, you may see the following error:
+
+     sssd.testlib.common.exceptions.DirSrvException: fail to setup Directory Server instance
+
+The test setup code automatically sets up a directory server instance, but if the test
+cleanup code does not execute cleanly, or fully, then some manual cleanup is needed on
+the non-controller system(s).
+
+     remove-ds.pl -i slapd-example-1
+
+And possibly
+
+     kdb5_util destroy -f EXAMPLE.TEST
+
 #### Shortening the development loop
 
 As you may have noticed, the tests run whatever packages the VM can install from its repositories. This is fine for testing of stable distributions or for usage from a CI engine, where the packages can be fetched from e.g. a COPR repository.
