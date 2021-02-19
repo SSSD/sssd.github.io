@@ -10,6 +10,7 @@ Other branches are not maintained.
 
 ## 2.x Series
 
+| [sssd-2.4.2.tar.gz](https://github.com/SSSD/sssd/releases/download/2.4.2/sssd-2.4.2.tar.gz)        | [sssd-2.4.2.tar.gz.asc](https://github.com/SSSD/sssd/releases/download/2.4.2/sssd-2.4.2.tar.gz.asc)      | SHA256SUM: `63428d3baf7486f0d076ee106f24372738f6172086abf884e7a7320030c39141` | 2021-02-19 | [Release notes](relnotes/notes_2_4_2) | |
 | [sssd-2.4.1.tar.gz](https://github.com/SSSD/sssd/releases/download/2.4.1/sssd-2.4.1.tar.gz)        | [sssd-2.4.1.tar.gz.asc](https://github.com/SSSD/sssd/releases/download/2.4.1/sssd-2.4.1.tar.gz.asc)      | SHA256SUM: `63428d3baf7486f0d076ee106f24372738f6172086abf884e7a7320030c39141` | 2021-02-05 | [Release notes](relnotes/notes_2_4_1) | |
 | [sssd-2.4.0.tar.gz](https://github.com/SSSD/sssd/releases/download/sssd-2_4_0/sssd-2.4.0.tar.gz)   | [sssd-2.4.0.tar.gz.asc](https://github.com/SSSD/sssd/releases/download/sssd-2_4_0/sssd-2.4.0.tar.gz.asc) | SHA256SUM: `13d7eeff15e582279f70a3aad32daeb40d3749ec14947a4eded35adce7490cdd` | 2020-10-12 | [Release notes](relnotes/notes_2_4_0) | |
 | [sssd-2.3.1.tar.gz](https://github.com/SSSD/sssd/releases/download/sssd-2_3_1/sssd-2.3.1.tar.gz)   | [sssd-2.3.1.tar.gz.asc](https://github.com/SSSD/sssd/releases/download/sssd-2_3_1/sssd-2.3.1.tar.gz.asc) | SHA256SUM: `ef8b047e6d0452a585862dffd16db725ac828e0d3fb594a8dea6d2f24a61ad17` | 2020-07-24 | [Release notes](relnotes/notes_2_3_1) | |
