@@ -107,7 +107,7 @@ One change compared to the IPA code would be that IPA only sends the refresh whe
 
 During design discussion, it was decided that the new options should be not include the provider-specific prefix but rather be provider agnostic to ease sharing the code and possibly allow other providers to use dynamic DNS updates as well. The new options are:
 
-1.  `dynds_update` `(bool)` - whether to perform the dynamic DNS update. Defaults to false.
+1.  `dyndns_update` `(bool)` - whether to perform the dynamic DNS update. Defaults to false.
 2.  `dyndns_refresh_interval` `(integer)` - how often to run the periodic task to refresh the resource record
 3.  `dyndns_iface` `(string)` - instead of updating the DNS with the address used to connect to LDAP, which is the default, use all addresses configured on a particular interface
 4.  `dyndns_update_ptr` `(bool)` - whether to also update the reverse zone when updating the forward zone
